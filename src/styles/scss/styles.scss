@@ -1,0 +1,65 @@
+
+/* Google Font Family url */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&display=swap');
+
+
+@import '~react-tabs/style/react-tabs.css';
+@import '~react-toastify/dist/ReactToastify.css';
+@import '~react-accessible-accordion/dist/fancy-example.css';
+@import '~swiper/swiper.min.css';
+@import '~swiper/components/effect-cube/effect-cube.min.css';
+@import '~swiper/components/effect-coverflow/effect-coverflow.min.css';
+@import '~swiper/components/pagination/pagination.min.css';
+@import '~swiper/components/navigation/navigation.min.css';
+@import '~react-modal-video/css/modal-video.min.css';
+@import '~react-image-lightbox/style.css';
+@import "aos/dist/aos.css";
+
+@import url(../css/animate.min.css);
+@import url(../css/bootstrap.min.css);
+@import url(../css/fontawesome.min.css);
+@import url(../css/remixicon.css);
+@import url(../css/icofont.css);
+
+
+@import 'common/function';
+@import 'common/mixin';
+@import 'common/rfs';
+@import 'common/variable';
+
+@import 'base/base.scss';
+
+@import 'components/blog-details.scss';
+@import 'components/banner.scss';
+@import 'components/cart.scss';
+@import 'components/checkout.scss';
+@import 'components/coming-soon.scss';
+@import 'components/contact.scss';
+@import 'components/error.scss';
+@import 'components/faq.scss';
+@import 'components/footer.scss';
+@import 'components/gallery.scss';
+@import 'components/home-five.scss';
+@import 'components/home-four.scss';
+@import 'components/home-one.scss';
+@import 'components/home-six.scss';
+@import 'components/home-three.scss';
+@import 'components/home-two.scss';
+@import 'components/how-it-works.scss';
+@import 'components/navbar.scss';
+@import 'components/privacy-policy.scss';
+@import 'components/products-details.scss';
+@import 'components/products.scss';
+@import 'components/profile-authentication.scss';
+@import 'components/team.scss';
+@import 'components/terms-conditions.scss';
+@import 'components/course-details.scss';
+@import 'components/course-list.scss';
+@import 'components/header.scss';
+
+
+
+

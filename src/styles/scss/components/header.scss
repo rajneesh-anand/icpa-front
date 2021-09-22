@@ -1,7 +1,8 @@
 .header-top {
-  padding-top: 4px;
+  padding-top: 2px;
   background: #8f1b1b;
   border-bottom: 1px solid #9d3a3a;
+  height: 32px;
   p {
     font-family: "Sarabun", sans-serif;
     font-weight: 400;
@@ -46,7 +47,7 @@
   z-index: 11;
   transition: all 0.3s;
   animation: fadeInDown 0.5s ease-in-out;
-  box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.4);
+  // box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.4);
 
 }
 
@@ -239,11 +240,14 @@
 }
 
 .book-now-btn {
-  font-weight: 700;
+
+  border-radius: 25px;
+  border: solid 1px white; 
+  padding: 10px 20px;
+  font-weight: 500;
   font-size: 14px;
   color: #fff;
-  text-transform: uppercase;
-  padding: 15px 30px;
+  text-transform: uppercase; 
   background: #6d0101;
   display: inline-block;
   &:hover {
@@ -262,6 +266,16 @@
   flex-wrap: wrap;
   margin-bottom: 2px;
   list-style-type: none;
+
+  @media #{$xxs-device} {
+    display: none;
+   
+  }
+  @media #{$xs-device} {
+    display: none;  
+  }
+
+
 
   li {
     position: relative;
@@ -291,6 +305,67 @@
     color: #ed2775;
     font-family: "Archivo";
     font-size: 12.5px;
+    font-weight: 700;
+    line-height: 1.4;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    &::before {
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background:#ed2775;
+      content: "";
+      transition: all 0.3s;
+    }
+   
+
+  }
+  .active
+  {
+    border-bottom: 2px solid #ed2775 ;
+  }
+}
+
+
+.aside-menu {
+  // display: flex;
+  // align-items: center;
+  // flex-wrap: wrap;
+  // margin-bottom: 2px;
+  list-style-type: none;
+
+ul{
+  padding-left: 0px !important;
+
+
+  li {
+    position: relative;    
+
+    &:hover {
+      .sub-menu {
+        top: 100%;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    &.active,
+    &:hover {
+      .main-menu-link {
+        &::before {
+          width: 100%;
+        }
+      }
+    }
+  }}
+  .main-menu-link {   
+    padding: 15px 5px;
+    display: block;
+    color: #ed2775;
+    font-family: "Archivo";
+    font-size: 11.5px;
     font-weight: 700;
     line-height: 1.4;
     text-decoration: none;
@@ -348,5 +423,33 @@
       color: #000;
     }
   }
+}
+
+.aside-footer-area {
+ 
+  .social-links {
+    list-style: none;
+      li {
+        display: inline;
+        padding: 4px 6px;
+          a {
+              background-color: #383d4a;
+              color: var(--whiteColor);
+          }
+      }
+  }
+  
+}
+
+
+.offcanvas-header {
+  display: -moz-box;
+  display: flex;
+  -moz-box-align: center;
+  align-items: center;
+  -moz-box-pack: justify;
+  justify-content: space-between;
+  padding: 1rem 1rem;
+  border-bottom: 1px dashed rgba(204, 204, 204, 0.5);
 }
 

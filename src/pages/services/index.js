@@ -7,8 +7,19 @@ import Seo from "@/components/Seo";
 import Header from "@/layout/header";
 import Footer from "@/layout/footer";
 import Layout from "@/layout/index";
+import { usePaginatedData } from "@/utils/useRequest";
+import Loading from "@/components/Loading";
 
-const ServicePage = ({ services }) => {
+const ServicePage = () => {
+  const {
+    result,
+    error,
+    isLoadingMore,
+    size,
+    setSize,
+    isReachingEnd,
+    isEmpty,
+  } = usePaginatedData("/api/services");
   return (
     <Layout>
       <Seo
@@ -18,7 +29,32 @@ const ServicePage = ({ services }) => {
       />
       <Header />
       <IntroVideo />
-      <KeyFeatures />
+
+      {isLoadingMore ? (
+        <Loading />
+      ) : isEmpty ? (
+        <div className="text-center">
+          <h6>No Product Available !</h6>
+        </div>
+      ) : (
+        <>
+          <KeyFeatures data={result} />
+          <div className="row">
+            <div className="col d-flex justify-content-center">
+              {!isReachingEnd && (
+                <button
+                  className="default-btn"
+                  disabled={isLoadingMore || isReachingEnd}
+                  onClick={() => setSize(size + 1)}
+                >
+                  {isLoadingMore ? "Loading..." : "More Services"}
+                </button>
+              )}
+            </div>
+          </div>
+        </>
+      )}
+
       <FreeTrial />
       <Partner />
       <Footer />
@@ -27,12 +63,3 @@ const ServicePage = ({ services }) => {
 };
 
 export default ServicePage;
-
-export async function getServerSideProps() {
-  const result = await fetch(`${process.env.API_URL}/awsupload/fetchObject`);
-  const data = await result.json();
-
-  return {
-    props: { banner: data ? data.data : null },
-  };
-}

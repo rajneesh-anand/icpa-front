@@ -26,14 +26,14 @@
             {
                 "id": 1,
                 "backgroundImage": "./img/slider/slide1.jpg",
-                "subTitle": "feel the difference with us",
-                "title": "Your Health <span>Is</span><span class='d-block'>Our Priority</span>"
+                "subTitle": "Feel the difference with us",
+                "title": "Sell your products online <span>Is</span><span class='d-block'>with best services</span>"
             },
             {
                 "id": 2,
                 "backgroundImage": "./img/slider/slide2.jpg",
-                "subTitle": "feel the difference with us",
-                "title": "Your Health <span>Is</span><span class='d-block'>Our Priority</span>"
+                "subTitle": "Feel the difference with us",
+                "title": "Sell your products online <span>Is</span><span class='d-block'>with best services</span>"
             }
         ]
     },

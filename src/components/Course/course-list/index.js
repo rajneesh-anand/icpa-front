@@ -32,7 +32,7 @@ const CourseList = () => {
   }, [number, duration]);
 
   return (
-    <div className="courses-area ptb-100">
+    <div className="courses-area ptb-50">
       <div className="container">
         <div className="section-title">
           <span className="sub-title">GO AT YOUR OWN PACE</span>
@@ -63,6 +63,7 @@ const CourseList = () => {
                   Marketer Land a High-Paying Job in Di...
                 </p>
               </div>
+              <div className="price shadow">&#x20B9;15</div>
               <div className="course-inf">
                 <div class="course-inf__item">
                   <div class="course-inf__title">+{count}</div>
@@ -74,10 +75,10 @@ const CourseList = () => {
                   <div class="course-inf__txt">Following</div>
                 </div>
               </div>
-              <div>
-                <button type="submit" class="default-btn">
-                  <i class="bx bx-paper-plane"></i> View Details
-                </button>
+              <div className="text-center ptb-12">
+                <Link href={`/course`}>
+                  <a className="default-btn">View Details</a>
+                </Link>
               </div>
             </div>
           </div>

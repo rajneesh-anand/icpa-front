@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import { getClosest, getSiblings, slideToggle, slideUp } from "@/utils/Animate";
 import OffcanvasBody from "react-bootstrap/OffcanvasBody";
 import OffcanvasTitle from "react-bootstrap/OffcanvasTitle";
 import OffcanvasHeader from "react-bootstrap/OffcanvasHeader";
@@ -18,12 +17,12 @@ const SideMenu = ({ show, handleClose }) => {
       style={{ width: "260px" }}
     >
       <OffcanvasHeader>
-        <OffcanvasTitle style={{ width: "100%", fontFamily: "Poppins" }}>
+        <OffcanvasTitle style={{ width: "100%" }}>
           {!session ? (
             <>
               <div className="text-center">
                 <img
-                  src="/fav.png"
+                  src="/images/fav.png"
                   style={{
                     width: "60px",
                     borderRadius: "50%",
@@ -32,9 +31,9 @@ const SideMenu = ({ show, handleClose }) => {
                 />
               </div>
 
-              <div className="profile-sidebar-slider">
+              <div className="text-center">
                 <Link href="/auth/signin">
-                  <a>Sign In</a>
+                  <a className="default-btn-sm">Sign In</a>
                 </Link>
               </div>
             </>
@@ -53,7 +52,7 @@ const SideMenu = ({ show, handleClose }) => {
               <div className="text-center" style={{ fontSize: 14 }}>
                 <p>{session.user.name}</p>
               </div>
-              <div className="profile-sidebar-slider">
+              <div className="text-center">
                 <Link href="/user/account">
                   <a>My Account</a>
                 </Link>
@@ -64,54 +63,93 @@ const SideMenu = ({ show, handleClose }) => {
         </OffcanvasTitle>
       </OffcanvasHeader>
 
-      <OffcanvasBody style={{ backgroundColor: "#100f0f" }}>
-        <div className="asside-navigation-area">
-          <ul className="asside-menu">
-            <li className="item">
-              <Link href="/articles/spirituality">
-                <a>Spirituality</a>
-              </Link>
-            </li>
-
+      <OffcanvasBody>
+        <div className="aside-navigation-area">
+          <nav>
+            <ul className="aside-menu">
+              <li>
+                <Link href="/services" activeClassName="active">
+                  <a className="main-menu-link">Services</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/membership" activeClassName="active">
+                  <a className="main-menu-link">Membership Plan</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/products" activeClassName="active">
+                  <a className="main-menu-link">Products Suggestion</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/courses" activeClassName="active">
+                  <a className="main-menu-link">Online Seller Courses</a>
+                </Link>
+                <ul className="sub-menu">
+                  <li>
+                    <Link
+                      className="sub-menu-link"
+                      href="/course/amazon-seller"
+                    >
+                      <a> Amazon Seller Course</a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      className="sub-menu-link"
+                      href="/course/flipkart-seller"
+                    >
+                      <a> Flipkart Seller Course</a>
+                    </Link>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <Link
+                  href={process.env.PUBLIC_URL + "/consultancy"}
+                  activeClassName="active"
+                >
+                  <a className="main-menu-link">Telephonic Consultancy</a>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href={process.env.PUBLIC_URL + "/news"}
+                  activeClassName="active"
+                >
+                  <a className="main-menu-link">E-Commerce News Updates</a>
+                </Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div className="aside-footer-area ptb-50">
+          <ul className="social-links">
             <li>
-              <Link href="/articles/Meditation">
-                <a>Meditation</a>
-              </Link>
+              <a href="https://www.facebook.com/" target="_blank">
+                <i className="ri-facebook-fill"></i>
+              </a>
             </li>
             <li>
-              <Link href="/articles/yoga">
-                <a>Yoga</a>
-              </Link>
+              <a href="https://twitter.com/" target="_blank">
+                <i className="ri-twitter-fill"></i>
+              </a>
             </li>
             <li>
-              <Link href="/articles/ayurveda">
-                <a>Ayurveda</a>
-              </Link>
+              <a href="https://www.linkedin.com/" target="_blank">
+                <i className="ri-linkedin-fill"></i>
+              </a>
             </li>
             <li>
-              <Link href="/articles/travel">
-                <a>Travel</a>
-              </Link>
+              <a href="https://www.messenger.com/" target="_blank">
+                <i className="ri-messenger-fill"></i>
+              </a>
             </li>
             <li>
-              <Link href="/articles/tantra">
-                <a>Tantra</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/shop">
-                <a>Shop</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/query">
-                <a>Send Your Queries ?</a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/about">
-                <a>About Us</a>
-              </Link>
+              <a href="https://github.com/" target="_blank">
+                <i className="ri-github-fill"></i>
+              </a>
             </li>
           </ul>
         </div>

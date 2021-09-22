@@ -55,7 +55,7 @@ const Footer = () => {
 
             <div className="col-lg-2 col-md-6 col-sm-6">
               <div className="single-footer-widget pl-2">
-                <h3>Company</h3>
+                <h6>Useful Links</h6>
                 <ul className="links-list">
                   <li>
                     <Link href="/about-simple">
@@ -88,7 +88,7 @@ const Footer = () => {
 
             <div className="col-lg-2 col-md-3 col-sm-6">
               <div className="single-footer-widget">
-                <h3>Support</h3>
+                <h6>Help &amp; Support</h6>
                 <ul className="links-list">
                   <li>
                     <Link href="/services">
@@ -121,7 +121,7 @@ const Footer = () => {
 
             <div className="col-lg-2 col-md-3 col-sm-6">
               <div className="single-footer-widget">
-                <h3>Useful Links</h3>
+                <h6>Legal</h6>
                 <ul className="links-list">
                   <li>
                     <Link href="/privacy-policy">
@@ -181,11 +181,8 @@ const Footer = () => {
 
           <div className="copyright-area">
             <p>
-              Copyright &copy; {currentYear} <strong>Texap</strong>. All Rights
-              Reserved by{" "}
-              <a href="https://envytheme.com/" target="_blank">
-                EnvyTheme
-              </a>
+              Copyright &copy; {currentYear}{" "}
+              <strong>ICPA GLOBAL CONSULTANTS</strong>
             </p>
           </div>
         </div>

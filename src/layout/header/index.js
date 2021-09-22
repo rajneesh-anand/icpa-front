@@ -32,7 +32,7 @@ const Header = () => {
   return (
     <Fragment>
       <header className="header">
-        <div className="header-top d-none d-lg-block">
+        <div className="header-top ">
           <div className="container">
             <div className="row row-cols-12">
               <div className="col">
@@ -42,12 +42,14 @@ const Header = () => {
               </div>
               <div className="col">
                 <p>
-                  <i className="ri-mail-fill"></i> <span>demo@demo.com</span>
+                  <i className="ri-whatsapp-fill"></i>
+                  <span>+91-789945454</span>
                 </p>
               </div>
               <div className="col">
                 <p>
-                  <i className="ri-mail-fill"></i> <span>demo@demo.com</span>
+                  <i className="ri-mail-fill"></i>{" "}
+                  <span>support@theicpaglobal.com</span>
                 </p>
               </div>
 
@@ -98,22 +100,21 @@ const Header = () => {
                     <Logo image={`/images/logo.png`} />
                   </div>
 
+                  <div className="d-flex flex-wrap align-items-center justify-content-between">
+                    <MainMenu />
+
+                    <Button
+                      path={"/auth/signin"}
+                      classOption="book-now-btn"
+                      text="Join Now"
+                    />
+                  </div>
                   <div className="hamburger-menu">
                     <button className="btn-menu" onClick={handleShow}>
                       <span></span>
                       <span></span>
                       <span></span>
                     </button>
-                  </div>
-
-                  <div className="d-flex flex-wrap align-items-center justify-content-between">
-                    <MainMenu />
-
-                    <Button
-                      path={"/"}
-                      classOption="book-now-btn"
-                      text="Join Now"
-                    />
                   </div>
                 </div>
               </div>

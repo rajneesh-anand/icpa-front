@@ -1,12 +1,7 @@
 import React from "react";
 import IntroVideo from "@/components/IntroVideo";
-// import Membership from "@/components/Membership";
-import PricingPlanStyle1 from "@/components/PricingPlan/PricingPlanStyle1";
-import PricingPlanStyle2 from "@/components/PricingPlan/PricingPlanStyle2";
-import PricingPlanStyle3 from "@/components/PricingPlan/PricingPlanStyle3";
-import PricingPlanStyle4 from "@/components/PricingPlan/PricingPlanStyle4";
-import PricingPlanStyle5 from "@/components/PricingPlan/PricingPlanStyle5";
 import FreeTrial from "@/components/FreeTrial";
+import MembershipPlan from "@/components/MembershipPlan";
 import Partner from "@/components/Partner";
 import Seo from "@/components/Seo";
 import Header from "@/layout/header";
@@ -18,13 +13,12 @@ const MembershipPage = ({ services }) => {
     <Layout>
       <Seo
         title="Membership Plans | ICPA Global Consultants"
-        description="This is home"
+        description="Membership Plans"
         canonical={`${process.env.PUBLIC_URL}/membership`}
       />
       <Header />
       <IntroVideo />
-      <PricingPlanStyle2 />
-
+      <MembershipPlan />
       <FreeTrial />
       <Partner />
       <Footer />

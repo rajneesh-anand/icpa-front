@@ -55,11 +55,10 @@ model Categories {
 
 model Services {
   id       Int     @default(autoincrement()) @id
-  serviceName     String?
+  serviceName      String? @unique
   slug String?
   images    String[]
   description String? 
-  subCategories   String[] 
   serviceFee    Decimal 
   saleFee Decimal
   discount Decimal?

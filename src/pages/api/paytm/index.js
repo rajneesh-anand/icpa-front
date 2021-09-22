@@ -18,7 +18,7 @@ export default async function handler(req, res) {
     mid: PaytmConfig.PaytmConfig.mid,
     websiteName: PaytmConfig.PaytmConfig.website,
     orderId: orderId,
-    callbackUrl: "http://localhost:3000/course",
+    callbackUrl: "http://localhost:3000/payment/status",
     txnAmount: {
       value: amount,
       currency: "INR",
@@ -74,7 +74,6 @@ export default async function handler(req, res) {
   });
 
   async function saveDataToDatabase(token) {
-    console.log(`token - ${token}`);
     try {
       const result = await prisma.courseorders.create({
         data: {

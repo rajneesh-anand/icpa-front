@@ -1,0 +1,65 @@
+.info-card {
+    overflow: hidden;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    background: #fff;
+    -webkit-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
+
+    .card-heading-img{
+        background: url("/images/metors.svg") center center/cover no-repeat;
+        // padding-top: 96px;
+        h4{
+          color: wheat;
+          font-size: 18px;
+          font-weight: 500;
+          padding-top: 8px;
+        }
+        h6{
+          color: wheat;
+          font-size: 16px;
+          font-weight: 500;
+          padding-top: 4px;
+          padding-bottom: 8px;
+        }
+      }
+    .card-body {      
+        padding-top: 16px;
+        padding-bottom: 16px;
+        .title {
+            margin-bottom: 8px;
+          }
+          
+          .form-group {
+            margin-bottom: 6px;
+        
+            .form-control {
+              border: 1px solid #928989 !important;
+             
+        
+              &:focus {
+                border-color: var(--mainColor) !important;
+              }
+            }
+            p {
+              color: red;
+            }
+          }
+    }
+  }
+
+
+  .modal-header{
+    padding: 4px 24px !important;
+    font-size: 12px !important;
+   
+  }
+  .modal-title{
+   
+      font-size: 12px !important;
+   
+  }
+ 
+  

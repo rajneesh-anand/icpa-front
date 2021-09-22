@@ -33,22 +33,9 @@
         }
       }
   
-      .price {
-        display: inline-block;
-        background-color: #fe4a55;
-        color: #fff;
-        width: 65px;
-        height: 65px;
-        border-radius: 50%;
-        position: absolute;
-        right: 20px;
-        bottom: -32.5px;
-        text-align: center;
-        line-height: 67px;
-        font-size: 24px;
-        font-weight: 800;
-      }
+     
     }
+
   
     .courses-content {
       border-radius: 0 0 5px 5px;
@@ -107,6 +94,22 @@
         }
       }
     }
+
+    .price {
+      display: inline-block;
+      background-color: #fe4a55;
+      color: #fff;
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      position: absolute;
+      right: 20px;
+      bottom: -32.5px;
+      text-align: center;
+      line-height: 67px;
+      font-size: 24px;
+      font-weight: 800;
+    }
   
     &.bg-color {
       background-color: #fffaf3;
@@ -145,6 +148,7 @@
       flex-wrap: wrap;
       align-items: flex-start;
       margin-top: 35px;
+      border-top: 1px dashed rgb(175 168 168 / 50%);
   
       &__item {
         padding: 10px 35px;

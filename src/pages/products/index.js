@@ -1,10 +1,10 @@
 import React from "react";
 import IntroVideo from "@/components/IntroVideo";
 import { usePaginatedData } from "@/utils/useRequest";
+import Loading from "@/components/Loading";
 import ProductsList from "@/components/ProductList";
 import FreeTrial from "@/components/FreeTrial";
 import Partner from "@/components/Partner";
-import Loading from "@/components/Loading";
 import Seo from "@/components/Seo";
 import Header from "@/layout/header";
 import Footer from "@/layout/footer";
@@ -42,21 +42,19 @@ const ProductPage = () => {
           <ProductsList data={result} />
           <div className="row">
             <div className="col d-flex justify-content-center">
-              <button
-                disabled={isLoadingMore || isReachingEnd}
-                onClick={() => setSize(size + 1)}
-              >
-                {isLoadingMore
-                  ? "Loading..."
-                  : isReachingEnd
-                  ? "No More Products"
-                  : "Load More Products"}
-              </button>
+              {!isReachingEnd && (
+                <button
+                  className="default-btn"
+                  disabled={isLoadingMore || isReachingEnd}
+                  onClick={() => setSize(size + 1)}
+                >
+                  {isLoadingMore ? "Loading..." : "More Services"}
+                </button>
+              )}
             </div>
           </div>
         </>
       )}
-      <ProductsList />
 
       <FreeTrial />
       <Partner />

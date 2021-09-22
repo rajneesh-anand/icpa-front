@@ -18,23 +18,18 @@ const IntroVideo = () => {
           <div className="row align-items-center">
             <div className="col-lg-3 col-md-3">
               <div className="advisor-image">
-                <img
-                  src="/images/advisor/advisor.jpg"
-                  alt="advisor"
-                  height={336}
-                  width={222}
-                />
+                <img src="/images/advisor/advisor.jpg" alt="advisor" />
               </div>
             </div>
             <div className="col-lg-4 col-md-4">
               <div className="advisor-content">
                 <h4>Vinay Gupta</h4>
-                <span className="sub-title">
+                <span className="sub-title" style={{ fontWeight: 700 }}>
                   Founder &amp; Director - ICPA Global Consultants
                 </span>
                 <p>
-                  EnvyTheme has a BS and MS in Mechanical Engineering from Santa
-                  Clara University and years of experience as a professional
+                  I have a BS and MS in Mechanical Engineering from Santa Clara
+                  University and years of experience as a professional
                   instructor and trainer for Data Science and programming. He
                   has publications and patents in various fields such as
                   microfluidics, materials science, and data science

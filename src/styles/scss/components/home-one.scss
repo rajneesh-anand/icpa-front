@@ -333,13 +333,15 @@ Features Area CSS
     z-index: 1;
 }
 .single-features-item {
-    background-color: var(--whiteColor);
+    // background-color: var(--whiteColor);
+    box-shadow: 0 50px 100px -20px rgba(50, 50, 93, .10), 0 30px 60px -30px rgba(107, 124, 147, .15);;
     transition: var(--transition);
-    padding: 40px 30px 35px 110px;
+    padding: 12px 8px;
     margin-bottom: 25px;
-    border-radius: 5px;
+    // border-radius: 5px;
     position: relative;
     z-index: 1;
+    background: var(--gradientColor);
 
     .icon {
         top: 40px;
@@ -378,10 +380,12 @@ Features Area CSS
             background: linear-gradient(45deg, #6A55F8 0%, #EE6C74 100%);
         }
     }
-    h3 {
-        font-size: 20px;
+    h4 {
+        font-size: 16px;
         margin-bottom: 12px;
         transition: var(--transition);
+        color: white;
+        font-weight: 400;
     }
     p {
         transition: var(--transition);
@@ -1454,7 +1458,7 @@ Free Trial Area CSS
         margin-top: 35px;
     }
     .single-features-item {
-        padding: 20px 15px 20px 80px;
+        padding: 20px;
 
         .icon {
             top: 20px;

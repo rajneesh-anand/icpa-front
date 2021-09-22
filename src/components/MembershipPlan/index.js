@@ -1,19 +1,72 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
+import { useSession } from "next-auth/client";
 
-const PricingPlanStyle2 = () => {
+const Hiddenfrom = ({ formData }) => {
+  console.log(formData);
+  return (
+    <form
+      id="redFrom"
+      method="post"
+      action={`https://securegw-stage.paytm.in/theia/api/v1/showPaymentPage?mid=${formData.mid}&orderId=${formData.orderId}`}
+      name="paytm"
+    >
+      <input type="hidden" name="mid" value={formData.mid} />
+      <input type="hidden" name="orderId" value={formData.orderId} />
+      <input type="hidden" name="txnToken" value={formData.txnToken} />
+    </form>
+  );
+};
+
+const MembershipPlan = () => {
+  const [session, loading] = useSession();
+  const [paytmData, setPaytmData] = useState({
+    mid: "",
+    orderId: "",
+    txnToken: "",
+  });
+
+  const handlePayment = async (e) => {
+    e.preventDefault();
+    try {
+      const orderData = {
+        name: session.user.name,
+        email: session.user.email,
+        amount: "50",
+      };
+
+      const response = await fetch("/api/paytm", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(orderData),
+      });
+      const result = await response.json();
+
+      setPaytmData({
+        mid: "zWEMTK89662017572077",
+        orderId: result.orderId,
+        txnToken: result.txnToken,
+      });
+      document.getElementById("redFrom").submit();
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <>
       <div className="pricing-area ptb-50 bg-F7F7FF">
         <div className="container">
           <div className="section-title">
             <span className="sub-title">MEMBERSHIP PLANS</span>
-            {/* <h4>No Hidden Charge Applied, Choose Your Plan</h4> */}
+            <h6>No Hidden Charge Applied, Choose Your Plan</h6>
           </div>
 
           <div className="row align-items-center justify-content-center">
             <div className="col-lg-6 col-md-6 col-sm-6">
-              <div className="single-pricing-box active">
+              <div className="single-pricing-box active" data-aos="zoom-in">
                 <div className="title">
                   <h3>GOLD PLAN</h3>
                   <div className="rating">
@@ -22,13 +75,13 @@ const PricingPlanStyle2 = () => {
                     <i className="bx bxs-star"></i>
                     <i className="bx bxs-star"></i>
                     <i className="bx bxs-star-half"></i>
-                    <p>4.5 (1 rating)</p>
+                    <p>4.5 (2527 rating)</p>
                   </div>
                 </div>
 
                 <span className="popular">Most Popular</span>
                 <div className="price">
-                  &#x20B9;49 <span>/Month</span>
+                  &#x20B9;149 <span>/Month</span>
                 </div>
 
                 <ul className="features-list">
@@ -85,21 +138,27 @@ const PricingPlanStyle2 = () => {
                 </ul>
 
                 <div className="plan-btn">
-                  <Link href="/sign-in">
-                    <a className="default-btn">Purchase Plan</a>
-                  </Link>
+                  {!session ? (
+                    <Link href="/auth/signin">
+                      <a className="default-btn">Purchase Plan</a>
+                    </Link>
+                  ) : (
+                    <button className="default-btn" onClick={handlePayment}>
+                      Purchase Plan
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
 
             <div className="col-lg-6 col-md-6 col-sm-6">
-              <div className="single-pricing-box">
+              <div className="single-pricing-box" data-aos="zoom-in">
                 <div className="title">
                   <h3>BASIC PLAN</h3>
                   <p>Powerful &amp; awesome elements</p>
                 </div>
                 <div className="price">
-                  $59 <span>/Month</span>
+                  &#x20B9;99 <span>/Month</span>
                 </div>
 
                 <ul className="features-list">
@@ -164,9 +223,10 @@ const PricingPlanStyle2 = () => {
             </div>
           </div>
         </div>
+        <Hiddenfrom formData={paytmData} />
       </div>
     </>
   );
 };
 
-export default PricingPlanStyle2;
+export default MembershipPlan;

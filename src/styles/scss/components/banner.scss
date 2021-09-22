@@ -143,6 +143,22 @@
       }
     }
   }
-  
-  
-  
+
+  .payment-status-area{
+    i.ri-close-line {
+      font-size: 64px;
+color: red;
+    }
+    i.ri-check-line{
+      font-size: 64px;
+    color: green;
+    vertical-align: middle;
+    }
+    span{
+      font-size: 24px;
+      color: green;
+    }
+    h6{
+      color: red;
+    }
+  }

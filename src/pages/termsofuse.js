@@ -1,6 +1,6 @@
 import React from "react";
-import SEO from "../components/seo";
-import { siteTermsAndServices } from "../constant/terms-and-services";
+import SEO from "@/components/Seo";
+import { siteTermsAndServices } from "@/constant/terms-and-services";
 import styled from "styled-components";
 import { Link, Element } from "react-scroll";
 import Sticky from "react-stickynode";

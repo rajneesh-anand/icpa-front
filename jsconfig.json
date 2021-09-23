@@ -8,6 +8,7 @@
             "@/styles/*": ["styles/*"],
             "@/libs/*": ["libs/*"],
             "@/layout/*": ["layout/*"],
+            "@/constant/*": ["constant/*"],
         }
     }
 }

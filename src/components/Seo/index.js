@@ -11,7 +11,7 @@ const SEO = ({ title, description, canonical, css, js, image }) => (
     />
 
     <meta name="og:type" property="og:type" content="website" />
-    <meta name="og:image" property="og:image" content="/images/og.png" />
+    <meta name="og:image" property="og:image" content="/og.png" />
     <meta name="og:title" property="og:title" content={title} />
     <meta
       name="og:description"
@@ -30,11 +30,7 @@ const SEO = ({ title, description, canonical, css, js, image }) => (
     <meta name="twitter:site" property="twitter:site" content="@icpa" />
     <meta name="twitter:creator" property="twitter:site" content="@icpa" />
 
-    <meta
-      name="twitter:image"
-      property="twitter:image"
-      content="/images/og.png"
-    />
+    <meta name="twitter:image" property="twitter:image" content="/og.png" />
 
     {canonical && <link rel="canonical" href={`${canonical}`} />}
     {js && <script type="text/javascript" src={`${js}`}></script>}

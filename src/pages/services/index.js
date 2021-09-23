@@ -34,7 +34,7 @@ const ServicePage = () => {
   return (
     <Layout>
       <Seo
-        title="Services | ICPA Global Consultants"
+        title="ICPA Global Consultants | Services"
         description="Amazon Flipkart Seller Account Management | Brand Registry | FBA Services"
         canonical={`${process.env.PUBLIC_URL}/services`}
       />

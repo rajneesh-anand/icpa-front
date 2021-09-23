@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { signIn, getCsrfToken, getSession } from "next-auth/client";
-import SignIn from "@/components/SignIn";
+import { getCsrfToken, getSession } from "next-auth/client";
+import SignInModal from "@/components/SignIn";
 import Seo from "@/components/Seo";
 import Header from "@/layout/header";
 import Footer from "@/layout/footer";
 import Layout from "@/layout/index";
 
-export default function SignInPage({ csrfToken }) {
+const SignInPage = ({ csrfToken }) => {
   return (
     <Layout>
       <Seo
@@ -15,12 +15,13 @@ export default function SignInPage({ csrfToken }) {
         canonical={`${process.env.PUBLIC_URL}/auth/signin`}
       />
       <Header />
-      <SignIn csrfToken={csrfToken} />
+      <SignInModal csrfToken={csrfToken} />
       <Footer />
     </Layout>
   );
-}
+};
 
+export default SignInPage;
 export async function getServerSideProps(context) {
   const csrfToken = await getCsrfToken(context);
   const session = await getSession(context);

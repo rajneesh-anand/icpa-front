@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import Card from "react-bootstrap/Card";
 import { signIn } from "next-auth/client";
 
 export default function SignInModal({ csrfToken }) {

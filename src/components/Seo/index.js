@@ -11,11 +11,6 @@ const SEO = ({ title, description, canonical, css, js, image }) => (
     />
 
     <meta name="og:type" property="og:type" content="website" />
-    <meta
-      name="og:image"
-      property="og:image"
-      content={`${process.env.PUBLIC_URL}/images/og.png`}
-    />
     <meta name="og:title" property="og:title" content={title} />
     <meta
       name="og:description"
@@ -24,6 +19,19 @@ const SEO = ({ title, description, canonical, css, js, image }) => (
     />
     <meta name="og:url" property="og:url" content={`${canonical}`} />
     <meta property="og:site_name" content="icpa global consultants" />
+    <meta
+      property="og:image"
+      itemprop="image"
+      content={`${process.env.PUBLIC_URL}/images/og.png`}
+    />
+    <meta
+      property="og:image:secure_url"
+      content={`${process.env.PUBLIC_URL}/images/og.png`}
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="500" />
+    <meta property="og:image:height" content="400" />
+
     <meta name="twitter:card" property="twitter:card" content="summary" />
     <meta name="twitter:title" property="twitter:title" content={title} />
     <meta

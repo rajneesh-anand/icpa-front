@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { signIn, getCsrfToken, getSession } from "next-auth/client";
-import Link from "next/link";
 import SignIn from "@/components/SignIn";
 import Seo from "@/components/Seo";
 import Header from "@/layout/header";

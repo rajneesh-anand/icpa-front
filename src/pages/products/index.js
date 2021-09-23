@@ -25,7 +25,7 @@ const ProductPage = () => {
     <Layout>
       <Seo
         title="Products Suggestion | ICPA Global Consultants"
-        description="This is home"
+        description="Amazon FLipkart Meesho Myntra Products"
         canonical={`${process.env.PUBLIC_URL}/products`}
       />
       <Header />

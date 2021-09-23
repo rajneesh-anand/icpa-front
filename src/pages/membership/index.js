@@ -8,12 +8,12 @@ import Header from "@/layout/header";
 import Footer from "@/layout/footer";
 import Layout from "@/layout/index";
 
-const MembershipPage = ({ services }) => {
+const MembershipPage = () => {
   return (
     <Layout>
       <Seo
         title="Membership Plans | ICPA Global Consultants"
-        description="Membership Plans"
+        description="Membership Gold Plans"
         canonical={`${process.env.PUBLIC_URL}/membership`}
       />
       <Header />

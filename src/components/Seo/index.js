@@ -11,7 +11,7 @@ const SEO = ({ title, description, canonical, css, js, image }) => (
     />
 
     <meta name="og:type" property="og:type" content="website" />
-    <meta name="og:image" property="og:image" content="/og.png" />
+    <meta name="og:image" property="og:image" content="/images/og.png" />
     <meta name="og:title" property="og:title" content={title} />
     <meta
       name="og:description"
@@ -19,7 +19,7 @@ const SEO = ({ title, description, canonical, css, js, image }) => (
       content={description}
     />
     <meta name="og:url" property="og:url" content={`${canonical}`} />
-    <meta property="og:site_name" content="KokeLiko" />
+    <meta property="og:site_name" content="icpa" />
     <meta name="twitter:card" property="twitter:card" content="summary" />
     <meta name="twitter:title" property="twitter:title" content={title} />
     <meta
@@ -27,8 +27,8 @@ const SEO = ({ title, description, canonical, css, js, image }) => (
       property="twitter:description"
       content={description}
     />
-    <meta name="twitter:site" property="twitter:site" content="@kokeliko" />
-    <meta name="twitter:creator" property="twitter:site" content="@kokeliko" />
+    <meta name="twitter:site" property="twitter:site" content="@icpa" />
+    <meta name="twitter:creator" property="twitter:site" content="@icpa" />
 
     <meta name="twitter:image" property="twitter:image" content="/og.png" />
 

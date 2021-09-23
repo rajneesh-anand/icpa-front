@@ -2,8 +2,7 @@
   "name": "icpa",
   "version": "1.0.0",
   "description": "Online seller consultancy",
-  "main": "index.js",
-  "scripts": {
+   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",

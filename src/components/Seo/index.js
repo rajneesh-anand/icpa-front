@@ -18,7 +18,7 @@ const SEO = ({ title, description, canonical, css, js, image }) => (
       content={description}
     />
     <meta name="og:url" property="og:url" content={`${canonical}`} />
-    <meta property="og:site_name" content="icpa global consultants" />
+    <meta property="og:site_name" content="ICPA Global Consultants" />
     <meta
       property="og:image"
       itemprop="image"
@@ -29,8 +29,8 @@ const SEO = ({ title, description, canonical, css, js, image }) => (
       content={`${process.env.PUBLIC_URL}/images/og.png`}
     />
     <meta property="og:image:type" content="image/png" />
-    <meta property="og:image:width" content="500" />
-    <meta property="og:image:height" content="400" />
+    <meta property="og:image:width" content="300" />
+    <meta property="og:image:height" content="200" />
 
     <meta name="twitter:card" property="twitter:card" content="summary" />
     <meta name="twitter:title" property="twitter:title" content={title} />

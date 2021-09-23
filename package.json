@@ -30,6 +30,7 @@
     "react-jw-player": "^1.19.1",
     "react-modal-video": "^1.2.8",
     "react-owl-carousel3": "^2.2.5",
+    "react-scroll": "^1.8.4",
     "react-slick": "^0.28.1",
     "react-stickynode": "^4.0.0",
     "react-tabs": "^3.2.2",

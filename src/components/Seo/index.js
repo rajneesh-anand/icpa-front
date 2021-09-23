@@ -4,7 +4,7 @@ import Head from "next/head";
 const SEO = ({ title, description, canonical, css, js, image }) => (
   <Head>
     <title>{title}</title>
-    <meta name="description" content={title} />
+    <meta name="description" content={description} />
     <meta
       name="viewport"
       content="width=device-width,minimum-scale=1,initial-scale=1"
@@ -19,7 +19,7 @@ const SEO = ({ title, description, canonical, css, js, image }) => (
       content={description}
     />
     <meta name="og:url" property="og:url" content={`${canonical}`} />
-    <meta property="og:site_name" content="icpa" />
+    <meta property="og:site_name" content="icpa global consultants" />
     <meta name="twitter:card" property="twitter:card" content="summary" />
     <meta name="twitter:title" property="twitter:title" content={title} />
     <meta
@@ -30,7 +30,11 @@ const SEO = ({ title, description, canonical, css, js, image }) => (
     <meta name="twitter:site" property="twitter:site" content="@icpa" />
     <meta name="twitter:creator" property="twitter:site" content="@icpa" />
 
-    <meta name="twitter:image" property="twitter:image" content="/og.png" />
+    <meta
+      name="twitter:image"
+      property="twitter:image"
+      content="/images/og.png"
+    />
 
     {canonical && <link rel="canonical" href={`${canonical}`} />}
     {js && <script type="text/javascript" src={`${js}`}></script>}

@@ -34,26 +34,27 @@ const Header = () => {
       <header className="header">
         <div className="header-top ">
           <div className="container">
-            <div className="row row-cols-12">
-              <div className="col">
-                <p>
-                  <i className="ri-phone-fill"></i> <span>+91-789945454</span>
-                </p>
-              </div>
-              <div className="col">
-                <p>
-                  <i className="ri-whatsapp-fill"></i>
-                  <span>+91-789945454</span>
-                </p>
-              </div>
-              <div className="col">
-                <p>
-                  <i className="ri-mail-fill"></i>{" "}
-                  <span>support@theicpaglobal.com</span>
-                </p>
+            <div className="row">
+              <div className="col-lg-6 col-md-6 col-12">
+                <ul className="top-contact-info">
+                  <li>
+                    <i className="ri-phone-fill"></i> <span>+91-789945454</span>
+                  </li>
+                  <li>
+                    {" "}
+                    <i className="ri-whatsapp-fill"></i>
+                    <span>+91-789945454</span>
+                  </li>
+                  <li>
+                    {" "}
+                    <i className="ri-mail-fill"></i>{" "}
+                    <span>support@theicpaglobal.com</span>
+                  </li>
+                </ul>
+                <p></p>
               </div>
 
-              <div className="col">
+              <div className="col-lg-6 col-md-6 d-none d-sm-block">
                 <ul className="social-links text-end">
                   <li>
                     <SocialIcon
@@ -102,7 +103,8 @@ const Header = () => {
 
                   <div className="d-flex flex-wrap align-items-center justify-content-between">
                     <MainMenu />
-
+                  </div>
+                  <div className="join-btn">
                     <Button
                       path={"/auth/signin"}
                       classOption="book-now-btn"

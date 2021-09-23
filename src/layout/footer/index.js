@@ -53,7 +53,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="col-lg-2 col-md-6 col-sm-6">
+            <div className="col-lg-2 col-md-3 col-4">
               <div className="single-footer-widget pl-2">
                 <h6>Useful Links</h6>
                 <ul className="links-list">
@@ -86,7 +86,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="col-lg-2 col-md-3 col-sm-6">
+            <div className="col-lg-2 col-md-3 col-4">
               <div className="single-footer-widget">
                 <h6>Help &amp; Support</h6>
                 <ul className="links-list">
@@ -119,7 +119,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="col-lg-2 col-md-3 col-sm-6">
+            <div className="col-lg-2 col-md-3 col-4">
               <div className="single-footer-widget">
                 <h6>Legal</h6>
                 <ul className="links-list">
@@ -135,7 +135,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link href="/terms-conditions">
-                      <a>Terms & Conditions</a>
+                      <a>Terms of Service</a>
                     </Link>
                   </li>
                   <li>
@@ -152,7 +152,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="col-lg-3 col-md-6 col-sm-6">
+            <div className="col-lg-3 col-md-6 ">
               <div className="single-footer-widget">
                 <h3>Newsletter</h3>
                 <p>

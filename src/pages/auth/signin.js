@@ -21,7 +21,6 @@ const SignInPage = ({ csrfToken }) => {
   );
 };
 
-export default SignInPage;
 export async function getServerSideProps(context) {
   const csrfToken = await getCsrfToken(context);
   const session = await getSession(context);
@@ -38,3 +37,5 @@ export async function getServerSideProps(context) {
     props: { csrfToken },
   };
 }
+
+export default SignInPage;

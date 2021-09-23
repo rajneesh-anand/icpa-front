@@ -26,8 +26,6 @@ const CourseListPage = ({ courses }) => {
   );
 };
 
-export default CourseListPage;
-
 export async function getServerSideProps() {
   const result = await fetch(`${process.env.API_URL}/awsupload/fetchObject`);
   const data = await result.json();
@@ -36,3 +34,5 @@ export async function getServerSideProps() {
     props: { banner: data ? data.data : null },
   };
 }
+
+export default CourseListPage;

@@ -20,8 +20,6 @@ const CourseDetailPage = () => {
   );
 };
 
-export default CourseDetailPage;
-
 export async function getServerSideProps(context) {
   const { req } = context;
   const data = await parse(req);
@@ -48,3 +46,5 @@ export async function getServerSideProps(context) {
     props: {},
   };
 }
+
+export default CourseDetailPage;

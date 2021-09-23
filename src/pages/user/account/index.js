@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useSession, getSession } from "next-auth/client";
 import Seo from "@/components/Seo";
 import NavbarStyleOne from "@/components/_App/NavbarStyleOne";
-import prisma from "@/libs/prisma";
+import prisma from "../../../libs/prisma";
 
 const Account = ({ orderData }) => {
   const data = JSON.parse(orderData).length != 0 ? JSON.parse(orderData) : null;

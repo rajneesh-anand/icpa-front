@@ -3,7 +3,7 @@ import { getSession } from "next-auth/client";
 import Seo from "@/components/Seo";
 import NavbarStyleOne from "@/components/_App/NavbarStyleOne";
 import ReactJWPlayer from "react-jw-player";
-import prisma from "@/libs/prisma";
+import prisma from "../../../libs/prisma";
 
 const UserCoursePage = ({ data }) => {
   const course_data = JSON.parse(data);

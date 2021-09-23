@@ -3,11 +3,11 @@ const withImages = require("next-images");
 const isProd = process.env.NODE_ENV === "production";
 
 const apiUrl = isProd
-  ? " https://icpa.herokuapp.com/api"
+  ? "https://icpa.herokuapp.com/api"
   : "http://localhost:8080/api";
 
 const publicUrl = isProd
-  ? "https://sdalegal.herokuapp.com"
+  ? "https://icpa-mu.vercel.app"
   : "http://localhost:3000";
 
 module.exports = withImages({

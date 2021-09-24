@@ -8,6 +8,7 @@ const options = {
   margin: 25,
   dots: false,
   autoplay: true,
+  autoplayTimeout: 2000,
   autoplayHoverPause: true,
   navText: [
     "<i class='ri-arrow-left-s-line'></i>",

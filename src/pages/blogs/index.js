@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from "react";
-import IntroVideo from "@/components/IntroVideo";
-import KeyFeatures from "@/components/KeyFeatures";
+import BlogList from "@/components/Blog/blog-list";
 import FreeTrial from "@/components/FreeTrial";
 import Partner from "@/components/Partner";
 import Seo from "@/components/Seo";
 import Header from "@/layout/header";
 import Footer from "@/layout/footer";
 import Layout from "@/layout/index";
-import { usePaginatedData } from "@/utils/useRequest";
 import Loading from "@/components/Loading";
-import ModalForm from "@/components/ModalForm";
+import { usePaginatedData } from "@/utils/useRequest";
 
-const ServicePage = () => {
+const BlogListPage = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
 
@@ -29,17 +27,16 @@ const ServicePage = () => {
     setSize,
     isReachingEnd,
     isEmpty,
-  } = usePaginatedData("/api/services");
+  } = usePaginatedData("/api/blogs");
 
   return (
     <Layout>
       <Seo
-        title="ICPA Global Consultants | Services"
-        description="Amazon Flipkart Seller Account Management | Brand Registry | FBA Services"
-        canonical={`${process.env.PUBLIC_URL}/services`}
+        title="News Updates | ICPA Global Consultants"
+        description="Amazon Flipkart Other E-Commerce Seller Platforms News and Updates"
+        canonical={`${process.env.PUBLIC_URL}/blogs`}
       />
       <Header />
-      <IntroVideo />
 
       {isLoadingMore ? (
         <Loading />
@@ -49,7 +46,7 @@ const ServicePage = () => {
         </div>
       ) : (
         <>
-          <KeyFeatures data={result} />
+          <BlogList data={result} />
           <div className="row">
             <div className="col d-flex justify-content-center">
               {!isReachingEnd && (
@@ -68,10 +65,9 @@ const ServicePage = () => {
 
       <FreeTrial />
       <Partner />
-      <ModalForm show={show} handleClose={handleClose} />
       <Footer />
     </Layout>
   );
 };
 
-export default ServicePage;
+export default BlogListPage;

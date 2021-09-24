@@ -39,7 +39,7 @@ const MainMenu = () => {
         </li>
         <li>
           <Link
-            href={process.env.PUBLIC_URL + "/consultancy"}
+            href={process.env.PUBLIC_URL + "/telephonic-consultation"}
             activeClassName="active"
           >
             <a className="main-menu-link">Telephonic Consultancy</a>
@@ -47,7 +47,7 @@ const MainMenu = () => {
         </li>
         <li>
           <Link
-            href={process.env.PUBLIC_URL + "/news"}
+            href={process.env.PUBLIC_URL + "/blogs"}
             activeClassName="active"
           >
             <a className="main-menu-link">E-Commerce News Updates</a>

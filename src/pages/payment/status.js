@@ -25,18 +25,8 @@ export default function PaymentStatusPage({ status }) {
 
 export async function getServerSideProps(context) {
   const { req } = context;
-  const session = await getSession(context);
   const data = await parse(req);
   console.log(data);
-
-  // if (!session) {
-  //   return {
-  //     redirect: {
-  //       destination: "/",
-  //       permanent: false,
-  //     },
-  //   };
-  // }
 
   if (data.STATUS === "TXN_SUCCESS") {
     await prisma.courseorders.updateMany({

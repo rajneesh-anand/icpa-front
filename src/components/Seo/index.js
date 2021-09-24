@@ -21,7 +21,7 @@ const SEO = ({ title, description, canonical, css, js, image }) => (
     <meta property="og:site_name" content="ICPA Global Consultants" />
     <meta
       property="og:image"
-      itemprop="image"
+      itemProp="image"
       content={`${process.env.PUBLIC_URL}/images/og.png`}
     />
     <meta

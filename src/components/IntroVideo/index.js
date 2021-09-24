@@ -105,6 +105,19 @@ const IntroVideo = () => {
                   />
                 </div>
               </div>
+              <div className="text-center mt-1 youtube">
+                <a
+                  target="_blank"
+                  href="https://www.youtube.com/watch?v=TiSGujM22OI&list=PLC3y8-rFHvwi1AXijGTKM0BKtHzVC-LSK"
+                  rel="noopener noreferrer"
+                  className="default-btn-sm"
+                >
+                  Watch Free Videos on Youtube
+                  <span>
+                    <i className="bx bxl-youtube"></i>
+                  </span>
+                </a>
+              </div>
             </div>
           </div>
         </div>

@@ -5,6 +5,7 @@
     --whiteColor: #ffffff;
     --blackColor: #262A37;
     --gradientColor: linear-gradient(44.44deg, #ED2775 7.79%, #FF7448 94.18%);
+    --gradientBlue:linear-gradient(44.44deg, #1a81d9 7.79%, #234ba5 94.18%);
     --paragraphColor: #716c80;
     --fontFamily: 'Inter', sans-serif;
     scroll-behavior: inherit;
@@ -63,6 +64,13 @@ p {
     padding: {
         top: 100px;
         bottom: 100px;
+    }
+}
+
+.mtb-48 {
+    margin: {
+        top: 48px;
+        bottom: 48px;
     }
 }
 
@@ -144,6 +152,45 @@ p {
         }
     }
 }
+
+
+.default-btn-blue {
+    z-index: 1;
+    border: none;
+    position: relative;
+    padding: 12px 35px;
+    border-radius: 30px;
+    display: inline-block;
+    color: var(--whiteColor);
+    transition: var(--transition);
+    box-shadow: 0px 12px 35px rgba(237, 39, 117, 0.25);
+    font: {
+        size: var(--fontSize);
+        weight: 600;
+    };
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        transition: var(--transition);
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+        border-radius: 30px;
+        background: var(--gradientBlue);
+    }
+    &:hover {
+        background-color: var(--mainColor);
+        color: var(--whiteColor);
+
+        &::before {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+}
+
 
 .default-btn-sm {
     z-index: 1;

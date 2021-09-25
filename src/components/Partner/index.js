@@ -9,7 +9,7 @@ const options = {
   dots: false,
   autoplay: true,
   autoplayTimeout: 2000,
-  autoplayHoverPause: true,
+  // autoplayHoverPause: true,
   navText: [
     "<i class='ri-arrow-left-s-line'></i>",
     "<i class='ri-arrow-right-s-line'></i>",

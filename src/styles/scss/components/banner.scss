@@ -147,7 +147,7 @@
   .payment-status-area{
     i.ri-close-line {
       font-size: 64px;
-color: red;
+      color: red;
     }
     i.ri-check-line{
       font-size: 64px;
@@ -162,3 +162,114 @@ color: red;
       color: red;
     }
   }
+
+
+
+
+.timeline {
+    display: flex;
+    align-items: center; 
+    height: 232px;
+  }  
+  .event
+   {
+    position: relative;
+  }
+  
+  .eventBubble {
+    position: absolute;
+    // background-color: rgba(158, 158, 158, 0.1);
+    background: var(--gradientColor);
+    border-radius: 10px;
+    width: 200px;
+    height: 106px;
+    top: -112px;
+    left: -80px;   
+    // border: 1px solid rgb(136, 131, 131);
+   
+     box-shadow: inset 0 0 5px rgba(158, 158, 158, 0.64)    
+   
+  }
+
+  
+  .eventTitle {
+    // font-family: "Arial Black", Gadget, sans-serif;
+    color: white;
+    font-size: 12.5px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 4px;
+   
+  }
+
+  .time {
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 72px;
+    font-size: 8px;
+    margin-top: -3px;
+    margin-left: -20px;
+    color: #9E9E9E;
+  }
+  
+  .now{
+       background-color: #004165;
+      color: white;
+      border-radius: 7px;
+      margin: 5px;
+      padding: 4px;
+      font-size: 10px;
+      font-family: Arial, Helvetica, sans-serif;
+      border: 2px solid white;
+      font-weight: bold;
+      box-shadow: 0 0 0 2px #004165
+  }
+
+
+  .consultation-area{
+    background: url("/images/consultancy-bg.svg") center center/cover no-repeat;
+    .tel-box{
+      display: flex;
+      justify-content: center;
+      margin-bottom: 48px;
+      h4{
+        color: var(--blackColor);
+    font-weight: 500;
+    padding-top: 16px;
+    margin-left: 16px;
+      }
+    }
+    .consultancy-form{
+      border: 1px solid pink;
+      margin-top: 24px;
+      margin-bottom: 48px;
+
+      @media #{$xxs-device} {
+        border:none;
+      }
+      @media #{$xs-device} {
+        border: none;
+      }
+
+
+      h6{
+        background: var(--gradientColor);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: 0.1em;
+        font-weight: 600;
+        padding: 16px;
+      }
+      .form-label{
+        font-weight: 600;
+      }
+      p{
+        color: red
+      ;
+      }
+      button{
+        margin-bottom: 16px;
+      }
+    }
+  }
+  

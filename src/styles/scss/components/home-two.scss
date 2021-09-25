@@ -718,11 +718,7 @@ Pricing Area CSS
             }
         }
     }
-    .plan-btn{
-        text-align: center;
-    padding-top: 8px;
-    border-top: 1px dashed hsla(0,0%,80%,.5);
-    }
+   
     &:hover, &.active {
         box-shadow: 0px 25px 50px 5px rgba(0, 0, 0, 0.1);
     }
@@ -735,6 +731,20 @@ Pricing Area CSS
         position: absolute;
         right: 20px;
         top: 20px;
+    }
+    .btn-list{
+        display: flex;
+        justify-self: center;
+        padding-top: 8px;
+        border-top: 1px dashed hsla(0,0%,80%,.5);
+        .plan-btn{
+           
+        padding: 0px 8px;
+        i{
+            vertical-align: middle;
+        }
+       
+        }
     }
 }
 .see-more-pricing {

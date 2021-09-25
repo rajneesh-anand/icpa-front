@@ -136,17 +136,27 @@ const MembershipPlan = () => {
                     <i className="ri-check-line"></i> Live Support
                   </li>
                 </ul>
-
-                <div className="plan-btn">
-                  {!session ? (
-                    <Link href="/auth/signin">
-                      <a className="default-btn">Purchase Plan</a>
-                    </Link>
-                  ) : (
-                    <button className="default-btn" onClick={handlePayment}>
-                      Purchase Plan
+                <div className="btn-list">
+                  <div className="plan-btn">
+                    {!session ? (
+                      <Link href="/auth/signin">
+                        <a className="default-btn">Purchase Plan</a>
+                      </Link>
+                    ) : (
+                      <button className="default-btn" onClick={handlePayment}>
+                        Purchase Plan
+                      </button>
+                    )}
+                  </div>
+                  <div className="plan-btn">
+                    <button
+                      className="default-btn-blue"
+                      onClick={handlePayment}
+                    >
+                      <i className="icofont-ui-call"></i>
+                      Ask to Experts
                     </button>
-                  )}
+                  </div>
                 </div>
               </div>
             </div>
@@ -214,10 +224,27 @@ const MembershipPlan = () => {
                   </li>
                 </ul>
 
-                <div className="plan-btn">
-                  <Link href="/sign-in">
-                    <a className="default-btn">Purchase Plan</a>
-                  </Link>
+                <div className="btn-list">
+                  <div className="plan-btn">
+                    {!session ? (
+                      <Link href="/auth/signin">
+                        <a className="default-btn">Purchase Plan</a>
+                      </Link>
+                    ) : (
+                      <button className="default-btn" onClick={handlePayment}>
+                        Purchase Plan
+                      </button>
+                    )}
+                  </div>
+                  <div className="plan-btn">
+                    <button
+                      className="default-btn-blue"
+                      onClick={handlePayment}
+                    >
+                      <i className="icofont-ui-call"></i>
+                      Ask to Experts
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>

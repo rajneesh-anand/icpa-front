@@ -5,6 +5,7 @@ import Header from "@/layout/header";
 import Footer from "@/layout/footer";
 import Layout from "@/layout/index";
 import UserCourseDetail from "@/components/UserCourseList/course-details";
+import prisma from "@/libs/prisma";
 
 const UserCourseVideoPage = ({ chapterList }) => {
   const course = JSON.parse(chapterList);

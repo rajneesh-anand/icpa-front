@@ -5,6 +5,7 @@ import Header from "@/layout/header";
 import Footer from "@/layout/footer";
 import Layout from "@/layout/index";
 import UserAccount from "@/components/UserAccount";
+import prisma from "@/libs/prisma";
 
 const UserCoursePage = ({ profileDetails }) => {
   const profile = JSON.parse(profileDetails);

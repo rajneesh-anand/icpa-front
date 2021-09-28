@@ -5,6 +5,7 @@ import Header from "@/layout/header";
 import Footer from "@/layout/footer";
 import Layout from "@/layout/index";
 import UserCourseList from "@/components/UserCourseList/course-list";
+import prisma from "@/libs/prisma";
 
 const UserCoursePage = ({ courseList }) => {
   const course = JSON.parse(courseList);

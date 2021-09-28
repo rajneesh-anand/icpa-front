@@ -79,7 +79,7 @@ const CourseDetail = ({ data }) => {
               <li>
                 <a>Courses</a>
               </li>
-              <li className="active">{data.courseName}</li>
+              <li className="active">{data[0].courseName}</li>
             </ul>
             <h2>{data.courseName}</h2>
             <div className="rating">

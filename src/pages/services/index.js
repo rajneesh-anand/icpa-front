@@ -44,7 +44,7 @@ const ServicePage = () => {
       {isLoadingMore ? (
         <Loading />
       ) : isEmpty ? (
-        <div className="text-center">
+        <div className="text-center ptb-100">
           <h6>No Service Available !</h6>
         </div>
       ) : (

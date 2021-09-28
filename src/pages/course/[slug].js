@@ -10,7 +10,7 @@ import Layout from "@/layout/index";
 import parse from "urlencoded-body-parser";
 
 const CourseDetailPage = ({ data }) => {
-  const course = JSON.parse(data);
+  const course = data ? JSON.parse(data) : null;
   return (
     <Layout>
       <Seo

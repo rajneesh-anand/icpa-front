@@ -18,12 +18,15 @@ const KeyFeatures = ({ data }) => {
                   key={index}
                   className="col-xl-4 col-lg-6 col-sm-6 col-md-6"
                 >
-                  <div className="single-features-item" data-aos="fade-down">
-                    {/* <div className="icon">
-                      <i className="ri-eye-line"></i>
-                    </div> */}
-                    <h4>{item.serviceName}</h4>
-                    {/* <p>{item.description}</p> */}
+                  <div
+                    className="service-card text-center"
+                    data-aos="fade-down"
+                  >
+                    <img
+                      src="https://images.unsplash.com/photo-1611916656173-875e4277bea6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHw&ixlib=rb-1.2.1&q=80&w=400"
+                      alt={item.serviceName}
+                    />
+                    <h6>{item.serviceName}</h6>
                   </div>
                 </div>
               ))}

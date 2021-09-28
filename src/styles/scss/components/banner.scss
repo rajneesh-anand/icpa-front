@@ -334,4 +334,48 @@
       height: 400px;
     }
   }
+
   
+  .service-card{
+    --card-gradient: rgba(0, 0, 0, 0.8);
+    --card-gradient: #5e9ad9, #e271ad;    
+    --card-blend-mode: overlay;  
+  
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0.05rem 0.1rem 0.3rem -0.03rem rgba(0, 0, 0, 0.45);
+    padding-bottom: 1rem;
+    background-image: linear-gradient(
+      var(--card-gradient),
+      white max(9.5rem, 27vh)
+    );
+    overflow: hidden;
+    min-height: 224px;
+    margin-bottom: 16px;
+  
+    img {
+      border-radius: 0.5rem 0.5rem 0 0;
+      width: 100%;
+      object-fit: cover;
+    
+      max-height: max(10rem, 30vh);
+      aspect-ratio: 4/3;
+      mix-blend-mode: var(--card-blend-mode); 
+      ~ * {
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+    }
+  
+    &:hover,
+    &:focus-within {
+      --card-gradient: #24a9d5 max(8.5rem, 20vh);
+    }
+    h6 {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+      // letter-spacing: 0.1em;
+    }
+
+  }

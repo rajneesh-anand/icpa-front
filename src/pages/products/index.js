@@ -34,7 +34,7 @@ const ProductPage = () => {
       {isLoadingMore ? (
         <Loading />
       ) : isEmpty ? (
-        <div className="text-center">
+        <div className="text-center ptb-100">
           <h6>No Product Available !</h6>
         </div>
       ) : (

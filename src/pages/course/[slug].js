@@ -1,5 +1,4 @@
 import React from "react";
-import IntroVideo from "@/components/IntroVideo";
 import CourseDetails from "@/components/Course/course-details";
 import FreeTrial from "@/components/FreeTrial";
 import Partner from "@/components/Partner";
@@ -7,7 +6,6 @@ import Seo from "@/components/Seo";
 import Header from "@/layout/header";
 import Footer from "@/layout/footer";
 import Layout from "@/layout/index";
-import parse from "urlencoded-body-parser";
 
 const CourseDetailPage = ({ data }) => {
   const course = data ? JSON.parse(data) : null;
@@ -19,7 +17,7 @@ const CourseDetailPage = ({ data }) => {
         canonical={`${process.env.PUBLIC_URL}/course/${course.slug}`}
       />
       <Header />
-      <CourseDetails data={course} />
+      {course && <CourseDetails data={course} />}
       <Partner />
       <Footer />
     </Layout>

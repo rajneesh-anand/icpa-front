@@ -373,6 +373,7 @@ const CourseDetail = ({ data }) => {
           </div>
         </div>
       </div>
+
       <ModalVideo
         channel="youtube"
         isOpen={!isOpen}

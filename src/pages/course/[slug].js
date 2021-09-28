@@ -7,18 +7,17 @@ import Header from "@/layout/header";
 import Footer from "@/layout/footer";
 import Layout from "@/layout/index";
 
-const CourseDetailPage = ({ data }) => {
-  const courseInfo = JSON.parse(data);
-  console.log(courseInfo);
+const CourseDetailPage = ({ course }) => {
+  console.log(course);
   return (
     <Layout>
       <Seo
-        title={`${courseInfo.courseName}`}
-        description={`${courseInfo.description}`}
-        canonical={`${process.env.PUBLIC_URL}/course/${courseInfo.slug}`}
+        title={`${course.courseName}`}
+        description={`${course.description}`}
+        canonical={`${process.env.PUBLIC_URL}/course/${course.slug}`}
       />
       <Header />
-      {courseInfo && <CourseDetails data={courseInfo} />}
+      <CourseDetails data={course} />
       <Partner />
       <Footer />
     </Layout>
@@ -26,27 +25,14 @@ const CourseDetailPage = ({ data }) => {
 };
 
 export async function getServerSideProps({ params, req, res }) {
-  try {
-    const { slug } = params;
-    const course = await prisma.courses.findFirst({
-      where: {
-        slug: slug,
-      },
-    });
+  const { slug } = params;
+  const result = await fetch(`${process.env.PUBLIC_URL}/api/course/${slug}`);
+  const data = await result.json();
+  console.log(data);
 
-    return {
-      props: { data: JSON.stringify(course) },
-    };
-  } catch (error) {
-    res.statusCode = 404;
-    return {
-      props: {},
-    };
-  } finally {
-    async () => {
-      await prisma.$disconnect();
-    };
-  }
+  return {
+    props: { course: data ? data.data : null },
+  };
 }
 
 export default CourseDetailPage;

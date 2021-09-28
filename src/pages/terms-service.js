@@ -1,5 +1,5 @@
 import React from "react";
-import SEO from "@/components/Seo";
+import Seo from "@/components/Seo";
 import { siteTermsAndServices } from "@/constant/terms-and-services";
 import styled from "styled-components";
 import { Link, Element } from "react-scroll";

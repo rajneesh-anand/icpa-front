@@ -31,9 +31,18 @@
         &:hover {
           color: #fe4a55;
         }
+      }    
+    }
+
+    .course-content {
+      padding: 10px;
+      a {
+        font-size: 18px;
+        font-weight: 500;    
+        }
+      p{
+        padding-top: 8px;
       }
-  
-     
     }
 
   
@@ -153,6 +162,7 @@
       &__item {
         padding: 10px 35px;
         min-width: 150px;
+        text-align: center;
   
         @media screen and (max-width: 768px) {
           padding: 10px 20px;

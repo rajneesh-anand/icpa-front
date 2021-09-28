@@ -6,6 +6,11 @@ import Logo from "@/components/Logo";
 import MainMenu from "@/components/Menu/main-menu";
 import MobileSideMenu from "@/components/Menu/mobile-menu";
 import Link from "next/link";
+import Overlay from "react-bootstrap/Overlay";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Popover from "react-bootstrap/Popover";
+import PopoverBody from "react-bootstrap/PopoverBody";
+import PopoverHeader from "react-bootstrap/PopoverHeader";
 
 const Header = () => {
   const [show, setShow] = useState(false);
@@ -104,13 +109,65 @@ const Header = () => {
                   <div className="d-flex flex-wrap align-items-center justify-content-between">
                     <MainMenu />
                   </div>
-                  <div className="join-btn">
-                    <Button
-                      path={"/auth/signin"}
-                      classOption="book-now-btn"
-                      text="Join Now"
-                    />
-                  </div>
+                  {session ? (
+                    <div className="logged-profile">
+                      <OverlayTrigger
+                        trigger="click"
+                        key="bottom"
+                        placement="bottom"
+                        rootClose
+                        overlay={
+                          <Popover id={`popover-positioned-bottom`}>
+                            {/* <Popover.Header as="h3">{`Popover bottom`}</Popover.Header> */}
+                            <Popover.Body>
+                              <div className="profile-menu">
+                                <ul>
+                                  <li>
+                                    <Link
+                                      href="/user/account"
+                                      activeClassName="active"
+                                    >
+                                      <a className="main-menu-link">
+                                        My Account
+                                      </a>
+                                    </Link>
+                                  </li>
+                                  <li>
+                                    <Link
+                                      href="/user/course"
+                                      activeClassName="active"
+                                    >
+                                      <a className="main-menu-link">
+                                        My Course
+                                      </a>
+                                    </Link>
+                                  </li>
+                                  <li>
+                                    <button
+                                      className="default-btn-sm"
+                                      onClick={() => signOut()}
+                                    >
+                                      Sign Out
+                                    </button>
+                                  </li>
+                                </ul>
+                              </div>
+                            </Popover.Body>
+                          </Popover>
+                        }
+                      >
+                        <i className="fas fa-user-circle"></i>
+                      </OverlayTrigger>
+                    </div>
+                  ) : (
+                    <div className="join-btn">
+                      <Button
+                        path={"/auth/signin"}
+                        classOption="book-now-btn"
+                        text="Join Now"
+                      />
+                    </div>
+                  )}
                   <div className="hamburger-menu">
                     <button className="btn-menu" onClick={handleShow}>
                       <span></span>

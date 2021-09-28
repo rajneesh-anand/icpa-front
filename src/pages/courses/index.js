@@ -7,8 +7,10 @@ import Seo from "@/components/Seo";
 import Header from "@/layout/header";
 import Footer from "@/layout/footer";
 import Layout from "@/layout/index";
+import prisma from "@/libs/prisma";
 
-const CourseListPage = ({ courses }) => {
+const CourseListPage = ({ coursesData }) => {
+  const courses = coursesData ? JSON.parse(coursesData) : [];
   return (
     <Layout>
       <Seo
@@ -18,7 +20,7 @@ const CourseListPage = ({ courses }) => {
       />
       <Header />
       <IntroVideo />
-      <CourseList />
+      <CourseList data={courses} />
       <FreeTrial />
       <Partner />
       <Footer />
@@ -27,11 +29,18 @@ const CourseListPage = ({ courses }) => {
 };
 
 export async function getServerSideProps() {
-  const result = await fetch(`${process.env.API_URL}/awsupload/fetchObject`);
-  const data = await result.json();
+  const courses = await prisma.courses.findMany({
+    orderBy: [
+      {
+        id: "asc",
+      },
+    ],
+  });
 
   return {
-    props: { banner: data ? data.data : null },
+    props: {
+      coursesData: courses.length != 0 ? JSON.stringify(courses) : null,
+    },
   };
 }
 

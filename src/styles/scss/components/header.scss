@@ -124,6 +124,29 @@
     }
   }
 
+  .logged-profile{
+    @media #{$xxs-device} {
+      display: none;
+     
+    }
+    @media #{$xs-device} {
+      display: none;  
+    }
+    @media #{$sm-device} {
+      display: none;  
+    }
+    @media #{$md-device} {
+      display: none;  
+    }
+  
+  
+
+     i{
+       font-size: 24px;
+       color: brown;
+     }  
+  }
+
   .hamburger-menu {
     width: 100px;
     display: none;
@@ -144,6 +167,7 @@
       display: inline;
       width: auto;
     }
+   
     button,
     a {
       color: black;
@@ -317,15 +341,9 @@
   margin-bottom: 2px;
   list-style-type: none;
 
-  @media #{$xxs-device} {
-    display: none;
-   
-  }
-  @media #{$xs-device} {
+  @media #{$md-device} {
     display: none;  
   }
-
-
 
   li {
     position: relative;
@@ -360,6 +378,14 @@
     text-decoration: none;
     text-transform: uppercase;
 
+    
+  @media #{$lg-up-device} {
+   font-size: 10px; 
+  }
+  @media #{$md-up-device} {
+    font-size: 9.5px; 
+   }
+
     &::before {
       position: absolute;
       bottom: 0px;
@@ -370,6 +396,7 @@
       content: "";
       transition: all 0.3s;
     }
+
    
 
   }
@@ -502,4 +529,77 @@ ul{
   padding: 1rem 1rem;
   border-bottom: 1px dashed rgba(204, 204, 204, 0.5);
 }
+
+
+     
+.profile-menu {
+  text-align: center;
+  ul{
+    list-style-type: none;
+    margin-left: 0px ;
+    padding-left: 0px;
+    margin-bottom: 4px;
+  }
+  
+ 
+
+
+
+  li {
+    position: relative;
+    & + li {
+      margin-bottom: 8px;
+    }
+
+    &:hover {
+      .sub-menu {
+        top: 100%;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+    &.active,
+    &:hover {
+      .main-menu-link {
+        &::before {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .main-menu-link {   
+    padding: 15px 5px;
+    // display: block;
+    color: #852e50;
+    font-family: "Roboto", 'sans-serif';
+    font-size: 12.5px;
+    font-weight: 600;
+    line-height: 1.4;
+    text-decoration: none;
+   text-transform: uppercase;
+   letter-spacing: 0.1em;
+
+    &::before {
+      position: absolute;
+      bottom: 0px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background:#ed2775;
+      content: "";
+      transition: all 0.3s;
+    }
+   
+
+  }
+  .active
+  {
+    border-bottom: 2px solid #ed2775 ;
+  }
+}
+
+    
+   
+   
+
 

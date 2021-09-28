@@ -272,4 +272,66 @@
       }
     }
   }
+
+  .consultancy-faq{
+    p{
+      color: rgb(2, 158, 127);
+    font-size: 14px;
+    line-height: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    
+    }
+  }
+
+  .video-playlist-area{
+    margin-bottom: 50px;
+    margin-top: 16px;
+    .playlist{
+      ul{
+        list-style-type: none;
+        padding-left: 0px;
+        li{
+          padding-top: 8px;
+         .playlist-item{
+           display: flex;
+           cursor: pointer;
+           position: relative;
+
+            &::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #0087ca;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+          }
+          &:hover::after{
+            transform: scaleX(1);
+            transform-origin: bottom left;
+          }
+
+           h6{
+            padding-right: 8px;
+            font-weight: 600;
+           }
+           i.bx-play-circle{           
+              vertical-align: middle;  
+              font-size: 24px;
+              color: crimson;        
+           }
+           
+         }
+        }
+      }
+    }
+    #studionmovieonline{
+      height: 400px;
+    }
+  }
   

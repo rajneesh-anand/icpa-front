@@ -26,9 +26,10 @@ const TelephonicPage = () => {
         canonical={`${process.env.PUBLIC_URL}/telephonic-consultation`}
       />
       <Header />
-      {/* <IntroVideo /> */}
+
       <Consultancy />
-      <FreeTrial />
+      {/* <FreeTrial /> */}
+      <IntroVideo />
       <Partner />
       <ModalForm show={show} handleClose={handleClose} />
       <Footer />

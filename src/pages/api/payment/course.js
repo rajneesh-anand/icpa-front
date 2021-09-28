@@ -4,7 +4,7 @@ const PaytmConfig = require("../../../paytm/config");
 import prisma from "@/libs/prisma";
 
 export default async function handler(req, res) {
-  const { name, email, amount, type, course } = req.body;
+  const { name, email, amount, type } = req.body;
 
   var orderDate = new Date();
   var orderId = `POID${orderDate.getFullYear()}${
@@ -74,19 +74,20 @@ export default async function handler(req, res) {
 
   async function saveDataToDatabase(token) {
     try {
-      await prisma.orders.create({
+      const result = await prisma.orders.create({
         data: {
           orderNumber: orderId,
           name: name,
           email: email,
           orderType: type,
-          course: { connect: { courseName: course } },
+          amount: JSON.parse(amount),
           paymentStatus: "Pending",
         },
       });
 
       return res.status(200).json({
         msg: "success",
+        data: result,
         txnToken: token,
         orderId: orderId,
       });

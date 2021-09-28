@@ -23,7 +23,7 @@ const Hiddenfrom = ({ formData }) => {
   );
 };
 
-const CourseDetail = () => {
+const CourseDetail = ({ data }) => {
   const [session, loading] = useSession();
   const [isOpen, setIsOpen] = React.useState(true);
   const [paytmData, setPaytmData] = React.useState({
@@ -38,12 +38,13 @@ const CourseDetail = () => {
 
   const handlePayment = async (e) => {
     e.preventDefault();
-
     try {
       const orderData = {
         name: session.user.name,
         email: session.user.email,
-        amount: "50",
+        course: data.courseName,
+        type: "Online Course",
+        amount: data.courseFee,
       };
 
       const response = await fetch("/api/paytm", {
@@ -78,13 +79,9 @@ const CourseDetail = () => {
               <li>
                 <a>Courses</a>
               </li>
-              <li className="active">
-                The Complete React Js &amp; Redux Course - Build Modern Web Apps
-              </li>
+              <li className="active">{data.courseName}</li>
             </ul>
-            <h2>
-              The Complete React Js &amp; Redux Course - Build Modern Web Apps
-            </h2>
+            <h2>{data.courseName}</h2>
             <div className="rating">
               <i className="bx bxs-star"></i>
               <i className="bx bxs-star"></i>
@@ -92,7 +89,7 @@ const CourseDetail = () => {
               <i className="bx bxs-star"></i>
               <i className="bx bxs-star"></i>
               <div className="rating-count">
-                <span>4.0 (1 rating)</span>
+                <span>( {data.numberOfRatings} Ratings )</span>
               </div>
             </div>
           </div>
@@ -345,7 +342,7 @@ const CourseDetail = () => {
                 <div className="courses-share">
                   <div className="share-info">
                     <span>
-                      Share This Course <i class="ri-share-fill"></i>
+                      Share This Course <i className="ri-share-fill"></i>
                     </span>
                     <ul className="social-link">
                       <li>

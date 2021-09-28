@@ -17,7 +17,7 @@ export default function PaymentStatusPage({ status }) {
         canonical={`${process.env.PUBLIC_URL}/payment/status`}
       />
       <Header />
-      <PaymentStatus status={status} />
+      <PaymentStatus data={status} />
       <Footer />
     </Layout>
   );
@@ -29,9 +29,10 @@ export async function getServerSideProps(context) {
   console.log(data);
 
   if (data.STATUS === "TXN_SUCCESS") {
-    await prisma.courseorders.updateMany({
+    await prisma.orders.updateMany({
       where: { orderNumber: data.ORDERID },
       data: {
+        amount: parseInt(data.TXNAMOUNT),
         paymentStatus: data.STATUS,
         paymentID: data.TXNID,
       },
@@ -39,6 +40,6 @@ export async function getServerSideProps(context) {
   }
 
   return {
-    props: { status: data.RESPMSG },
+    props: { status: data },
   };
 }

@@ -2,16 +2,22 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
 const BlogList = ({ data }) => {
+  const fomatDate = (date_value) => {
+    let date = new Date(date_value);
+    return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+  };
   return (
-    <div className="blog-area ptb-100">
+    <div className="blog-area ptb-50">
       <div className="container">
         <div className="section-title">
-          <span className="sub-title">GO AT YOUR OWN PACE</span>
-          <h2>Top Selling Courses</h2>
+          <span className="sub-title">
+            LATEST NEWS FROM THE WORLD OF E-COMMERCE
+          </span>
+          {/* <h2>Top Selling Courses</h2>
           <p>
             Explore all of our courses and pick your suitable ones to enroll and
             start learning with us! We ensure that you will never regret it!
-          </p>
+          </p> */}
         </div>
         <div className="row justify-content-center">
           {data &&
@@ -31,7 +37,8 @@ const BlogList = ({ data }) => {
                   <div className="content">
                     <ul className="meta">
                       <li>
-                        <i className="ri-time-line"></i> {item.createdAt}
+                        <i className="ri-time-line"></i>
+                        {fomatDate(item.createdAt)}
                       </li>
                     </ul>
                     <h3>
@@ -39,6 +46,11 @@ const BlogList = ({ data }) => {
                         <a>{item.title}</a>
                       </Link>
                     </h3>
+                  </div>
+                  <div className="read-more">
+                    <Link href={`/blog/${item.slug}`}>
+                      <a className="default-btn-sm">Read More</a>
+                    </Link>
                   </div>
                 </div>
               </div>

@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from "react";
-import NavbarStyleTwo from "@/components/_App/NavbarStyleTwo";
+// import NavbarStyleTwo from "@/components/_App/NavbarStyleTwo";
 import Banner from "@/components/Banner";
-import Features from "@/components/HomeDemo2/Features";
-import KeyFeatures from "@/components/HomeDemo2/KeyFeatures";
-import AppProgressStyle2 from "@/components/Common/AppProgressStyle2";
-import AboutBrief from "@/components/About/about-brief";
-import AppScreenshotsStyle2 from "@/components/AppScreenshots/AppScreenshotsStyle2";
-import SoftwareIntegrationsTwo from "@/components/Common/SoftwareIntegrationsTwo";
-import ClientFeedbackStyle2 from "@/components/Feedbacks/ClientFeedbackStyle2";
-import ClientFeedbackStyle1 from "@/components/Feedbacks/ClientFeedbackStyle1";
-import MembershipPlan from "@/components/MembershipPlan";
-import FreeTrialStyle2 from "@/components/Common/FreeTrialStyle2";
+// import Features from "@/components/HomeDemo2/Features";
+// import KeyFeatures from "@/components/HomeDemo2/KeyFeatures";
+// import AppProgressStyle2 from "@/components/Common/AppProgressStyle2";
+// import AboutBrief from "@/components/About/about-brief";
+// import AppScreenshotsStyle2 from "@/components/AppScreenshots/AppScreenshotsStyle2";
+// import SoftwareIntegrationsTwo from "@/components/Common/SoftwareIntegrationsTwo";
+// import ClientFeedbackStyle2 from "@/components/Feedbacks/ClientFeedbackStyle2";
+// import ClientFeedbackStyle1 from "@/components/Feedbacks/ClientFeedbackStyle1";
+// import MembershipPlan from "@/components/MembershipPlan";
+// import FreeTrialStyle2 from "@/components/Common/FreeTrialStyle2";
 import Partner from "@/components/Partner";
-import FooterStyleOne from "@/components/_App/FooterStyleOne";
+// import FooterStyleOne from "@/components/_App/FooterStyleOne";
 import ModalForm from "@/components/ModalForm";
 import Seo from "@/components/Seo";
 import Header from "@/layout/header";
@@ -38,13 +38,13 @@ const HomePage = ({ banner }) => {
       />
       <Header />
       <Banner data={banner} />
-      <AboutBrief />
+      {/* <AboutBrief />
       <AppProgressStyle2 />
       <KeyFeatures />
       <MembershipPlan />
       <AppScreenshotsStyle2 />
       <SoftwareIntegrationsTwo />
-      <ClientFeedbackStyle1 />
+      <ClientFeedbackStyle1 /> */}
 
       <Partner />
       <ModalForm show={show} handleClose={handleClose} />

@@ -1,42 +1,48 @@
-import React from "react";
-import IntroVideo from "@/components/IntroVideo";
-import CourseDetails from "@/components/Course/course-details";
+import React, { useState, useEffect } from "react";
+import BlogList from "@/components/Blog/blog-list";
 import FreeTrial from "@/components/FreeTrial";
 import Partner from "@/components/Partner";
 import Seo from "@/components/Seo";
 import Header from "@/layout/header";
 import Footer from "@/layout/footer";
 import Layout from "@/layout/index";
-import parse from "urlencoded-body-parser";
+import BlogDetail from "@/components/Blog/blog-details";
 
-const CourseDetailPage = ({ data }) => {
-  const course = JSON.parse(data);
+const SingleBlogPage = ({ data }) => {
+  const blog = JSON.parse(data);
   return (
     <Layout>
       <Seo
-        title={`${course.courseName}`}
-        description={`${course.description}`}
-        canonical={`${process.env.PUBLIC_URL}/course/${course.slug}`}
+        title={`${blog.title}`}
+        description="Amazon Flipkart Other E-Commerce Seller Platforms News and Updates"
+        canonical={`${process.env.PUBLIC_URL}/blog/${blog.slug}`}
       />
       <Header />
-      <CourseDetails data={course} />
+      <BlogDetail data={blog} />
       <Partner />
       <Footer />
     </Layout>
   );
 };
 
+export default SingleBlogPage;
+
 export async function getServerSideProps({ params, req, res }) {
   try {
     const { slug } = params;
-    const course = await prisma.courses.findFirst({
+    const post = await prisma.post.findFirst({
       where: {
         slug: slug,
+      },
+      include: {
+        author: {
+          select: { name: true, image: true },
+        },
       },
     });
 
     return {
-      props: { data: JSON.stringify(course) },
+      props: { data: JSON.stringify(post) },
     };
   } catch (error) {
     res.statusCode = 404;
@@ -49,5 +55,3 @@ export async function getServerSideProps({ params, req, res }) {
     };
   }
 }
-
-export default CourseDetailPage;

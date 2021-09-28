@@ -11,21 +11,22 @@ class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <link rel="icon" type="image/png" href="/images/favicon.png" />
+
           <script
             async
-            src={`https://www.googletagmanager.com/gtag/js?id='G-93NWLELNJZ'`}
+            src="https://www.googletagmanager.com/gtag/js?id=G-KXQY7M7CQL"
           />
 
           <script
             dangerouslySetInnerHTML={{
               __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-93NWLELNJZ', {
-              page_path: window.location.pathname,
-            });
-          `,
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', 'G-KXQY7M7CQL',{
+                 page_path: window.location.pathname,
+                });
+              `,
             }}
           />
 

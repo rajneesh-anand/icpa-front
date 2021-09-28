@@ -24,6 +24,7 @@ const Hiddenfrom = ({ formData }) => {
 };
 
 const CourseDetail = ({ data }) => {
+  console.log(data);
   const [session, loading] = useSession();
   const [isOpen, setIsOpen] = React.useState(true);
   const [paytmData, setPaytmData] = React.useState({
@@ -79,7 +80,7 @@ const CourseDetail = ({ data }) => {
               <li>
                 <a>Courses</a>
               </li>
-              <li className="active">{data[0].courseName}</li>
+              <li className="active">{data.courseName}</li>
             </ul>
             <h2>{data.courseName}</h2>
             <div className="rating">

@@ -8,16 +8,17 @@ import Footer from "@/layout/footer";
 import Layout from "@/layout/index";
 
 const CourseDetailPage = ({ data }) => {
-  const course = data ? JSON.parse(data) : null;
+  const courseInfo = JSON.parse(data);
+  console.log(courseInfo);
   return (
     <Layout>
       <Seo
-        title={`${course.courseName}`}
-        description={`${course.description}`}
-        canonical={`${process.env.PUBLIC_URL}/course/${course.slug}`}
+        title={`${courseInfo.courseName}`}
+        description={`${courseInfo.description}`}
+        canonical={`${process.env.PUBLIC_URL}/course/${courseInfo.slug}`}
       />
       <Header />
-      {course && <CourseDetails data={course} />}
+      {courseInfo && <CourseDetails data={courseInfo} />}
       <Partner />
       <Footer />
     </Layout>

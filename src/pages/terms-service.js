@@ -1,6 +1,6 @@
 import React from "react";
 import SEO from "@/components/Seo";
-import { sitePrivacyPolicy } from "@/constant/privacy-policy";
+import { siteTermsAndServices } from "@/constant/terms-and-services";
 import styled from "styled-components";
 import { Link, Element } from "react-scroll";
 import Sticky from "react-stickynode";
@@ -22,17 +22,18 @@ const StyledLink = styled(Link)(
   }
 );
 
-const PrivacyPolicyPage = () => {
-  const { title, date, content } = sitePrivacyPolicy;
+const TermsOfUsePage = () => {
+  const { title, date, content } = siteTermsAndServices;
   const menuItems = [];
   content.forEach((item) => {
     menuItems.push(item.title);
   });
   return (
     <>
-      <SEO
-        title="Privacy Policy | KokeLiko"
-        canonical={`${process.env.PUBLIC_URL}/privacypolicy`}
+      <Seo
+        title="Terms of Service | ICPA Global Consultants"
+        description="ICPA GLOBAL CONSULTANTS | Terms of Service"
+        canonical={`${process.env.PUBLIC_URL}/terms-service`}
       />
       <div className="container">
         <div className="row">
@@ -103,4 +104,4 @@ const PrivacyPolicyPage = () => {
   );
 };
 
-export default PrivacyPolicyPage;
+export default TermsOfUsePage;

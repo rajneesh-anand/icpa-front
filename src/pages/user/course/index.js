@@ -39,7 +39,7 @@ export async function getServerSideProps(context) {
     };
   }
 
-  const result = await fetch("http://localhost:3000/api/courses");
+  const result = await fetch(`${process.env.PUBLIC_URL}/api/courses`);
   const data = await result.json();
   console.log(data.data);
 

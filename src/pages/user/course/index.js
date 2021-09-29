@@ -5,10 +5,8 @@ import Header from "@/layout/header";
 import Footer from "@/layout/footer";
 import Layout from "@/layout/index";
 import UserCourseList from "@/components/UserCourseList/course-list";
-import prisma from "@/libs/prisma";
 
 const UserCoursePage = ({ courseList }) => {
-  const course = courseList ? JSON.parse(courseList) : [];
   return (
     <Layout>
       <Seo
@@ -17,8 +15,8 @@ const UserCoursePage = ({ courseList }) => {
         canonical={`${process.env.PUBLIC_URL}/user/course`}
       />
       <Header />
-      {course ? (
-        <UserCourseList data={course} />
+      {courseList ? (
+        <UserCourseList data={courseList} />
       ) : (
         <h6>You have not enrolled for any course</h6>
       )}
@@ -39,22 +37,11 @@ export async function getServerSideProps(context) {
       },
     };
   }
-
-  const courses = await prisma.orders.findMany({
-    where: {
-      email: session.user.email,
-    },
-    select: {
-      courseId: true,
-    },
-  });
-
-  let newArray = courses.map((el) => el.courseId);
-  let courseArray = JSON.parse(newArray.toString());
-  const result =
-    await prisma.$queryRaw`SELECT * FROM "Courses" c where id in (${courseArray})`;
+  const result = await fetch(`${process.env.PUBLIC_URL}/api/courses`);
+  const data = await result.json();
+  console.log(data);
 
   return {
-    props: { courseList: result.length != 0 ? JSON.stringify(result) : null },
+    props: { courseList: data ? data.data : null },
   };
 }

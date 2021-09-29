@@ -13,9 +13,9 @@ const UserCoursePage = ({ profileDetails }) => {
   return (
     <Layout>
       <Seo
-        title="My Course"
+        title="My Account"
         description="This is couse"
-        canonical={`${process.env.PUBLIC_URL}/user/course`}
+        canonical={`${process.env.PUBLIC_URL}/user/account`}
       />
       <Header />
 

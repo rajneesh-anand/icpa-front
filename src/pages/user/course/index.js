@@ -8,8 +8,7 @@ import UserCourseList from "@/components/UserCourseList/course-list";
 import prisma from "@/libs/prisma";
 
 const UserCoursePage = ({ courseList }) => {
-  const course = JSON.parse(courseList);
-  console.log(course);
+  const course = courseList ? JSON.parse(courseList) : [];
   return (
     <Layout>
       <Seo
@@ -54,9 +53,8 @@ export async function getServerSideProps(context) {
   let courseArray = JSON.parse(newArray.toString());
   const result =
     await prisma.$queryRaw`SELECT * FROM "Courses" c where id in (${courseArray})`;
-  console.log(result);
 
   return {
-    props: { courseList: result ? JSON.stringify(result) : null },
+    props: { courseList: result.length != 0 ? JSON.stringify(result) : null },
   };
 }

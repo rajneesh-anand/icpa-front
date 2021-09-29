@@ -8,7 +8,7 @@ import UserCourseDetail from "@/components/UserCourseList/course-details";
 import prisma from "@/libs/prisma";
 
 const UserCourseVideoPage = ({ chapterList }) => {
-  const course = JSON.parse(chapterList);
+  const lectures = chapterList ? JSON.parse(chapterList) : [];
 
   return (
     <Layout>
@@ -18,11 +18,9 @@ const UserCourseVideoPage = ({ chapterList }) => {
         canonical={`${process.env.PUBLIC_URL}/user/course`}
       />
       <Header />
-      {course ? (
-        <UserCourseDetail data={course} />
-      ) : (
-        <h6>You have not enrolled for the course</h6>
-      )}
+
+      <UserCourseDetail data={lectures} />
+
       <Footer />
     </Layout>
   );
@@ -62,7 +60,9 @@ export async function getServerSideProps(context) {
     });
 
     return {
-      props: { chapterList: lectures ? JSON.stringify(lectures) : null },
+      props: {
+        chapterList: lectures.length != 0 ? JSON.stringify(lectures) : null,
+      },
     };
   } else {
     return {

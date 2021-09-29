@@ -110,7 +110,6 @@ const CourseDetail = ({ data }) => {
                     <Tab>Overview</Tab>
                     <Tab>Curriculum</Tab>
                     <Tab>Instructor</Tab>
-                    <Tab>Reviews</Tab>
                   </TabList>
                   <TabPanel>
                     <div className="courses-overview">
@@ -282,23 +281,16 @@ const CourseDetail = ({ data }) => {
                       <span>
                         <i className="flaticon-tag"></i> Price
                       </span>
-                      $16
+                      &#x20B9;{data.courseFee}
                     </div>
                   </li>
-                  <li>
-                    <div className="d-flex justify-content-between align-items-center">
-                      <span>
-                        <i className="flaticon-teacher"></i> Instructor
-                      </span>
-                      EnvyTheme
-                    </div>
-                  </li>
+
                   <li>
                     <div className="d-flex justify-content-between align-items-center">
                       <span>
                         <i className="flaticon-time"></i> Duration
                       </span>
-                      12 Hours
+                      {data.duration}
                     </div>
                   </li>
                   <li>
@@ -306,15 +298,15 @@ const CourseDetail = ({ data }) => {
                       <span>
                         <i className="flaticon-distance-learning"></i> Lessons
                       </span>
-                      8
+                      {data.numberOfLectures}
                     </div>
                   </li>
                   <li>
                     <div className="d-flex justify-content-between align-items-center">
                       <span>
-                        <i className="flaticon-web"></i> Enrolled
+                        <i className="flaticon-web"></i> Enrolled Clients
                       </span>
-                      0 students
+                      {data.numberOfEnrollments}
                     </div>
                   </li>
                   <li>
@@ -327,13 +319,13 @@ const CourseDetail = ({ data }) => {
                   </li>
                 </ul>
                 {!loading && session ? (
-                  <div className="btn-box">
+                  <div className="btn-box text-center">
                     <button className="default-btn" onClick={handlePayment}>
                       Enroll Now
                     </button>
                   </div>
                 ) : (
-                  <div className="btn-box">
+                  <div className="btn-box text-center">
                     <Link href="/auth/signin">
                       <a className="default-btn">Login To Enroll</a>
                     </Link>

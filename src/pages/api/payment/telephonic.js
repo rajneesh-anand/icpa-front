@@ -74,20 +74,18 @@ export default async function handler(req, res) {
 
   async function saveDataToDatabase(token) {
     try {
-      const result = await prisma.orders.create({
+      await prisma.orders.create({
         data: {
           orderNumber: orderId,
           name: name,
           email: email,
           orderType: type,
-          amount: JSON.parse(amount),
           paymentStatus: "Pending",
         },
       });
 
       return res.status(200).json({
         msg: "success",
-        data: result,
         txnToken: token,
         orderId: orderId,
       });

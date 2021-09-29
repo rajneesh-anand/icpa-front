@@ -529,19 +529,19 @@ textarea.form-control {
     background: linear-gradient(50.48deg, #ED2775 -2.06%, #FF7448 93.55%);
     padding: {
         bottom: 100px;
-        top: 180px;
+        top: 32px;
     };
-    &::before {
-        left: 0;
-        right: 0;
-        top: 82px;
-        height: 1px;
-        content: '';
-        z-index: -1;
-        opacity: .2;
-        position: absolute;
-        background-color: var(--whiteColor);
-    }
+    // &::before {
+    //     left: 0;
+    //     right: 0;
+    //     top: 82px;
+    //     height: 1px;
+    //     content: '';
+    //     z-index: -1;
+    //     opacity: .2;
+    //     position: absolute;
+    //     background-color: var(--whiteColor);
+    // }
     &.page-title-style-two {
         background: #eef5fc;
 

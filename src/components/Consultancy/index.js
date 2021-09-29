@@ -81,7 +81,7 @@ const Consultancy = () => {
         comment: data.comment,
       };
 
-      const response = await fetch("/api/paytm", {
+      const response = await fetch("/api/payment/telephonic", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

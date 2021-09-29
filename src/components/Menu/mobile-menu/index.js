@@ -14,21 +14,23 @@ const SideMenu = ({ show, handleClose }) => {
       show={show}
       onHide={handleClose}
       placement="start"
-      style={{ width: "260px" }}
+      style={{ width: "272px" }}
     >
       <OffcanvasHeader>
         <OffcanvasTitle style={{ width: "100%" }}>
           {!session ? (
             <>
               <div className="text-center">
-                <img
+                <i className="fas fa-user-circle" style={{ fontSize: 56 }}></i>
+                {/* <img
                   src="/images/fav.png"
+                  className="rounded-circle"
                   style={{
                     width: "60px",
                     borderRadius: "50%",
-                    marginRight: 5,
+                    // marginRight: 5,
                   }}
-                />
+                /> */}
               </div>
 
               <div className="text-center">
@@ -42,9 +44,9 @@ const SideMenu = ({ show, handleClose }) => {
               <div className="text-center">
                 <img
                   src={session.user.image}
+                  className="rounded-circle"
                   style={{
                     width: "60px",
-                    borderRadius: "50%",
                     marginRight: 5,
                   }}
                 />
@@ -107,7 +109,7 @@ const SideMenu = ({ show, handleClose }) => {
               </li>
               <li>
                 <Link
-                  href={process.env.PUBLIC_URL + "/consultancy"}
+                  href={process.env.PUBLIC_URL + "/telephonic-consultation"}
                   activeClassName="active"
                 >
                   <a className="main-menu-link">Telephonic Consultancy</a>
@@ -115,7 +117,7 @@ const SideMenu = ({ show, handleClose }) => {
               </li>
               <li>
                 <Link
-                  href={process.env.PUBLIC_URL + "/news"}
+                  href={process.env.PUBLIC_URL + "/blogs"}
                   activeClassName="active"
                 >
                   <a className="main-menu-link">E-Commerce News Updates</a>
@@ -124,7 +126,7 @@ const SideMenu = ({ show, handleClose }) => {
             </ul>
           </nav>
         </div>
-        <div className="aside-footer-area ptb-50">
+        <div className="aside-footer-area text-center ptb-50">
           <ul className="social-links">
             <li>
               <a href="https://www.facebook.com/" target="_blank">

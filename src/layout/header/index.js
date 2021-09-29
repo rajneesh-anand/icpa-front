@@ -40,7 +40,7 @@ const Header = () => {
         <div className="header-top ">
           <div className="container">
             <div className="row">
-              <div className="col-lg-6 col-md-6 col-12">
+              <div className="col-lg-6 col-md-6 col-12 text-center">
                 <ul className="top-contact-info">
                   <li>
                     <i className="ri-phone-fill"></i> <span>+91-789945454</span>
@@ -180,27 +180,6 @@ const Header = () => {
             </div>
           </div>
         </div>
-
-        {/* <div
-          className={`header-bottom sticky-header d-none d-lg-block ${
-            scroll > headerTop ? "sticky" : ""
-          }`}
-        >
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-12">
-                <div className="d-flex flex-wrap align-items-center justify-content-between">
-                  <MainMenu />
-                  <Button
-                    path={process.env.PUBLIC_URL + "/"}
-                    classOption="book-now-btn"
-                    text="book an appointment"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> */}
       </header>
 
       <MobileSideMenu show={show} handleClose={handleClose} />

@@ -9,24 +9,26 @@
     box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.15);
 
     .card-heading-img{
-        background: url("/images/metors.svg") center center/cover no-repeat;
+        // background: url("/images/metors.svg") center center/cover no-repeat;
         // padding-top: 96px;
+        background: var(--gradientColor);
+        padding: 8px;
         h4{
-          color: wheat;
+          color: rgb(255, 255, 255);
           font-size: 18px;
           font-weight: 500;
-          padding-top: 8px;
+          // padding-top: 8px;
         }
         h6{
-          color: wheat;
+          color: rgb(255, 255, 255);
           font-size: 16px;
           font-weight: 500;
           padding-top: 4px;
-          padding-bottom: 8px;
+          // padding-bottom: 8px;
         }
       }
     .card-body {      
-        padding-top: 16px;
+        padding-top: 8px;
         padding-bottom: 16px;
         .title {
             margin-bottom: 8px;

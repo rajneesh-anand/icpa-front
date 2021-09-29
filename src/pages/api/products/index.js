@@ -5,10 +5,10 @@ export default async function handler(req, res) {
   const page = parseInt(query.page) || 1;
   const limit = parseInt(query.limit) || 12;
   const startIndex = (page - 1) * limit;
-  const totalCount = await prisma.product.count();
+  const totalCount = await prisma.products.count();
 
   try {
-    const product = await prisma.product.findMany({
+    const product = await prisma.products.findMany({
       take: limit,
       skip: startIndex,
     });

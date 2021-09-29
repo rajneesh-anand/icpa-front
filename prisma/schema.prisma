@@ -39,6 +39,7 @@ model Products {
   gst Decimal?
   minimumQuantity Int?
   details String?
+  ratings Decimal?
   inStock Boolean @default(true) 
   createdAt     DateTime  @default(now()) 
 }
@@ -147,7 +148,7 @@ model Orders {
 
 model Telconsultations {
   id        Int @default(autoincrement()) @id
-  name      String @unique
+  name      String
   email   String
   phone   String
   sellerType   String

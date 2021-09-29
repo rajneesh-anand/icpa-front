@@ -7,6 +7,7 @@ import Layout from "@/layout/index";
 import UserCourseList from "@/components/UserCourseList/course-list";
 
 const UserCoursePage = ({ courseList }) => {
+  console.log(courseList);
   return (
     <Layout>
       <Seo
@@ -37,11 +38,33 @@ export async function getServerSideProps(context) {
       },
     };
   }
-  const result = await fetch(`${process.env.PUBLIC_URL}/api/courses`);
+
+  const result = await fetch("http://localhost:3000/api/courses");
   const data = await result.json();
-  console.log(data);
+  console.log(data.data);
 
   return {
-    props: { courseList: data ? data.data : null },
+    props: { courseList: data.data },
   };
+
+  // const orders = await prisma.orders.findMany({
+  //   where: {
+  //     email: session.user.email,
+  //   },
+  //   select: {
+  //     courseId: true,
+  //   },
+  // });
+  // let newArray = orders.map((el) => el.courseId);
+  // let courseIdList = newArray.filter((x) => x).join(",");
+
+  // const result = await prisma.$queryRaw(
+  //   `select * from "Courses" where id in (${courseIdList})`
+  // );
+
+  // console.log(result);
+
+  // return {
+  //   props: { courseList: result.length != 0 ? JSON.stringify(result) : null },
+  // };
 }

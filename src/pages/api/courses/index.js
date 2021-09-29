@@ -2,25 +2,28 @@ import prisma from "../../../libs/prisma";
 import { getSession } from "next-auth/client";
 
 export default async function handler(req, res) {
-  const session = await getSession({ req });
   try {
-    const courses = await prisma.orders.findMany({
+    const session = await getSession({ req });
+    const orders = await prisma.orders.findMany({
       where: {
-        email: session.user.email,
+        email: session?.user?.email,
       },
       select: {
         courseId: true,
       },
     });
 
-    let newArray = courses.map((el) => el.courseId);
-    let courseArray = JSON.parse(newArray.toString());
-    const result =
-      await prisma.$queryRaw`SELECT * FROM "Courses" c where id in (${courseArray})`;
+    let newArray = orders.map((el) => el.courseId);
+    let courseIdList = newArray.filter((x) => x).join(",");
 
+    const result = await prisma.$queryRaw(
+      `select * from "Courses" where id in (${courseIdList})`
+    );
+
+    console.log(result);
     res.status(200).json({
-      msg: "success",
       data: result,
+      msg: "success",
     });
   } catch (error) {
     console.log(error);

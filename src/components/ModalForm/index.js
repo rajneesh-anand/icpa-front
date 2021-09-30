@@ -51,7 +51,15 @@ export default function ModalForm({ show, handleClose }) {
         <Modal.Body>
           <div className="info-card">
             <div className="card-heading-img text-center">
-              <h4> Fill up the Form</h4>
+              <i
+                className="bx bxs-edit"
+                style={{
+                  fontSize: 28,
+                  verticalAlign: "middle",
+                  color: "white",
+                }}
+              ></i>
+              <span>Fill up the form</span>
               <h6> Our Business team will contact you shortly !</h6>
             </div>
             <div className="card-body">

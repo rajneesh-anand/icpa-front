@@ -3,10 +3,10 @@ import React from "react";
 const ContactInfo = () => {
   return (
     <>
-      <div className="contact-info-area pb-100">
+      <div className="contact-info-area pb-50">
         <div className="container">
           <div className="contact-info-inner">
-            <h2>Have any question in mind please call or mail us</h2>
+            {/* <h2>Have any question in mind please call or mail us</h2> */}
 
             <div className="row justify-content-center">
               <div className="col-lg-4 col-md-6 col-sm-6">
@@ -29,10 +29,12 @@ const ContactInfo = () => {
                     <i className="ri-earth-line"></i>
                   </div>
                   <h3>
-                    <a href="mailto:hello@texap.com">hello@texap.com</a>
+                    <a href="mailto:support@theicpaglobal.com">
+                      support@theicpagloal.com
+                    </a>
                   </h3>
                   <h3>
-                    <a href="mailto:info@texap.com">info@texap.com</a>
+                    <a href="mailto:info@texap.com">info@theicpagloal.com</a>
                   </h3>
                 </div>
               </div>
@@ -42,7 +44,9 @@ const ContactInfo = () => {
                   <div className="icon bg2">
                     <i className="ri-map-pin-line"></i>
                   </div>
-                  <h3>121 King St, Melbourne VIC 3000, Australia.</h3>
+                  <h3>
+                    B-1752 , Shastri Nagar <br /> New Delhi 110052 - India{" "}
+                  </h3>
                 </div>
               </div>
             </div>

@@ -51,7 +51,7 @@ const ContactForm = () => {
 
   return (
     <>
-      <div className="contact-area ptb-100">
+      <div className="contact-area ptb-50">
         <div className="container">
           {message && (
             <ToastContainer
@@ -85,7 +85,7 @@ const ContactForm = () => {
                       name="name"
                       className="form-control"
                       id="name"
-                      placeholder="Eg: Sarah Taylor"
+                      placeholder="Enter Your Full Name"
                       {...register("name", { required: "Name is required !" })}
                     />
 
@@ -99,7 +99,7 @@ const ContactForm = () => {
                       name="email"
                       className="form-control"
                       id="email"
-                      placeholder="hello@sarah.com"
+                      placeholder="support@theicpaglobal.com"
                       {...register("email", {
                         required: "Email is required !",
                         pattern: {

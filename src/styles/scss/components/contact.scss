@@ -1,5 +1,5 @@
 .contact-info-inner {
-  background: linear-gradient(26.1deg, #ed2775 0%, #ff7448 100%);
+  // background: linear-gradient(26.1deg, #ed2775 0%, #ff7448 100%);
   padding: 100px 100px 75px;
   text-align: center;
   position: relative;
@@ -148,7 +148,7 @@
 /* Max width 767px */
 @media only screen and (max-width: 767px) {
   .contact-info-inner {
-    padding: 60px 15px 35px;
+    padding: 24px 50px 24px;
 
     h2 {
       max-width: 100%;
@@ -180,13 +180,15 @@
 
 /* Min width 576px to Max width 767px */
 @media only screen and (min-width: 576px) and (max-width: 767px) {
+  .contact-info-inner {
+  padding: 24px 50px 24px;
+  }
 }
 
 /* Min width 768px to Max width 991px */
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .contact-info-inner {
-    padding: 80px 30px 55px;
-
+    padding: 24px 50px 24px;
     h2 {
       font-size: 30px;
     }
@@ -205,14 +207,14 @@
 /* Min width 992px to Max width 1199px */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .contact-info-inner {
-    padding: 100px 30px 75px;
+    padding: 24px 50px 24px;
   }
 }
 
 /* Min width 1200px to Max width 1399px */
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
   .contact-info-inner {
-    padding: 100px 50px 75px;
+    padding: 24px 50px 24px;
   }
 }
 

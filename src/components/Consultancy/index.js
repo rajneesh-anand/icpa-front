@@ -9,6 +9,7 @@ import { useForm } from "react-hook-form";
 import dynamic from "next/dynamic";
 import moment from "moment";
 import Timeline from "@/components/Timeline";
+import CallIcon from "@/components/Icons/call";
 import {
   Accordion,
   AccordionItem,
@@ -116,13 +117,15 @@ const Consultancy = () => {
   return (
     <div className="consultation-area ptb-50">
       <div className="container">
-        <div className="tel-box">
-          <img
+        <div className="tel-box text-center">
+          {/* <img
             src="/images/customer-support-icon.png"
             alt="support-icon"
             height={60}
             width={60}
-          />
+          /> */}
+          <CallIcon />
+
           <h4>BOOK TELEPHONIC CONSULTATION IN 2 EASY STEPS</h4>
         </div>
 

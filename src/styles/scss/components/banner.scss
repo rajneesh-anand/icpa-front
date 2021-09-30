@@ -185,11 +185,40 @@
     height: 106px;
     top: -112px;
     left: -80px;   
-    // border: 1px solid rgb(136, 131, 131);
+    // border: 1px solid rgb(136, 131, 131);   
+     box-shadow: inset 0 0 5px rgba(158, 158, 158, 0.64) ;
+
+     @media #{$xs-device} {
+      position: absolute;
+      background: var(--gradientColor);
+      border-radius: 10px;
+      width: 116px;
+      height: 106px;
+      top: -112px;
+      left: -40px;
+      -webkit-box-shadow: inset 0 0 5px rgb(158 158 158 / 64%);
+      box-shadow: inset 0 0 5px rgb(158 158 158 / 64%);
+     }
+     @media #{$xxs-device} {
+      position: absolute;
+      background: var(--gradientColor);
+      border-radius: 10px;
+      width: 116px;
+      height: 106px;
+      top: -112px;
+      left: -40px;
+      -webkit-box-shadow: inset 0 0 5px rgb(158 158 158 / 64%);
+      box-shadow: inset 0 0 5px rgb(158 158 158 / 64%);
+     }
+    
+    
+ }
+
+
+
+
    
-     box-shadow: inset 0 0 5px rgba(158, 158, 158, 0.64)    
-   
-  }
+  
 
   
   .eventTitle {
@@ -199,6 +228,14 @@
     text-transform: uppercase;
     text-align: center;
     padding: 4px;
+    @media #{$xs-device} {
+      font-size: 9.5px;
+    }
+    @media #{$xxs-device} {
+      font-size: 9.5px;
+    }
+    
+
    
   }
 
@@ -229,14 +266,25 @@
   .consultation-area{
     background: url("/images/consultancy-bg.svg") center center/cover no-repeat;
     .tel-box{
-      display: flex;
-      justify-content: center;
+      // display: flex;
+      // justify-content: center;
       margin-bottom: 48px;
       h4{
         color: var(--blackColor);
     font-weight: 500;
     padding-top: 16px;
     margin-left: 16px;
+
+    @media #{$xxs-device} {
+     font-size: 12.5px;
+    }
+    @media #{$xs-device} {
+      font-size: 12.5px;
+    }
+
+      }
+      svg{
+        height: 64px;
       }
     }
     .consultancy-form{

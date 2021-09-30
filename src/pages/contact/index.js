@@ -18,8 +18,9 @@ const ContactPage = () => {
       />
       <Header />
       <IntroVideo />
-      <ContactForm />
+
       <ContactInfo />
+      <ContactForm />
       <Partner />
       <Footer />
     </Layout>

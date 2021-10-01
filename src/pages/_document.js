@@ -34,6 +34,11 @@ class MyDocument extends Document {
             rel="stylesheet"
             href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
           />
+
+          <script
+            type="text/javascript"
+            src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"
+          ></script>
         </Head>
         <body>
           <Main />

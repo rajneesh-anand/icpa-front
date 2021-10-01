@@ -1,7 +1,116 @@
-/*================================================
-Product card Area CSS
-=================================================*/
+
 .products-area{
+
+
+
+    .data-filter-menu {
+        margin-top: 16px;
+        margin-bottom: 16px;
+        button {
+            background-color: transparent;
+            border: 0;
+            padding: 0;
+            border: 0 none;
+            position: relative;          
+            margin-right: 4px;
+            @include transition(0.3s);
+            &:last-child {
+              margin-right: 0;
+            }
+            &:after {
+              background-color: #535353;
+                        bottom: 0;
+                        content: "";
+                        height: 1px;
+                        position: absolute;
+                        right: 0;
+                        width: 0;
+                        @include transition(0.3s);
+                      }
+                     
+            &:hover {
+                    &:after {
+                          left: 0;
+                          width: 100%;
+                        }
+            }
+            &.is-checked{
+                color:red
+            }
+            
+            span {
+                position: relative;
+                display: inline-block;
+                padding: 5px 20px;
+                &.filter-text {
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    line-height: 1.58;
+                    font-size: 13.5px;
+                    color: $body-color;
+                    -webkit-transition: all 0.3s
+                        cubic-bezier(0.645, 0.045, 0.355, 1);
+                    transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+    
+                    &.is-checked{
+                        color:red
+                    }
+                }
+            }
+           
+            
+        }
+    }
+    
+
+
+
+    // .data-filter-menu {
+    //     margin-bottom: 15px;
+    //     @media #{$lg-device} {
+    //       margin-bottom: 15px;
+    //     }
+    //     @media #{$md-device} {
+    //       margin-bottom: 15px;
+    //     }
+    //     button {
+    //       background-color: transparent;
+    //       border: none;
+    //       box-shadow: none;
+    //       color: $black;
+    //       font-size: 16px;
+    //       letter-spacing: 0;
+    //       line-height: 1.1;
+    //       margin-right: 38.74px;
+    //       padding: 0;
+    //       position: relative;
+    //       @include transition(0.3s);
+    //       @media #{$sm-device} {
+    //         margin-right: 25px;
+    //       }
+    //       &:last-child {
+    //         margin-right: 0;
+    //       }
+    //       &:after {
+    //         background-color: #535353;
+    //         bottom: 0;
+    //         content: "";
+    //         height: 1px;
+    //         position: absolute;
+    //         right: 0;
+    //         width: 0;
+    //         @include transition(0.3s);
+    //       }
+    //       &.active,
+    //       &:hover {
+    //         &:after {
+    //           left: 0;
+    //           width: 100%;
+    //         }
+    //       }
+    //     }
+    // }
+
 .card {
     background: #fff;
     box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);

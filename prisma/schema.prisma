@@ -30,7 +30,7 @@ model Products {
   slug String?
   images    String?
   description String?
-  category    String?  
+  category    String[]  
   size  String?
   weight  Decimal?  
   price    Decimal? 

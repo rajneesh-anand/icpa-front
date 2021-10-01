@@ -21,6 +21,9 @@ const ProductPage = () => {
     isEmpty,
   } = usePaginatedData("/api/products");
 
+  // let newArray = result.map((el) => el.slug);
+  // console.log(newArray);
+
   return (
     <Layout>
       <Seo

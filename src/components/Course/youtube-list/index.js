@@ -62,6 +62,18 @@ const YoutubeList = ({ youtubeVideos }) => {
                         <a target="_blank">{title}</a>
                       </Link>
                     </div>
+                    <div
+                      className="text-center"
+                      style={{ padding: "16px 8px", fontWeight: 600 }}
+                    >
+                      <Link
+                        href={`https://www.youtube.com/watch?v=${resourceId.videoId}`}
+                      >
+                        <a className="default-btn-sm" target="_blank">
+                          Watch Now
+                        </a>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               );

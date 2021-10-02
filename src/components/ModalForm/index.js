@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Modal } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function ModalForm({ show, handleClose }) {
+  const [message, setMessage] = useState();
   const {
     register,
     handleSubmit,
@@ -15,27 +17,36 @@ export default function ModalForm({ show, handleClose }) {
     const userInfo = {
       name: data.name,
       email: data.email,
-      service: data.service,
-      company: data.company,
-      mobile: data.mobile,
+      location: data.location,
+      contact: data.contact,
+      interest: data.interest,
     };
     console.log(userInfo);
-    // try {
-    //   const result = await fetch("/api/contact", {
-    //     method: "POST",
-    //     headers: { "content-type": "application/json" },
-    //     body: JSON.stringify(userInfo),
-    //   });
-    //   console.log(result.status);
-    //   if (result.status >= 400 && result.status < 600) {
-    //     throw new Error("Bad response from server");
-    //   } else {
-    //     setMessage("success");
-    //   }
-    // } catch (error) {
-    //   setMessage("failed");
-    // }
+    try {
+      const result = await fetch("/api/query", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(userInfo),
+      });
+
+      if (result.status >= 400 && result.status < 600) {
+        throw new Error("Bad response from server");
+      } else {
+        setMessage("success");
+      }
+    } catch (error) {
+      setMessage("failed");
+    }
   };
+
+  useEffect(() => {
+    if (message === "success") {
+      toast.success("Our business team will contact you shortly !");
+    }
+    if (message === "failed") {
+      toast.error("Oops something went wrong !");
+    }
+  }, [message]);
 
   return (
     <>
@@ -60,7 +71,9 @@ export default function ModalForm({ show, handleClose }) {
                 }}
               ></i>
               <span>Fill up the form</span>
-              <h6> Our Business team will contact you shortly !</h6>
+              <h6>
+                Get free of cost updates of e-commerce (Amazon,Flipkart etc.){" "}
+              </h6>
             </div>
             <div className="card-body">
               <form>
@@ -99,11 +112,11 @@ export default function ModalForm({ show, handleClose }) {
                 <div className="form-group">
                   <input
                     type="text"
-                    name="mobile"
+                    name="contact"
                     className="form-control"
-                    id="mobile"
+                    id="contact"
                     placeholder="Contact Number"
-                    {...register("mobile", {
+                    {...register("contact", {
                       required: "Contact Number is required !",
                       pattern: {
                         value: /^((\+91?)|\+)?[7-9][0-9]{9}$/,
@@ -111,22 +124,22 @@ export default function ModalForm({ show, handleClose }) {
                       },
                     })}
                   />
-                  {errors.mobile && <p>{errors.mobile.message}</p>}
+                  {errors.contact && <p>{errors.contact.message}</p>}
                 </div>
                 <div className="form-group">
                   <input
                     type="text"
-                    name="company"
+                    name="location"
                     className="form-control"
-                    placeholder="Organization / Company "
-                    {...register("company", {})}
+                    placeholder="Location : City - State  "
+                    {...register("location", {})}
                   />
                 </div>
                 <div className="form-group">
                   <select
                     className="form-control"
-                    name="service"
-                    {...register("service", {})}
+                    name="interest"
+                    {...register("interest", {})}
                   >
                     <option value="Online Seller Course">
                       Online Seller Course
@@ -140,7 +153,7 @@ export default function ModalForm({ show, handleClose }) {
                     className="default-btn"
                     onClick={handleSubmit(onSubmit)}
                   >
-                    <i className="bx bx-paper-plane"></i> Send Query
+                    <i className="bx bx-paper-plane"></i> Join Us
                   </button>
                 </div>
               </form>
@@ -153,6 +166,19 @@ export default function ModalForm({ show, handleClose }) {
           </Button>
         </Modal.Footer> */}
       </Modal>
+      {message && (
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+        />
+      )}
     </>
   );
 }

@@ -9,16 +9,6 @@ const BlogList = ({ data }) => {
   return (
     <div className="blog-area ptb-50">
       <div className="container">
-        <div className="section-title">
-          <span className="sub-title">
-            LATEST NEWS FROM THE WORLD OF E-COMMERCE
-          </span>
-          {/* <h2>Top Selling Courses</h2>
-          <p>
-            Explore all of our courses and pick your suitable ones to enroll and
-            start learning with us! We ensure that you will never regret it!
-          </p> */}
-        </div>
         <div className="row justify-content-center">
           {data &&
             data.map((item, index) => (

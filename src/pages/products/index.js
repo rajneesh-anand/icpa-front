@@ -20,9 +20,7 @@ const ProductPage = () => {
     isReachingEnd,
     isEmpty,
   } = usePaginatedData("/api/products");
-
-  // let newArray = result.map((el) => el.slug);
-  // console.log(newArray);
+  console.log(isLoadingMore);
 
   return (
     <Layout>
@@ -33,6 +31,15 @@ const ProductPage = () => {
       />
       <Header />
       <IntroVideo />
+      <div className="page-title-area">
+        <div className="container">
+          <div className="page-title-content">
+            <h4>
+              SELECT YOUR PRODUCTS FOR ONLINE LISTINGS ON AMAZON / FLIPKART
+            </h4>
+          </div>
+        </div>
+      </div>
 
       {isLoadingMore ? (
         <Loading />

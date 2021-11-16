@@ -18,9 +18,8 @@ const Footer = () => {
                 </Link>
 
                 <p>
-                  Best solution for your it startup business,
-                  consecteturadipiscing elit. Scelerisque amet odio velit,
-                  auctor nam elit nulla.
+                  Best solution for setting up an online business store on major
+                  e-commerce platforms i.e Amazon, Flipkart etc..
                 </p>
 
                 <ul className="social-links">
@@ -156,8 +155,8 @@ const Footer = () => {
               <div className="single-footer-widget">
                 <h3>Newsletter</h3>
                 <p>
-                  Best solution for your it startup business,
-                  consecteturadipiscing elit.
+                  Best solution for setting up an online business store on major
+                  e-commerce platforms i.e Amazon, flipkart etc..,
                 </p>
 
                 <form

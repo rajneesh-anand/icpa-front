@@ -4,15 +4,11 @@ import { slugify } from "../../utils/helper";
 const DataFilter = ({ categories }) => {
   return (
     <div className="data-filter-menu">
-      <button className="active is-checked default-btn-sm" data-filter="*">
+      <button className="active is-checked" data-filter="*">
         All
       </button>
       {categories?.map((cat, idx) => (
-        <button
-          key={idx}
-          data-filter={`.${slugify(cat)}`}
-          className="default-btn-sm"
-        >
+        <button key={idx} data-filter={`.${slugify(cat)}`}>
           <span className="filter-text">{cat}</span>
         </button>
       ))}

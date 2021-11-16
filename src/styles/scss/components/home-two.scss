@@ -642,6 +642,34 @@ Feedback Area CSS
 /*================================================
 Pricing Area CSS
 =================================================*/
+.membership-area{
+
+    .rating{
+        color: orange;
+         font-size: 18px;
+         display: flex;
+         justify-content: center;
+        
+    }
+    .title {
+        margin-bottom: 25px;
+        // border-bottom: 1px dashed hsla(0,0%,80%,.5);
+        text-align: center;
+   
+
+        h3 {
+            font-size: 20px;
+            margin-bottom: 5px;
+            font-family: "Montserrat";
+        }
+        p{
+            font-size: 14px;
+            margin-left: 8px;
+            font-weight: 600;
+            color: #423309;
+         }
+    }
+
 .single-pricing-box {
     padding: 50px;
     margin-bottom: 25px;
@@ -654,20 +682,26 @@ Pricing Area CSS
         color: orange;
          font-size: 18px;
          display: flex;
-         p{
-            font-size: 14px;
-            margin-left: 8px;
-            font-weight: 600;
-         }
+         justify-content: center;
+        
     }
     .title {
         margin-bottom: 25px;
         border-bottom: 1px dashed hsla(0,0%,80%,.5);
+        text-align: center;
+   
 
         h3 {
             font-size: 20px;
             margin-bottom: 5px;
+            font-family: "Montserrat";
         }
+        p{
+            font-size: 14px;
+            margin-left: 8px;
+            font-weight: 600;
+            color: #423309;
+         }
     }
     .price {
         margin-bottom: 30px;
@@ -734,7 +768,7 @@ Pricing Area CSS
     }
     .btn-list{
         display: flex;
-        justify-self: center;
+       justify-content: center;
         padding-top: 8px;
         border-top: 1px dashed hsla(0,0%,80%,.5);
         .plan-btn{
@@ -746,6 +780,7 @@ Pricing Area CSS
        
         }
     }
+}
 }
 .see-more-pricing {
     &.color-black {

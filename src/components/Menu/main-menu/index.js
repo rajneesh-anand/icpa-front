@@ -7,19 +7,15 @@ const MainMenu = () => {
       <ul className="main-menu">
         <li>
           <Link href="/services" activeClassName="active">
-            <a className="main-menu-link">Services</a>
+            <a className="main-menu-link">Services &amp; Plans</a>
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link href="/membership" activeClassName="active">
             <a className="main-menu-link">Membership Plan</a>
           </Link>
-        </li>
-        <li>
-          <Link href="/products" activeClassName="active">
-            <a className="main-menu-link">Products Suggestion</a>
-          </Link>
-        </li>
+        </li> */}
+
         <li>
           <Link href="/courses" activeClassName="active">
             <a className="main-menu-link">Online Seller Courses</a>
@@ -36,6 +32,16 @@ const MainMenu = () => {
               </Link>
             </li>
           </ul>
+        </li>
+        <li>
+          <Link href="/products" activeClassName="active">
+            <a className="main-menu-link">Products Suggestion</a>
+          </Link>
+        </li>
+        <li>
+          <Link href="/franchise" activeClassName="active">
+            <a className="main-menu-link">Franchise Opportunity</a>
+          </Link>
         </li>
         <li>
           <Link

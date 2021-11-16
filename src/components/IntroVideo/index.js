@@ -105,7 +105,7 @@ const IntroVideo = () => {
                   />
                 </div>
               </div>
-              <div className="text-center mt-1 youtube">
+              {/* <div className="text-center mt-1 youtube">
                 <a
                   target="_blank"
                   href="https://www.youtube.com/watch?v=TiSGujM22OI&list=PLC3y8-rFHvwi1AXijGTKM0BKtHzVC-LSK"
@@ -117,7 +117,7 @@ const IntroVideo = () => {
                     <i className="bx bxl-youtube"></i>
                   </span>
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

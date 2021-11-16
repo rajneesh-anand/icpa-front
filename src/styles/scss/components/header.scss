@@ -320,6 +320,7 @@
   text-transform: uppercase; 
   background: #6d0101;
   display: inline-block;
+  font-family: 'Roboto';
   &:hover {
     background: #000;
     color: #fff;
@@ -371,16 +372,17 @@
     padding: 15px 5px;
     display: block;
     color: #ed2775;
-    font-family: "Archivo";
-    font-size: 12.5px;
+    font-family: 'ROBOTO CONDENSED';
+    font-size: 13.5px;
     font-weight: 700;
     line-height: 1.4;
     text-decoration: none;
     text-transform: uppercase;
+    letter-spacing: 0.03em;
 
     
   @media #{$lg-up-device} {
-   font-size: 10px; 
+   font-size: 11px; 
   }
   @media #{$md-up-device} {
     font-size: 9.5px; 

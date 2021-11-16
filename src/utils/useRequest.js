@@ -26,7 +26,7 @@ export const usePaginatedData = (url) => {
   );
 
   const result = data ? [].concat(...data) : [];
-  console.log(result);
+
   const isLoadingInitialData = !data && !error;
   const isLoadingMore =
     isLoadingInitialData ||

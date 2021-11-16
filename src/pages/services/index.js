@@ -10,6 +10,8 @@ import Layout from "@/layout/index";
 import { usePaginatedData } from "@/utils/useRequest";
 import Loading from "@/components/Loading";
 import ModalForm from "@/components/ModalForm";
+import MembershipPlan from "@/components/MembershipPlan";
+import YoutubeLink from "@/components/Youtube";
 
 const ServicePage = () => {
   const [show, setShow] = useState(false);
@@ -40,7 +42,7 @@ const ServicePage = () => {
       />
       <Header />
       <IntroVideo />
-
+      <YoutubeLink />
       {isLoadingMore ? (
         <Loading />
       ) : isEmpty ? (
@@ -65,7 +67,7 @@ const ServicePage = () => {
           </div>
         </>
       )}
-
+      <MembershipPlan />
       <FreeTrial />
       <Partner />
       <ModalForm show={show} handleClose={handleClose} />

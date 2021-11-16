@@ -14,12 +14,14 @@ const ProductList = ({ data }) => {
 
   return (
     <>
-      <div className="products-area ptb-50 bg-F7F7FF">
+      <div className="products-area pb-50 ">
         <div className="container">
-          <div className="section-title">
-            <span className="sub-title">SELECT YOUR PRODUCTS FOR LISTING</span>
+          {/* <div className="section-title">
+            <span className="sub-title">
+              SELECT YOUR PRODUCTS FOR LISTING ON AMAZON / FLIPKART
+            </span>
             <h4>We Stock &amp; You Sell</h4>
-          </div>
+          </div> */}
           <div className="row">
             <div className="col-12">
               <div className="messonry-button text-center mb-8">
@@ -44,7 +46,11 @@ const ProductList = ({ data }) => {
                       className="card-img-top"
                       alt={item.name}
                     />
-                    {/* <div className="label-top shadow-sm">Most Popular</div> */}
+                    {item.popularity && (
+                      <div className="label-top shadow-sm">
+                        {item.popularity}
+                      </div>
+                    )}
                     <div className="card-body">
                       <div className="clearfix mb-3">
                         <span className="float-start price-hp">

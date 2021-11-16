@@ -37,6 +37,20 @@ const BlogListPage = () => {
         canonical={`${process.env.PUBLIC_URL}/blogs`}
       />
       <Header />
+      <div className="page-title-area">
+        <div className="container">
+          <div className="page-title-content">
+            <ul>
+              <li>
+                <a>Home</a>
+              </li>
+
+              <li className="active">News &amp; Updates</li>
+            </ul>
+            <h4>LATEST NEWS FROM THE WORLD OF E-COMMERCE</h4>
+          </div>
+        </div>
+      </div>
 
       {isLoadingMore ? (
         <Loading />

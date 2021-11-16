@@ -57,17 +57,35 @@ const MembershipPlan = () => {
 
   return (
     <>
-      <div className="pricing-area ptb-50 bg-F7F7FF">
+      <div className="membership-area ptb-50">
         <div className="container">
+          <div className="text-center">
+            <img
+              src="/images/gold.png"
+              alt="gold-membership"
+              height={128}
+              width={128}
+            />
+          </div>
           <div className="section-title">
-            <span className="sub-title">MEMBERSHIP PLANS</span>
-            <h6>No Hidden Charge Applied, Choose Your Plan</h6>
+            <span className="sub-title">GOLD MEMBERSHIP PLAN</span>
+            <div className="title">
+              <div className="rating">
+                <i className="bx bxs-star"></i>
+                <i className="bx bxs-star"></i>
+                <i className="bx bxs-star"></i>
+                <i className="bx bxs-star"></i>
+                <i className="bx bxs-star-half"></i>
+              </div>
+              <p>4.5 (2527 Ratings)</p>
+            </div>
+            {/* <h6>No Hidden Charge Applied, Choose Your Plan</h6> */}
           </div>
 
           <div className="row align-items-center justify-content-center">
-            <div className="col-lg-6 col-md-6 col-sm-6">
+            <div className="col-lg-12 col-md-12 col-sm-12">
               <div className="single-pricing-box active" data-aos="zoom-in">
-                <div className="title">
+                {/* <div className="title">
                   <h3>GOLD PLAN</h3>
                   <div className="rating">
                     <i className="bx bxs-star"></i>
@@ -75,9 +93,9 @@ const MembershipPlan = () => {
                     <i className="bx bxs-star"></i>
                     <i className="bx bxs-star"></i>
                     <i className="bx bxs-star-half"></i>
-                    <p>4.5 (2527 rating)</p>
                   </div>
-                </div>
+                  <p>4.5 (2527 Ratings)</p>
+                </div> */}
 
                 <span className="popular">Most Popular</span>
                 <div className="price">
@@ -161,7 +179,7 @@ const MembershipPlan = () => {
               </div>
             </div>
 
-            <div className="col-lg-6 col-md-6 col-sm-6">
+            {/* <div className="col-lg-6 col-md-6 col-sm-6">
               <div className="single-pricing-box" data-aos="zoom-in">
                 <div className="title">
                   <h3>BASIC PLAN</h3>
@@ -248,6 +266,7 @@ const MembershipPlan = () => {
                 </div>
               </div>
             </div>
+         */}
           </div>
         </div>
         <Hiddenfrom formData={paytmData} />

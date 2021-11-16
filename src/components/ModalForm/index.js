@@ -153,7 +153,7 @@ export default function ModalForm({ show, handleClose }) {
                     className="default-btn"
                     onClick={handleSubmit(onSubmit)}
                   >
-                    <i className="bx bx-paper-plane"></i> Join Us
+                    <i className="bx bx-paper-plane"></i> JOIN US
                   </button>
                 </div>
               </form>

@@ -30,6 +30,9 @@ const CourseListPage = ({ coursesData }) => {
 
 export async function getServerSideProps() {
   const courses = await prisma.courses.findMany({
+    where: {
+      status: true,
+    },
     orderBy: [
       {
         id: "asc",

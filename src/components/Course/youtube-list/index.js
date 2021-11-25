@@ -23,11 +23,11 @@ const YoutubeList = ({ youtubeVideos }) => {
 
       <div className="courses-area ptb-50">
         <div className="container">
-          <div className="section-title">
+          {/* <div className="section-title">
             <span className="sub-title">
               WATCH OUR FREE YOUTUBE VIDEOS E-COMMERCE SELLER COURSES
             </span>
-          </div>
+          </div> */}
           <div className="row">
             {youtubeVideos.items.map(({ id, snippet = {} }) => {
               console.log(snippet);

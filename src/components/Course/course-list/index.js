@@ -37,16 +37,17 @@ const CourseList = ({ data }) => {
           <span className="sub-title">
             OUR TOP SELLING E-COMMERCE SELLER COURSES
           </span>
-          {/* <h2>Top Selling Courses</h2> */}
+
           <p>
             Explore all of our courses and pick your suitable ones to enroll and
-            start learning with us! We ensure that you will never regret it!
+            start learning with us. <br /> We ensure that you will never regret
+            it!
           </p>
         </div>
-        <div className="row">
+        <div className="row justify-content-center mt-3">
           {data &&
             data.map((item, index) => (
-              <div key={index} className="col-lg-6 col-md-6">
+              <div key={index} className="col-lg-12 col-md-12">
                 <div className="single-course-box">
                   <div className="course-image">
                     <Link href={`/course/${item.slug}`}>
@@ -65,7 +66,7 @@ const CourseList = ({ data }) => {
                   <div className="course-inf">
                     <div className="course-inf__item">
                       <div className="course-inf__title">
-                        +{item.numberOfEnrollments}
+                        {item.numberOfEnrollments}+
                       </div>
                       <div className="course-inf__txt">Enrollments</div>
                     </div>

@@ -22,12 +22,12 @@ const MainMenu = () => {
           </Link>
           <ul className="sub-menu">
             <li>
-              <Link className="sub-menu-link" href="/course/amazon-seller">
+              <Link className="sub-menu-link" href="/courses/amazon">
                 <a> Amazon Seller Course</a>
               </Link>
             </li>
             <li>
-              <Link className="sub-menu-link" href="/course/flipkart-seller">
+              <Link className="sub-menu-link" href="/courses/flipkart">
                 <a> Flipkart Seller Course</a>
               </Link>
             </li>
@@ -57,6 +57,14 @@ const MainMenu = () => {
             activeClassName="active"
           >
             <a className="main-menu-link">E-Commerce News Updates</a>
+          </Link>
+        </li>
+        <li>
+          <Link
+            href={process.env.PUBLIC_URL + "/courses/youtube"}
+            activeClassName="active"
+          >
+            <a className="main-menu-link">Free Youtube Videos</a>
           </Link>
         </li>
       </ul>

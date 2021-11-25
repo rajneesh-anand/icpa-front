@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import Link from "next/link";
 
 const Intro = ({ data }) => {
-  console.log(data);
   return (
     <div
       className="intro-section"

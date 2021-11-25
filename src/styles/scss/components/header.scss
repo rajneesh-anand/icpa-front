@@ -349,7 +349,7 @@
   li {
     position: relative;
     & + li {
-      margin-left: 6px;
+       margin-left: 6px;
     }
 
     &:hover {
@@ -373,18 +373,16 @@
     display: block;
     color: #ed2775;
     font-family: 'ROBOTO CONDENSED';
-    font-size: 13.5px;
+    font-size: 10.5px;
     font-weight: 700;
     line-height: 1.4;
     text-decoration: none;
     text-transform: uppercase;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.04em;
 
     
-  @media #{$lg-up-device} {
-   font-size: 11px; 
-  }
-  @media #{$md-up-device} {
+ 
+  @media #{$lg-device} {
     font-size: 9.5px; 
    }
 

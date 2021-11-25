@@ -13,7 +13,7 @@ export default async function handler(req, res) {
             name: name,
             email: email,
             contact: contact,
-            location: locatio,
+            location: location,
             interested: interest,
           },
         });

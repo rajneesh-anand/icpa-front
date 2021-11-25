@@ -8,7 +8,6 @@ import Footer from "@/layout/footer";
 import Layout from "@/layout/index";
 
 const CourseDetailPage = ({ course }) => {
-  console.log(course);
   return (
     <Layout>
       <Seo

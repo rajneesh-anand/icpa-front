@@ -94,7 +94,11 @@
           list-style-type: none;
   
           li {
-            display: block;
+            // display: block;
+            margin: 8px 0px;
+          color: brown;
+          font-weight: 600;
+          font-family: 'Roboto';
   
             a {
               background-color: #f8f9f8;

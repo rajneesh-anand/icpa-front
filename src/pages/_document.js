@@ -11,19 +11,17 @@ class MyDocument extends Document {
         <Head>
           <meta charSet="utf-8" />
           <link rel="icon" type="image/png" href="/images/favicon.png" />
-
           <script
             async
-            src="https://www.googletagmanager.com/gtag/js?id=G-KXQY7M7CQL"
+            src="https://www.googletagmanager.com/gtag/js?id=G-F467Z7XFF5"
           />
-
           <script
             dangerouslySetInnerHTML={{
               __html: `
                   window.dataLayer = window.dataLayer || [];
                   function gtag(){dataLayer.push(arguments);}
                   gtag('js', new Date());
-                  gtag('config', 'G-KXQY7M7CQL',{
+                  gtag('config', 'G-F467Z7XFF5',{
                  page_path: window.location.pathname,
                 });
               `,

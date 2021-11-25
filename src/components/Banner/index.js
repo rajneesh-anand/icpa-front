@@ -6,7 +6,6 @@ import Intro from "./intro";
 SwiperCore.use([Autoplay]);
 
 function BannerPage({ data }) {
-  console.log(data);
   const swiperOption = {
     loop: true,
     speed: 600,

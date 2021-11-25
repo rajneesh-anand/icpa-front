@@ -10,6 +10,7 @@ import dynamic from "next/dynamic";
 import moment from "moment";
 import Timeline from "@/components/Timeline";
 import CallIcon from "@/components/Icons/call";
+import htmr from "htmr";
 import {
   Accordion,
   AccordionItem,
@@ -37,7 +38,7 @@ const Hiddenfrom = ({ formData }) => {
   );
 };
 
-const Consultancy = () => {
+const Consultancy = ({ data }) => {
   const [isProcessing, setProcessingTo] = useState(false);
   const [value, onChange] = useState(new Date());
   const [paytmData, setPaytmData] = useState({
@@ -259,13 +260,13 @@ const Consultancy = () => {
               <Form.Group as={Col} md="4">
                 <Form.Label>Select Talktime Package *</Form.Label>
                 <Form.Select
-                  defaultValue="Below INR 10,000"
+                  defaultValue="40 Minutes - &#x20B9; 750"
                   name="package"
                   {...register("package")}
                 >
-                  <option>1 Hour (999)</option>
-                  <option>40 Min (750)</option>
-                  <option>20 Hour (149)</option>
+                  <option>1 Hour - &#x20B9; 999</option>
+                  <option>40 Minutes - &#x20B9; 750</option>
+                  <option>20 Minutes - &#x20B9; 149</option>
                 </Form.Select>
               </Form.Group>
               <Form.Group as={Col} md="4">
@@ -307,193 +308,22 @@ const Consultancy = () => {
             <p>FREQUENTLY ASKED QUESTIONS</p>
           </div>
           <div className="faq-accordion">
-            <Accordion allowZeroExpanded preExpanded={["a"]}>
-              <AccordionItem uuid="a">
-                <AccordionItemHeading>
-                  <AccordionItemButton>
-                    <span>Why are consultants important?</span>
-                  </AccordionItemButton>
-                </AccordionItemHeading>
+            {data.length > 0 &&
+              data.map((item, index) => (
+                <Accordion key={index} allowZeroExpanded preExpanded={["1"]}>
+                  <AccordionItem uuid={`${item.id}`}>
+                    <AccordionItemHeading>
+                      <AccordionItemButton>
+                        <span>{item.title}</span>
+                      </AccordionItemButton>
+                    </AccordionItemHeading>
 
-                <AccordionItemPanel>
-                  <p>
-                    <strong>ICPA</strong> is always looking for talented{" "}
-                    <a href="/faq">information</a> security and IT risk
-                    management professionals who are dedicated, hard working and
-                    looking for a challenge. If you are interested in employment
-                    with <strong>Texap</strong>, a company who values you and
-                    your family, visit our careers page.
-                  </p>
-                  <ul>
-                    <li>a console</li>
-                    <li>Two Joy-Con controllers that are detachable</li>
-                    <li>
-                      A grip that enables you to combine them into a single
-                      gamepad for play on the TV
-                    </li>
-                    <li>
-                      Two straps for turning the Joy-Cons into individual
-                      controllers
-                    </li>
-                    <li>
-                      A dock which you can use to connect your console to the
-                      television for traditional gameplay
-                    </li>
-                  </ul>
-                </AccordionItemPanel>
-              </AccordionItem>
-
-              <AccordionItem uuid="b">
-                <AccordionItemHeading>
-                  <AccordionItemButton>
-                    <span>What is the purpose of a consultant?</span>
-                  </AccordionItemButton>
-                </AccordionItemHeading>
-
-                <AccordionItemPanel>
-                  <p>
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life
-                    accusamus terry richardson ad squid. 3 wolf moon officia
-                    aute, non cupidatat skateboard dolor brunch. Food truck
-                    quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-                    sunt aliqua put a bird on it squid single-origin coffee
-                    nulla assumenda shoreditch et. Nihil anim keffiyeh
-                    helvetica, craft beer labore wes anderson cred nesciunt
-                    sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-                  </p>
-                  <ul>
-                    <li>a console</li>
-                    <li>
-                      Two Joy-Con controllers that are{" "}
-                      <a href="/faq">detachable</a>
-                    </li>
-                    <li>
-                      A grip that enables you to combine them into a single
-                      gamepad for play on the TV
-                    </li>
-                    <li>
-                      Two straps for turning the Joy-Cons into{" "}
-                      <strong>individual</strong> controllers
-                    </li>
-                    <li>
-                      A dock which you can use to connect your console to the
-                      television for traditional gameplay
-                    </li>
-                  </ul>
-                </AccordionItemPanel>
-              </AccordionItem>
-
-              <AccordionItem uuid="c">
-                <AccordionItemHeading>
-                  <AccordionItemButton>
-                    <span>What attracts you to the role of a consultant?</span>
-                  </AccordionItemButton>
-                </AccordionItemHeading>
-
-                <AccordionItemPanel>
-                  <p>
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life
-                    accusamus terry richardson ad squid. 3 wolf moon officia
-                    aute, non cupidatat skateboard dolor brunch. Food truck
-                    quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor.
-                  </p>
-                  <p>
-                    Tunt aliqua put a bird on it squid single-origin coffee
-                    nulla assumenda shoreditch et. Nihil anim keffiyeh
-                    helvetica, craft beer labore wes anderson cred nesciunt
-                    sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-                  </p>
-                </AccordionItemPanel>
-              </AccordionItem>
-
-              <AccordionItem uuid="d">
-                <AccordionItemHeading>
-                  <AccordionItemButton>
-                    <span>What are the advantages of being a consultant?</span>
-                  </AccordionItemButton>
-                </AccordionItemHeading>
-
-                <AccordionItemPanel>
-                  <ul>
-                    <li>a console</li>
-                    <li>Two Joy-Con controllers that are detachable</li>
-                    <li>
-                      A grip that enables you to combine them into a single
-                      gamepad for play on the TV
-                    </li>
-                    <li>
-                      Two straps for turning the Joy-Cons into individual
-                      controllers
-                    </li>
-                    <li>
-                      A dock which you can use to connect your console to the
-                      television for traditional gameplay
-                    </li>
-                  </ul>
-                </AccordionItemPanel>
-              </AccordionItem>
-
-              <AccordionItem uuid="e">
-                <AccordionItemHeading>
-                  <AccordionItemButton>
-                    <span>Is consulting a good career?</span>
-                  </AccordionItemButton>
-                </AccordionItemHeading>
-
-                <AccordionItemPanel>
-                  <p>
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life
-                    accusamus terry richardson ad squid. 3 wolf moon officia
-                    aute, non cupidatat skateboard dolor brunch. Food truck
-                    quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-                    sunt aliqua put a bird on it squid single-origin coffee
-                    nulla assumenda shoreditch et. Nihil anim keffiyeh
-                    helvetica, craft beer labore wes anderson cred nesciunt
-                    sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-                  </p>
-                </AccordionItemPanel>
-              </AccordionItem>
-
-              <AccordionItem uuid="f">
-                <AccordionItemHeading>
-                  <AccordionItemButton>
-                    <span>How is working in consulting?</span>
-                  </AccordionItemButton>
-                </AccordionItemHeading>
-
-                <AccordionItemPanel>
-                  <p>
-                    Anim pariatur cliche reprehenderit, enim eiusmod high life
-                    accusamus terry richardson ad squid. 3 wolf moon officia
-                    aute, non cupidatat skateboard dolor brunch. Food truck
-                    quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor,
-                    sunt aliqua put a bird on it squid single-origin coffee
-                    nulla assumenda shoreditch et. Nihil anim keffiyeh
-                    helvetica, craft beer labore wes anderson cred nesciunt
-                    sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-                  </p>
-                  <ul>
-                    <li>a console</li>
-                    <li>
-                      Two Joy-Con controllers that are{" "}
-                      <a href="/faq">detachable</a>
-                    </li>
-                    <li>
-                      A grip that enables you to combine them into a single
-                      gamepad for play on the TV
-                    </li>
-                    <li>
-                      Two straps for turning the Joy-Cons into{" "}
-                      <strong>individual</strong> controllers
-                    </li>
-                    <li>
-                      A dock which you can use to connect your console to the
-                      television for traditional gameplay
-                    </li>
-                  </ul>
-                </AccordionItemPanel>
-              </AccordionItem>
-            </Accordion>
+                    <AccordionItemPanel>
+                      {htmr(item.description)}
+                    </AccordionItemPanel>
+                  </AccordionItem>
+                </Accordion>
+              ))}
           </div>
         </div>
 

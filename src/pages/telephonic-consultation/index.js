@@ -9,8 +9,10 @@ import Footer from "@/layout/footer";
 import Layout from "@/layout/index";
 import ModalForm from "@/components/ModalForm";
 
-const TelephonicPage = () => {
+const TelephonicPage = ({ faqData }) => {
+  const faq = faqData ? JSON.parse(faqData) : [];
   const [show, setShow] = useState(false);
+
   const handleClose = () => setShow(false);
 
   useEffect(() => {
@@ -27,8 +29,8 @@ const TelephonicPage = () => {
       />
       <Header />
 
-      <Consultancy />
-      {/* <FreeTrial /> */}
+      <Consultancy data={faq} />
+
       <IntroVideo />
       <Partner />
       <ModalForm show={show} handleClose={handleClose} />
@@ -38,3 +40,22 @@ const TelephonicPage = () => {
 };
 
 export default TelephonicPage;
+
+export async function getServerSideProps() {
+  const faq = await prisma.faq.findMany({
+    where: {
+      status: true,
+    },
+    orderBy: [
+      {
+        id: "asc",
+      },
+    ],
+  });
+
+  return {
+    props: {
+      faqData: faq.length != 0 ? JSON.stringify(faq) : null,
+    },
+  };
+}

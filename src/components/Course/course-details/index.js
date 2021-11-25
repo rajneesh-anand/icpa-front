@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useSession } from "next-auth/client";
 import Link from "next/link";
 import { Tab, Tabs as TabsComponent, TabList, TabPanel } from "react-tabs";
 import dynamic from "next/dynamic";
+import htmr from "htmr";
 const ModalVideo = dynamic(() => import("react-modal-video"), {
   ssr: false,
 });
@@ -25,6 +26,7 @@ const Hiddenfrom = ({ formData }) => {
 
 const CourseDetail = ({ data }) => {
   console.log(data);
+  const [chapters, setChapters] = useState();
   const [session, loading] = useSession();
   const [isOpen, setIsOpen] = React.useState(true);
   const [paytmData, setPaytmData] = React.useState({
@@ -36,6 +38,15 @@ const CourseDetail = ({ data }) => {
   const openModal = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect(async () => {
+    const res = await fetch(
+      `${process.env.PUBLIC_URL}/api/chapters/${data.slug}`
+    );
+    const result = await res.json();
+    console.log(result);
+    setChapters(result.data);
+  }, []);
 
   const handlePayment = async (e) => {
     e.preventDefault();
@@ -109,146 +120,32 @@ const CourseDetail = ({ data }) => {
                   <TabList>
                     <Tab>Overview</Tab>
                     <Tab>Curriculum</Tab>
-                    <Tab>Instructor</Tab>
                   </TabList>
                   <TabPanel>
                     <div className="courses-overview">
                       <h3>Course Description</h3>
-                      <p>
-                        Learn the modern way of building web applications Master
-                        React&#x27;s Compositional Model Build an Instagram-like
-                        Web App from the ground up! Build Interactive Web Pages
-                        with self-contained Components Manage your
-                        Application&#x27;s Data with Redux Get web development
-                        jobs on freelancer sites
-                      </p>
+                      {htmr(data.details)}
                     </div>
                   </TabPanel>
                   <TabPanel>
                     <div className="courses-curriculum">
                       <h3>Course Videos</h3>
                       <ul>
-                        <li>
-                          <a
-                            className="d-flex justify-content-between align-items-center"
-                            href="/courses"
-                          >
-                            <span className="courses-name">Introduction</span>
-                            <div className="courses-meta">
-                              <span className="status locked">
-                                <i className="bx bx-lock"></i>
-                              </span>
-                            </div>
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            className="d-flex justify-content-between align-items-center"
-                            href="/courses"
-                          >
-                            <span className="courses-name">
-                              Market Research
-                            </span>
-                            <div className="courses-meta">
-                              <span className="status locked">
-                                <i className="bx bx-lock"></i>
-                              </span>
-                            </div>
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            className="d-flex justify-content-between align-items-center"
-                            href="/courses"
-                          >
-                            <span className="courses-name">
-                              Search Engine Optimization (SEO)
-                            </span>
-                            <div className="courses-meta">
-                              <span className="status locked">
-                                <i className="bx bx-lock"></i>
-                              </span>
-                            </div>
-                          </a>
-                        </li>
+                        {chapters &&
+                          chapters.map((item, index) => (
+                            <li
+                              key={index}
+                              className="d-flex justify-content-between align-items-center"
+                            >
+                              <span className="courses-name">{item.title}</span>
+                              <div className="courses-meta">
+                                <span className="status locked">
+                                  <i className="bx bx-lock"></i>
+                                </span>
+                              </div>
+                            </li>
+                          ))}
                       </ul>
-                    </div>
-                  </TabPanel>
-                  <TabPanel>
-                    <div className="courses-instructor">
-                      <div className="single-advisor-box">
-                        <div className="row align-items-center">
-                          <div className="col-lg-4 col-md-4">
-                            <div className="advisor-image">
-                              <img
-                                src="/images/advisor/advisor1.jpg"
-                                alt="EnvyTheme"
-                              />
-                            </div>
-                          </div>
-                          <div className="col-lg-8 col-md-8">
-                            <div className="advisor-content">
-                              <h3>EnvyTheme</h3>
-                              <span className="sub-title">
-                                Head of Data Science, Pierian Data Inc.
-                              </span>
-                              <p>
-                                EnvyTheme has a BS and MS in Mechanical
-                                Engineering from Santa Clara University and
-                                years of experience as a professional instructor
-                                and trainer for Data Science and programming. He
-                                has publications and patents in various fields
-                                such as microfluidics, materials science, and
-                                data science technologies. Over the course of
-                                his career he has developed a skill set in
-                                analyzing data and he hopes to use his
-                                experience in teaching and data science to help
-                                other people learn the power of programming the
-                                ability to analyze data, as well as present the
-                                data in clear and beautiful visualizations.
-                              </p>
-                              <ul className="social-link">
-                                <li>
-                                  <a
-                                    href="https://facebook.com/EnvyTheme/"
-                                    className="d-block"
-                                    target="_blank"
-                                  >
-                                    <i className="bx bxl-facebook"></i>
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="https://twitter.com/envy_theme"
-                                    className="d-block"
-                                    target="_blank"
-                                  >
-                                    <i className="bx bxl-twitter"></i>
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="https://instagram.com/envytheme3s/"
-                                    className="d-block"
-                                    target="_blank"
-                                  >
-                                    <i className="bx bxl-instagram"></i>
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href="https://linkedin.com/company/envytheme/"
-                                    className="d-block"
-                                    target="_blank"
-                                  >
-                                    <i className="bx bxl-linkedin"></i>
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
                     </div>
                   </TabPanel>
                 </TabsComponent>

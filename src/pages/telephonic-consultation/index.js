@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import IntroVideo from "@/components/IntroVideo";
 import Consultancy from "@/components/Consultancy";
-import FreeTrial from "@/components/FreeTrial";
+import prisma from "@/libs/prisma";
 import Partner from "@/components/Partner";
 import Seo from "@/components/Seo";
 import Header from "@/layout/header";

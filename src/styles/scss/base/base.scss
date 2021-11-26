@@ -584,7 +584,7 @@ textarea.form-control {
     position: relative;
     background: linear-gradient(50.48deg, #ED2775 -2.06%, #FF7448 93.55%);
     padding: {
-        bottom: 100px;
+        bottom: 32px;
         top: 32px;
     };
     // &::before {
@@ -661,10 +661,13 @@ textarea.form-control {
             border: 1px solid white;
             padding: 8px 16px;
             border-radius: 30px;
+            background: var(--gradientColor);
 
             @media #{$xs-device} {
                 border: none;  
                 border-radius: 0;
+                background: var(--whiteColor);
+                color: orangered;
             }
             
 
@@ -895,8 +898,12 @@ textarea.form-control {
     }
 
     .default-btn {
-        padding: 11px 30px;
-        font-size: 12.5px;
+        padding: 8px 12px;
+        font-size: 10px;
+    }
+    .default-btn-blue {
+        padding: 8px 12px;
+        font-size: 10px;
     }
 
     .shape1, .shape2, .bg-shape1, .shape6, .shape8, .shape12, .shape13, .shape10, .shape11 {

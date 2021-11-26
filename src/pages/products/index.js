@@ -9,6 +9,7 @@ import Seo from "@/components/Seo";
 import Header from "@/layout/header";
 import Footer from "@/layout/footer";
 import Layout from "@/layout/index";
+import YoutubeLink from "@/components/Youtube";
 
 const ProductPage = () => {
   const {
@@ -31,15 +32,6 @@ const ProductPage = () => {
       />
       <Header />
       <IntroVideo />
-      <div className="page-title-area">
-        <div className="container">
-          <div className="page-title-content">
-            <h4>
-              SELECT YOUR PRODUCTS FOR ONLINE LISTINGS ON AMAZON / FLIPKART
-            </h4>
-          </div>
-        </div>
-      </div>
 
       {isLoadingMore ? (
         <Loading />
@@ -65,8 +57,8 @@ const ProductPage = () => {
           </div>
         </>
       )}
-
       <FreeTrial />
+      <YoutubeLink />
       <Partner />
       <Footer />
     </Layout>

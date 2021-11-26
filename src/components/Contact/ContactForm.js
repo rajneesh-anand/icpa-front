@@ -136,7 +136,12 @@ const ContactForm = () => {
                     <option value="Online Seller Courses">
                       Online Courses
                     </option>
-                    <option value="Products Query">Products Query</option>
+                    <option value="Membership Gold Plan">
+                      Membership Gold Plan
+                    </option>
+                    <option value="Products Suggestion Query">
+                      Products Suggestion Query
+                    </option>
                     <option value="Online Seller Services">
                       Online Seller Services
                     </option>

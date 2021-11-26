@@ -15,14 +15,17 @@ const ProductList = ({ data }) => {
 
   return (
     <>
+      <div className="page-title-area">
+        <div className="container">
+          <div className="page-title-content">
+            <h4>
+              SELECT YOUR PRODUCTS FOR ONLINE LISTINGS ON AMAZON / FLIPKART
+            </h4>
+          </div>
+        </div>
+      </div>
       <div className="products-area pb-50 ">
         <div className="container">
-          {/* <div className="section-title">
-            <span className="sub-title">
-              SELECT YOUR PRODUCTS FOR LISTING ON AMAZON / FLIPKART
-            </span>
-            <h4>We Stock &amp; You Sell</h4>
-          </div> */}
           <div className="row">
             <div className="col-12">
               <div className="messonry-button text-center mb-8">

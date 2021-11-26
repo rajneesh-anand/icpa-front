@@ -62,8 +62,6 @@
     }
   }
 }
-
-
 .contact-area {
   background-color: #152733;   
   .contact-form { 
@@ -147,6 +145,106 @@
       border: none;
       height: 500px;
       margin-bottom: -5px;
+    }
+  }
+}
+
+.free-trial-area{
+  background-color: var(--blackColor);
+
+  .free-trial-content {
+    &.bg-color {
+            &::before {
+            display: none;
+        }
+        form {
+            .input-newsletter {
+                border-radius: 30px;
+            }
+            .default-btn {
+                border-radius: 30px;
+
+                &::before {
+                    border-radius: 30px;
+                }
+            }
+        }
+    }
+    .contact-title{
+        display: flex;
+        p{
+            font-size: 18px;
+            color: white;
+            padding: 16px 8px;
+        }
+        a{
+            font-size: 18px;
+            color: white;
+            padding: 16px 8px; 
+        }
+    }
+
+    .icon {
+        width: 64px;
+        height: 64px;
+        font-size: 35px;
+        position: relative;
+        border-radius: 50%;
+        color: var(--whiteColor);
+        background: linear-gradient(44.44deg, #ed2775 7.79%, #ff7448 94.18%);
+        margin: {
+        //   left: auto;
+        //   right: auto;
+          bottom: 16px;
+        }
+        i {
+          left: 0;
+          right: 0;
+          top: 50%;
+          position: absolute;
+          transform: translateY(-50%);
+        }
+        &.bg1 {
+          background: linear-gradient(45.24deg, #9f5ff1 5.99%, #ff54b0 91.87%);
+        }
+        &.bg2 {
+          background: linear-gradient(44.44deg, #3f75ff 7.79%, #4adeff 94.18%);
+        }
+        &.bg3 {
+            background: linear-gradient(44.44deg,  #128C7E 7.79%, #25D366 94.18%);
+          }
+    }
+
+    .contact-form{
+      .form-control  {
+        display: block;
+        width: 100%;
+        padding: 0.375rem 0.75rem;
+        margin: 6px 0px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+      }
+      .form-select  {
+        display: block;
+        width: 100%;
+        padding: 0.375rem 0.75rem;
+        margin: 6px 0px;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+      }
+      p{
+        color: #ff7448;
+      }
     }
   }
 }

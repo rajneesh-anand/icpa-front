@@ -4,16 +4,16 @@ export default async function handler(req, res) {
   const { name, email, subject, message, mobile, type } = req.body;
   const transporter = nodemailer.createTransport({
     port: 465,
-    host: "email-smtp.ap-south-1.amazonaws.com",
+    host: `${process.env.SMTP_HOST}`,
     auth: {
-      user: "AKIAQ7ISNVPZBKAGLNEP",
-      pass: "BJ7dIQ2BXQxtSNNGmv+/BbpMbHCmJZNp4ybz78iBGc4V",
+      user: `${process.env.SMTP_USERNAME}`,
+      pass: `${process.env.SMTP_PASSWORD}`,
     },
     secure: true,
   });
 
   const mailData = {
-    from: "theicpaglobal@gmail.com",
+    from: `${process.env.EMAIL_FROM}`,
     to: "anand.k.rajneesh@gmail.com",
     subject: `ICPA Query From ${name}`,
     text: subject + " | Sent from: " + email,

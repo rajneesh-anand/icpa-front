@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
-import ScrollAnimation from "react-animate-on-scroll";
 
 const FreeTrialStyle2 = () => {
   const [message, setMessage] = useState();
@@ -9,6 +8,7 @@ const FreeTrialStyle2 = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm({
     mode: "onBlur",
   });
@@ -16,7 +16,9 @@ const FreeTrialStyle2 = () => {
   useEffect(() => {
     if (message) {
       if (message === "success") {
-        toast.success("Thank you for your email, We will contact you shortly");
+        toast.success(
+          "Thank you for your email, We will contact you shortly ! "
+        );
       } else {
         toast.error("Oops, Something went wrong !");
       }
@@ -30,6 +32,7 @@ const FreeTrialStyle2 = () => {
       subject: data.msg_subject,
       message: data.message,
       mobile: data.mobile,
+      type: data.type,
     };
 
     try {
@@ -42,6 +45,9 @@ const FreeTrialStyle2 = () => {
       if (result.status >= 400 && result.status < 600) {
         throw new Error("Bad response from server");
       } else {
+        reset("", {
+          keepValues: false,
+        });
         setMessage("success");
       }
     } catch (error) {
@@ -53,9 +59,22 @@ const FreeTrialStyle2 = () => {
     <>
       <div className="free-trial-area">
         <div className="container">
+          {message && (
+            <ToastContainer
+              position="top-right"
+              autoClose={5000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+            />
+          )}
           <div className="free-trial-content bg-color">
-            <span className="sub-title">Feel Free To Contact Us </span>
-            <h4>Send us your query ?</h4>
+            {/* <span className="sub-title">Feel Free To Contact Us </span>
+            <h4>Send us your query ?</h4> */}
             <div className="row">
               <div className="col-lg-4 col-md-4 ">
                 <div data-aos="fade-down">
@@ -84,10 +103,7 @@ const FreeTrialStyle2 = () => {
               </div>
               <div className="col-lg-8 col-md-8 ">
                 <div className="contact-form">
-                  <form
-                    className="free-trial-form"
-                    onSubmit={(e) => e.preventDefault()}
-                  >
+                  <form onSubmit={(e) => e.preventDefault()}>
                     <div className="row">
                       <div className="col-lg-6 col-md-6 col-sm-6">
                         <div className="form-group">
@@ -96,7 +112,7 @@ const FreeTrialStyle2 = () => {
                             name="name"
                             className="form-control"
                             id="name"
-                            placeholder="Type Your Name"
+                            placeholder="Full Name"
                             {...register("name", {
                               required: "Name is required !",
                             })}
@@ -112,7 +128,7 @@ const FreeTrialStyle2 = () => {
                             name="email"
                             className="form-control"
                             id="email"
-                            placeholder="Type Your Email"
+                            placeholder="Email Address"
                             {...register("email", {
                               required: "Email is required !",
                               pattern: {
@@ -132,7 +148,7 @@ const FreeTrialStyle2 = () => {
                             name="phone_number"
                             className="form-control"
                             id="phone_number"
-                            placeholder="Type your contact number"
+                            placeholder="Contact Number"
                             {...register("mobile", {
                               required: "Contact Number is required !",
                               pattern: {
@@ -145,6 +161,26 @@ const FreeTrialStyle2 = () => {
                         </div>
                       </div>
                       <div className="col-lg-6 col-md-6 col-sm-6">
+                        <div className="form-group">
+                          <select className="form-select" {...register("type")}>
+                            <option value="Online Seller Courses">
+                              Online Courses
+                            </option>
+                            <option value="Membership Gold Plan">
+                              Membership Gold Plan
+                            </option>
+                            <option value="Products Suggestion Query">
+                              Products Suggestion Query
+                            </option>
+                            <option value="Online Seller Services">
+                              Online Seller Services
+                            </option>
+                            <option value="Others Query">Others Query</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div className="col-lg-12 col-md-12 col-sm-12">
                         <div className="form-group">
                           <input
                             type="text"
@@ -169,7 +205,7 @@ const FreeTrialStyle2 = () => {
                             className="form-control"
                             cols="30"
                             rows="6"
-                            placeholder="Type your message ..."
+                            placeholder="Type message here ..."
                             {...register("message", {
                               required: "Message is required !",
                             })}
@@ -180,7 +216,7 @@ const FreeTrialStyle2 = () => {
                       <div className="col-lg-12 col-md-12 col-sm-12">
                         <button
                           type="submit"
-                          className="default-btn"
+                          className="default-btn-sm"
                           onClick={handleSubmit(onSubmit)}
                         >
                           <i className="bx bx-paper-plane"></i> Send Message
@@ -191,13 +227,13 @@ const FreeTrialStyle2 = () => {
                 </div>
               </div>
 
-              <div className="lines">
+              {/* <div className="lines">
                 <div className="line"></div>
                 <div className="line"></div>
                 <div className="line"></div>
                 <div className="line"></div>
                 <div className="line"></div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

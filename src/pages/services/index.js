@@ -42,7 +42,7 @@ const ServicePage = () => {
       />
       <Header />
       <IntroVideo />
-      <YoutubeLink />
+
       {isLoadingMore ? (
         <Loading />
       ) : isEmpty ? (
@@ -69,6 +69,7 @@ const ServicePage = () => {
       )}
       <MembershipPlan />
       <FreeTrial />
+      <YoutubeLink />
       <Partner />
       <ModalForm show={show} handleClose={handleClose} />
       <Footer />

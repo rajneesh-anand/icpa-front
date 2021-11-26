@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useSession } from "next-auth/client";
 
@@ -20,12 +20,19 @@ const Hiddenfrom = ({ formData }) => {
 
 const MembershipPlan = () => {
   const [session, loading] = useSession();
+  const [membershipData, setMembershipData] = useState();
   const [paytmData, setPaytmData] = useState({
     mid: "",
     orderId: "",
     txnToken: "",
   });
 
+  useEffect(async () => {
+    const res = await fetch(`${process.env.API_URL}/upload/plan`);
+    const data = await res.json();
+    console.log(data);
+    setMembershipData(data);
+  }, []);
   const handlePayment = async (e) => {
     e.preventDefault();
     try {
@@ -57,6 +64,13 @@ const MembershipPlan = () => {
 
   return (
     <>
+      <div className="page-title-area">
+        <div className="container">
+          <div className="page-title-content">
+            <h4>JOIN OUR GOLD MEMBERSHIP PLAN </h4>
+          </div>
+        </div>
+      </div>
       <div className="membership-area ptb-50">
         <div className="container">
           <div className="text-center">
@@ -77,82 +91,35 @@ const MembershipPlan = () => {
                 <i className="bx bxs-star"></i>
                 <i className="bx bxs-star-half"></i>
               </div>
-              <p>4.5 (2527 Ratings)</p>
+              {membershipData && (
+                <p>
+                  Rating {membershipData.rating} ({" "}
+                  {membershipData.number_of_ratings} )
+                </p>
+              )}
             </div>
-            {/* <h6>No Hidden Charge Applied, Choose Your Plan</h6> */}
           </div>
 
           <div className="row align-items-center justify-content-center">
             <div className="col-lg-12 col-md-12 col-sm-12">
               <div className="single-pricing-box active" data-aos="zoom-in">
-                {/* <div className="title">
-                  <h3>GOLD PLAN</h3>
-                  <div className="rating">
-                    <i className="bx bxs-star"></i>
-                    <i className="bx bxs-star"></i>
-                    <i className="bx bxs-star"></i>
-                    <i className="bx bxs-star"></i>
-                    <i className="bx bxs-star-half"></i>
+                {membershipData && (
+                  <span className="popular">{membershipData.tag}</span>
+                )}
+                {membershipData && (
+                  <div className="price">
+                    &#x20B9;{membershipData.fee} <span>/Month</span>
                   </div>
-                  <p>4.5 (2527 Ratings)</p>
-                </div> */}
-
-                <span className="popular">Most Popular</span>
-                <div className="price">
-                  &#x20B9;149 <span>/Month</span>
-                </div>
+                )}
 
                 <ul className="features-list">
-                  <li>
-                    <i className="ri-check-line"></i> Sale Boost - Product
-                    Keywords Search
-                  </li>
-                  <li>
-                    <i className="ri-check-line"></i> Amazon Prime Batch &amp;
-                    Guaranteed Delivery Enroll
-                  </li>
-                  <li>
-                    <i className="ri-check-line"></i> Amazon Seller Flex Apply
-                  </li>
-                  <li>
-                    <i className="ri-check-line"></i> Increase Product
-                    Visibility / Sponsored on Products
-                  </li>
-                  <li>
-                    <i className="ri-check-line"></i> Coupon / Offer / Deals
-                    &amp; Promotion
-                  </li>
-                  <li>
-                    <i className="ri-check-line"></i> Plan of Action, Reviews
-                    &amp; Ratings
-                  </li>
-                  <li>
-                    <i className="ri-check-line"></i> Brand Protection / Brand
-                    Registration / Brand Authorization &amp; FBA Registration
-                  </li>
-                  <li>
-                    <i className="ri-check-line"></i> Products Listing / Product
-                    Suggestions
-                  </li>
-                  <li>
-                    <i className="ri-check-line"></i> ODR Manage &amp;
-                    Trade-Mark Manage
-                  </li>
-                  <li>
-                    <i className="ri-check-line"></i> Stock Management &amp;
-                    Growth Planning
-                  </li>
-                  <li>
-                    <i className="ri-check-line"></i> Complete Seller Account
-                    Handling
-                  </li>
-                  <li>
-                    <i className="ri-check-line"></i> 100% Account Protection
-                    from Suspension
-                  </li>
-                  <li>
-                    <i className="ri-check-line"></i> Live Support
-                  </li>
+                  {membershipData &&
+                    membershipData.features.map((item, index) => (
+                      <li key={index}>
+                        <i className="ri-check-line"></i>
+                        {item}
+                      </li>
+                    ))}
                 </ul>
                 <div className="btn-list">
                   <div className="plan-btn">
@@ -167,106 +134,13 @@ const MembershipPlan = () => {
                     )}
                   </div>
                   <div className="plan-btn">
-                    <button
-                      className="default-btn-blue"
-                      onClick={handlePayment}
-                    >
-                      <i className="icofont-ui-call"></i>
-                      Ask to Experts
-                    </button>
+                    <Link href="/contact">
+                      <a className="default-btn-blue">Ask Our Experts</a>
+                    </Link>
                   </div>
                 </div>
               </div>
             </div>
-
-            {/* <div className="col-lg-6 col-md-6 col-sm-6">
-              <div className="single-pricing-box" data-aos="zoom-in">
-                <div className="title">
-                  <h3>BASIC PLAN</h3>
-                  <p>Powerful &amp; awesome elements</p>
-                </div>
-                <div className="price">
-                  &#x20B9;99 <span>/Month</span>
-                </div>
-
-                <ul className="features-list">
-                  <li>
-                    <i className="ri-check-line"></i> Sale Boost - Product
-                    Keywords Search
-                  </li>
-                  <li>
-                    <i className="ri-check-line"></i> Amazon Prime Batch &amp;
-                    Guaranteed Delivery Enroll
-                  </li>
-                  <li>
-                    <i className="ri-check-line"></i> Amazon Seller Flex Apply
-                  </li>
-                  <li>
-                    <i className="ri-check-line"></i> Increase Product
-                    Visibility / Sponsored on Products
-                  </li>
-                  <li>
-                    <i className="ri-check-line"></i> Coupon / Offer / Deals
-                    &amp; Promotion
-                  </li>
-                  <li>
-                    <i className="ri-check-line"></i> Plan of Action, Reviews
-                    &amp; Ratings
-                  </li>
-                  <li>
-                    <i className="ri-check-line"></i> Brand Protection / Brand
-                    Registration / Brand Authorization &amp; FBA Registration
-                  </li>
-                  <li>
-                    <i className="ri-check-line"></i> Products Listing / Product
-                    Suggestions
-                  </li>
-                  <li>
-                    <i className="ri-check-line"></i> ODR Manage &amp;
-                    Trade-Mark Manage
-                  </li>
-                  <li>
-                    <i className="ri-close-line"></i> Stock Management &amp;
-                    Growth Planning
-                  </li>
-                  <li>
-                    <i className="ri-close-line"></i> Complete Seller Account
-                    Handling
-                  </li>
-                  <li>
-                    <i className="ri-close-line"></i> 100% Account Protection
-                    from Suspension
-                  </li>
-                  <li>
-                    <i className="ri-close-line"></i> Live Support
-                  </li>
-                </ul>
-
-                <div className="btn-list">
-                  <div className="plan-btn">
-                    {!session ? (
-                      <Link href="/auth/signin">
-                        <a className="default-btn">Purchase Plan</a>
-                      </Link>
-                    ) : (
-                      <button className="default-btn" onClick={handlePayment}>
-                        Purchase Plan
-                      </button>
-                    )}
-                  </div>
-                  <div className="plan-btn">
-                    <button
-                      className="default-btn-blue"
-                      onClick={handlePayment}
-                    >
-                      <i className="icofont-ui-call"></i>
-                      Ask to Experts
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-         */}
           </div>
         </div>
         <Hiddenfrom formData={paytmData} />

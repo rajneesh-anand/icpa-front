@@ -373,18 +373,13 @@
     display: block;
     color: #ed2775;
     font-family: 'ROBOTO CONDENSED';
-    font-size: 11.5px;
+    font-size: 12.5px;
     font-weight: 700;
     line-height: 1.4;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.04em;
 
-    
- 
-  @media #{$lg-device} {
-    font-size: 9.5px; 
-   }
 
     &::before {
       position: absolute;

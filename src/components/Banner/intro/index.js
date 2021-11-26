@@ -23,7 +23,7 @@ const Intro = ({ data }) => {
                     "Sell your Products Online <span class='d-block'>With best services</span>",
                 }}
               />
-              <Link href={process.env.PUBLIC_URL + "/"}>
+              {/* <Link href={process.env.PUBLIC_URL + "/"}>
                 <a className="btn btn-danger me-3 animated delay1">
                   Membership Plan
                 </a>
@@ -32,7 +32,7 @@ const Intro = ({ data }) => {
                 <a className="btn btn-outline-secondary animated delay2">
                   Our Services
                 </a>
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

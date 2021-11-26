@@ -1,11 +1,18 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Autoplay } from "swiper";
+import SwiperCore, {
+  Navigation,
+  Pagination,
+  Autoplay,
+  Scrollbar,
+} from "swiper";
 import Intro from "./intro";
 
-SwiperCore.use([Autoplay]);
+SwiperCore.use([Navigation, Pagination, Autoplay, Scrollbar]);
 
 function BannerPage({ data }) {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
   const swiperOption = {
     loop: true,
     speed: 600,
@@ -16,14 +23,24 @@ function BannerPage({ data }) {
       disableOnInteraction: false,
     },
     navigation: {
-      nextEl: ".hero-slider .swiper-button-next",
-      prevEl: ".hero-slider .swiper-button-prev",
+      prevEl: prevRef.current ? prevRef.current : undefined,
+      nextEl: nextRef.current ? nextRef.current : undefined,
     },
   };
 
   return (
     <div className="hero-slider-area">
-      <Swiper effect="fade" className="hero-slider" {...swiperOption}>
+      <Swiper
+        effect="fade"
+        className="hero-slider"
+        onInit={(swiper) => {
+          const navigation = swiper.params.navigation;
+          navigation.prevEl = prevRef.current;
+          navigation.nextEl = nextRef.current;
+          swiper.update();
+        }}
+        {...swiperOption}
+      >
         {data &&
           data.map(
             (item, index) =>
@@ -34,10 +51,10 @@ function BannerPage({ data }) {
               )
           )}
         <div className="swiper-button-prev">
-          <i className="icofont-arrow-left"></i>
+          <i className="icofont-arrow-left" ref={prevRef}></i>
         </div>
         <div className="swiper-button-next">
-          <i className="icofont-arrow-right"></i>
+          <i className="icofont-arrow-right" ref={nextRef}></i>
         </div>
       </Swiper>
     </div>

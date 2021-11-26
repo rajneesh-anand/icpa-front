@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
 const CourseList = ({ data }) => {
+  console.log(data);
   const [count, setCount] = useState("0");
 
   const [number, setNumber] = useState("0");
@@ -52,7 +53,7 @@ const CourseList = ({ data }) => {
                   <div className="course-image">
                     <Link href={`/course/${item.slug}`}>
                       <a className="d-block image">
-                        <img src={item.images} alt={item.courseName} />
+                        <img src={item.image} alt={item.courseName} />
                       </a>
                     </Link>
                   </div>

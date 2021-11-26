@@ -1,25 +1,38 @@
-import sgMail from "@sendgrid/mail";
-sgMail.setApiKey(`${process.env.SENDGRID_API_KEY}`);
+export default async function handler(req, res) {
+  let nodemailer = require("nodemailer");
 
-export default async (req, res) => {
-  const { email, subject, message, name, mobile } = req.body;
+  const { name, email, subject, message, mobile, type } = req.body;
+  const transporter = nodemailer.createTransport({
+    port: 465,
+    host: "email-smtp.ap-south-1.amazonaws.com",
+    auth: {
+      user: "AKIAQ7ISNVPZBKAGLNEP",
+      pass: "BJ7dIQ2BXQxtSNNGmv+/BbpMbHCmJZNp4ybz78iBGc4V",
+    },
+    secure: true,
+  });
 
-  const msg = {
-    to: email,
-    from: "osho.ved@hotmail.com",
-    subject: subject,
-    text: "and easy to do anywhere, even with Node.js",
-    html: `<strong>${message} - ${name} - ${mobile}</strong>`,
+  const mailData = {
+    from: "theicpaglobal@gmail.com",
+    to: "anand.k.rajneesh@gmail.com",
+    subject: `ICPA Query From ${name}`,
+    text: subject + " | Sent from: " + email,
+    html: `<div><p>Name : ${name}</p><p>Email : ${email}</p><p>Contact Number : ${mobile}</p><p>Query Type : ${type}</p></div> <div>${message}</div>`,
   };
 
   try {
-    const response = await sgMail.send(msg);
-    const result = response[0].statusCode;
-    if (result === 202) {
-      res.status(200).json({ message: "success" });
-    }
+    transporter.sendMail(mailData, function (err, info) {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(info);
+        res.status(200).json({
+          msg: "success",
+        });
+      }
+    });
   } catch (error) {
     console.log(error);
-    res.status(500).json({ error: "failed" });
+    res.status(500).send(error);
   }
-};
+}

@@ -9,6 +9,7 @@ const ContactForm = () => {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm({
     mode: "onBlur",
   });
@@ -24,25 +25,33 @@ const ContactForm = () => {
   }, [message]);
 
   const onSubmit = async (data) => {
+    setMessage(null);
     const userInfo = {
       name: data.name,
       email: data.email,
       subject: data.msg_subject,
       message: data.message,
       mobile: data.mobile,
+      type: data.type,
     };
 
     try {
       const result = await fetch("/api/contact", {
         method: "POST",
-        headers: { "content-type": "application/json" },
+        headers: {
+          Accept: "application/json, text/plain, */*",
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(userInfo),
       });
-      console.log(result.status);
+
       if (result.status >= 400 && result.status < 600) {
         throw new Error("Bad response from server");
       } else {
         setMessage("success");
+        reset("", {
+          keepValues: false,
+        });
       }
     } catch (error) {
       setMessage("failed");
@@ -50,111 +59,118 @@ const ContactForm = () => {
   };
 
   return (
-    <>
-      <div className="contact-area ptb-50">
-        <div className="container">
-          {message && (
-            <ToastContainer
-              position="top-right"
-              autoClose={5000}
-              hideProgressBar={false}
-              newestOnTop={false}
-              closeOnClick
-              rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
-            />
-          )}
-          <div className="section-title">
-            <h2>Get in Touch</h2>
-            <p>
-              The IT industry offers a sea of options, from platforms,
-              programming languages methodologies, technologies, tools, and
-              more.
-            </p>
-          </div>
+    <div className="contact-area pb-50">
+      <div className="container">
+        {message && (
+          <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+          />
+        )}
 
-          <div className="contact-form">
-            <form id="contactForm">
+        <div className="contact-form ptb-50">
+          <div className="form-items">
+            <h3>How Can We Help You ? </h3>
+            <p>Fill in the data below.</p>
+            <form>
               <div className="row">
                 <div className="col-lg-6 col-md-6 col-sm-6">
-                  <div className="form-group">
-                    <input
-                      type="text"
-                      name="name"
-                      className="form-control"
-                      id="name"
-                      placeholder="Enter Your Full Name"
-                      {...register("name", { required: "Name is required !" })}
-                    />
+                  <input
+                    type="text"
+                    name="name"
+                    className="form-control"
+                    id="name"
+                    placeholder="Enter Your Full Name"
+                    {...register("name", {
+                      required: "Name is required !",
+                    })}
+                  />
 
-                    {errors.name && <p>{errors.name.message}</p>}
-                  </div>
+                  {errors.name && <p>{errors.name.message}</p>}
+                </div>
+
+                <div className="col-lg-6 col-md-6 col-sm-6">
+                  <input
+                    type="email"
+                    name="email"
+                    className="form-control"
+                    id="email"
+                    placeholder="example@xyz.com"
+                    {...register("email", {
+                      required: "Email is required !",
+                      pattern: {
+                        value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
+                        message: "Invalid email address !",
+                      },
+                    })}
+                  />
+                  {errors.email && <p>{errors.email.message}</p>}
                 </div>
                 <div className="col-lg-6 col-md-6 col-sm-6">
-                  <div className="form-group">
-                    <input
-                      type="email"
-                      name="email"
-                      className="form-control"
-                      id="email"
-                      placeholder="support@theicpaglobal.com"
-                      {...register("email", {
-                        required: "Email is required !",
-                        pattern: {
-                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-                          message: "Invalid email address !",
-                        },
-                      })}
-                    />
-                    {errors.email && <p>{errors.email.message}</p>}
-                  </div>
+                  <input
+                    type="text"
+                    name="phone_number"
+                    className="form-control"
+                    id="phone_number"
+                    placeholder="Enter your phone number"
+                    {...register("mobile", {
+                      required: "Contact Number is required !",
+                      pattern: {
+                        value: /^((\+91?)|\+)?[7-9][0-9]{9}$/,
+                        message: "Invalid Mobile Number !",
+                      },
+                    })}
+                  />
+                  {errors.mobile && <p>{errors.mobile.message}</p>}
                 </div>
+
                 <div className="col-lg-6 col-md-6 col-sm-6">
-                  <div className="form-group">
-                    <input
-                      type="text"
-                      name="phone_number"
-                      className="form-control"
-                      id="phone_number"
-                      placeholder="Enter your phone number"
-                      {...register("mobile", {})}
-                    />
-                  </div>
-                </div>
-                <div className="col-lg-6 col-md-6 col-sm-6">
-                  <div className="form-group">
-                    <input
-                      type="text"
-                      name="msg_subject"
-                      className="form-control"
-                      id="msg_subject"
-                      placeholder="Enter your subject"
-                      {...register("msg_subject", {
-                        required: "Subject is required !",
-                      })}
-                    />
-                    {errors.msg_subject && <p>{errors.msg_subject.message}</p>}
-                  </div>
+                  <select className="form-select mt-3" {...register("type")}>
+                    <option value="Online Seller Courses">
+                      Online Courses
+                    </option>
+                    <option value="Products Query">Products Query</option>
+                    <option value="Online Seller Services">
+                      Online Seller Services
+                    </option>
+                    <option value="Others Query">Others Query</option>
+                  </select>
                 </div>
                 <div className="col-lg-12 col-md-12 col-sm-12">
-                  <div className="form-group">
-                    <textarea
-                      name="message"
-                      id="message"
-                      className="form-control"
-                      cols="30"
-                      rows="6"
-                      placeholder="Enter message..."
-                      {...register("message", {
-                        required: "Message is required !",
-                      })}
-                    ></textarea>
-                    {errors.message && <p>{errors.message.message}</p>}
-                  </div>
+                  <input
+                    type="text"
+                    name="msg_subject"
+                    className="form-control"
+                    id="msg_subject"
+                    placeholder="Enter your subject"
+                    {...register("msg_subject", {
+                      required: "Subject is required !",
+                    })}
+                  />
+                  {errors.msg_subject && <p>{errors.msg_subject.message}</p>}
                 </div>
                 <div className="col-lg-12 col-md-12 col-sm-12">
+                  <textarea
+                    name="message"
+                    id="message"
+                    className="form-control"
+                    cols="30"
+                    rows="6"
+                    placeholder="Enter message..."
+                    {...register("message", {
+                      required: "Message is required !",
+                    })}
+                  ></textarea>
+                  {errors.message && <p>{errors.message.message}</p>}
+                </div>
+                <div className="col-lg-12 col-md-12 col-sm-12 text-center">
                   <button
                     type="submit"
                     className="default-btn"
@@ -169,18 +185,17 @@ const ContactForm = () => {
         </div>
 
         <div className="maps">
-          {/* <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46660.669043361966!2d-76.17429939609431!3d43.03529129888566!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d9f3b8019f2991%3A0x58d5929e21a62e5!2sDinosaur%20Bar-B-Que!5e0!3m2!1sen!2sbd!4v1593527523138!5m2!1sen!2sbd"></iframe> */}
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3500.466813780782!2d77.17734651440828!3d28.67567938887911!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d03cd035888b9%3A0x5dca567f9bead6bd!2sICPA%20Global%20Consultants!5e0!3m2!1sen!2shk!4v1633373625467!5m2!1sen!2shk"
             width="600"
             height="450"
             style={{ border: 0 }}
-            allowfullscreen=""
+            allowFullScreen=""
             loading="lazy"
           ></iframe>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

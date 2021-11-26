@@ -1,13 +1,29 @@
 import React from "react";
+import Link from "next/link";
 
 const ContactInfo = () => {
   return (
     <>
+      <div className="page-title-area">
+        <div className="container">
+          <div className="page-title-content">
+            <ul>
+              <li>
+                <Link href="/">
+                  <a>Home</a>
+                </Link>
+              </li>
+              <li>
+                <a>Contact</a>
+              </li>
+            </ul>
+            <h4>Do you have any question ? Kindly call us or mail us ! </h4>
+          </div>
+        </div>
+      </div>
       <div className="contact-info-area pb-50">
         <div className="container">
           <div className="contact-info-inner">
-            {/* <h2>Have any question in mind please call or mail us</h2> */}
-
             <div className="row justify-content-center">
               <div className="col-lg-4 col-md-6 col-sm-6">
                 <div className="single-contact-info-box">

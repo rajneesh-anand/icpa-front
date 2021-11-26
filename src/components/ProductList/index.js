@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import useMasonry from "@/utils/useMasonry";
 import DataFilter from "@/components/DataFilter";
 import { slugify } from "../../utils/helper";
+import Link from "next/link";
 
 const ProductList = ({ data }) => {
   const { categories } = useMasonry(
@@ -42,7 +43,11 @@ const ProductList = ({ data }) => {
                 >
                   <div className="card h-100 shadow-sm">
                     <img
-                      src="https://source.unsplash.com/160x160/?food"
+                      src={
+                        item.image
+                          ? item.image
+                          : "https://source.unsplash.com/160x160/?food"
+                      }
                       className="card-img-top"
                       alt={item.name}
                     />
@@ -54,7 +59,7 @@ const ProductList = ({ data }) => {
                     <div className="card-body">
                       <div className="clearfix mb-3">
                         <span className="float-start price-hp">
-                          &#x20B9;12354.00
+                          &#x20B9; {item.price}
                         </span>{" "}
                         <span className="float-end">
                           <a className="text-muted small" href="#">
@@ -64,9 +69,11 @@ const ProductList = ({ data }) => {
                       </div>
                       <h5 className="card-title">{item.name}</h5>
                       <div className="text-center my-4">
-                        <a href="#" className="btn btn-warning">
-                          Check offer
-                        </a>
+                        <Link href="/contact">
+                          <a className="btn btn-warning">
+                            Contact Us to Sell Online
+                          </a>
+                        </Link>
                       </div>
                     </div>
                   </div>

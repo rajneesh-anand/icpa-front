@@ -17,7 +17,7 @@ const ContactPage = () => {
         canonical={`${process.env.PUBLIC_URL}/contact`}
       />
       <Header />
-      <IntroVideo />
+      {/* <IntroVideo /> */}
 
       <ContactInfo />
       <ContactForm />

@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-import BlogList from "@/components/Blog/blog-list";
-import FreeTrial from "@/components/FreeTrial";
 import Partner from "@/components/Partner";
 import Seo from "@/components/Seo";
 import Header from "@/layout/header";

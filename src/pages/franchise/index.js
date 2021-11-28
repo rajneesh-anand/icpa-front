@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import IntroVideo from "@/components/IntroVideo";
-import KeyFeatures from "@/components/KeyFeatures";
-import FreeTrial from "@/components/FreeTrial";
+
 import Partner from "@/components/Partner";
 import Seo from "@/components/Seo";
 import Header from "@/layout/header";

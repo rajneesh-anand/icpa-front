@@ -1,6 +1,6 @@
 import React from "react";
 import CourseDetails from "@/components/Course/course-details";
-import FreeTrial from "@/components/FreeTrial";
+import HomeContactPage from "@/components/Home/Contact";
 import Partner from "@/components/Partner";
 import Seo from "@/components/Seo";
 import Header from "@/layout/header";

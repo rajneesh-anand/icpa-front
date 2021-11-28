@@ -36,11 +36,11 @@ const ProductList = ({ data }) => {
               data.map((item) => (
                 <div
                   key={item.id}
-                  className={`col masonry-grid mb-30 ${item.category
+                  className={`col masonry-grid  ${item.category
                     .map((cat) => slugify(cat))
                     .join(" ")}`}
                 >
-                  <div className="card h-100 shadow-sm">
+                  <div className="card shadow-sm">
                     <img
                       src={
                         item.image
@@ -66,7 +66,10 @@ const ProductList = ({ data }) => {
                           </a>
                         </span>
                       </div>
-                      <h5 className="card-title">{item.name}</h5>
+                      <div className="text-center">
+                        <h5 className="card-title">{item.name}</h5>
+                      </div>
+
                       <div className="text-center my-4">
                         <Link href="/contact">
                           <a className="btn btn-warning">

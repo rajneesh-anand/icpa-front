@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="footer-area">
         <div className="container">
           <div className="row">
-            <div className="col-lg-3 col-md-6 col-sm-6">
+            <div className="col-lg-4 col-md-6 col-sm-6">
               <div className="single-footer-widget">
                 <Link href="/">
                   <a className="logo">
@@ -19,7 +19,7 @@ const Footer = () => {
 
                 <p>
                   Best solution for setting up an online business store on major
-                  e-commerce platforms i.e Amazon, Flipkart etc..
+                  e-commerce platforms i.e Amazon, Flipkart
                 </p>
 
                 <ul className="social-links">
@@ -52,7 +52,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="col-lg-2 col-md-3 col-4">
+            <div className="col-lg-3 col-md-2 col-4">
               <div className="single-footer-widget pl-2">
                 <h6>Useful Links</h6>
                 <ul className="links-list">
@@ -85,7 +85,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="col-lg-2 col-md-3 col-4">
+            <div className="col-lg-3 col-md-2 col-4">
               <div className="single-footer-widget">
                 <h6>Help &amp; Support</h6>
                 <ul className="links-list">
@@ -118,7 +118,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="col-lg-2 col-md-3 col-4">
+            <div className="col-lg-2 col-md-2 col-4">
               <div className="single-footer-widget">
                 <h6>Legal</h6>
                 <ul className="links-list">
@@ -151,7 +151,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className="col-lg-3 col-md-6 ">
+            {/* <div className="col-lg-3 col-md-6 ">
               <div className="single-footer-widget">
                 <h3>Newsletter</h3>
                 <p>
@@ -175,7 +175,7 @@ const Footer = () => {
                   </button>
                 </form>
               </div>
-            </div>
+            </div> */}
           </div>
 
           <div className="copyright-area">

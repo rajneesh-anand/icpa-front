@@ -1,6 +1,6 @@
 import React from "react";
 import IntroVideo from "@/components/IntroVideo";
-import FreeTrial from "@/components/FreeTrial";
+import HomeContactPage from "@/components/Home/Contact";
 import MembershipPlan from "@/components/MembershipPlan";
 import Partner from "@/components/Partner";
 import Seo from "@/components/Seo";
@@ -19,7 +19,7 @@ const MembershipPage = () => {
       <Header />
       <IntroVideo />
       <MembershipPlan />
-      <FreeTrial />
+      <HomeContactPage />
       <Partner />
       <Footer />
     </Layout>

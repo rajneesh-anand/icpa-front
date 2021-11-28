@@ -6,7 +6,13 @@ import Seo from "@/components/Seo";
 import Header from "@/layout/header";
 import Footer from "@/layout/footer";
 import Layout from "@/layout/index";
-
+import ClientFeedback from "@/components/Feedback";
+import HomeServicesPage from "@/components/Home/Services";
+import HomeCoursePage from "@/components/Home/Courses";
+import YoutubeLink from "@/components/Youtube";
+import HomeContactPage from "@/components/Home/Contact";
+import ProjectsPage from "@/components/Home/Projects";
+import AwardsPage from "@/components/Home/Awards";
 const HomePage = ({ banner }) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -26,15 +32,22 @@ const HomePage = ({ banner }) => {
       />
       <Header />
       <Banner data={banner} />
+      <HomeServicesPage />
+      <HomeCoursePage />
+      <ProjectsPage />
+      <AwardsPage />
       {/* <AboutBrief />
       <AppProgressStyle2 />
       <KeyFeatures />
       <MembershipPlan />
       <AppScreenshotsStyle2 />
-      <SoftwareIntegrationsTwo />
-      <ClientFeedbackStyle1 /> */}
+      <SoftwareIntegrationsTwo />*/}
 
+      <ClientFeedback />
+
+      <YoutubeLink />
       <Partner />
+      <HomeContactPage />
       <ModalForm show={show} handleClose={handleClose} />
       <Footer />
     </Layout>

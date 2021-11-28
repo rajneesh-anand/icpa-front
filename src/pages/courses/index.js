@@ -1,7 +1,7 @@
 import React from "react";
 import IntroVideo from "@/components/IntroVideo";
 import CourseList from "@/components/Course/course-list";
-import FreeTrial from "@/components/FreeTrial";
+import HomeContactPage from "@/components/Home/Contact";
 import Partner from "@/components/Partner";
 import Seo from "@/components/Seo";
 import Header from "@/layout/header";
@@ -21,7 +21,7 @@ const CourseListPage = ({ coursesData }) => {
       <Header />
       <IntroVideo />
       <CourseList data={courses} />
-      <FreeTrial />
+      <HomeContactPage />
       <Partner />
       <Footer />
     </Layout>

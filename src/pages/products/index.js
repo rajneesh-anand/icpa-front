@@ -3,7 +3,7 @@ import IntroVideo from "@/components/IntroVideo";
 import { usePaginatedData } from "@/utils/useRequest";
 import Loading from "@/components/Loading";
 import ProductsList from "@/components/ProductList";
-import FreeTrial from "@/components/FreeTrial";
+import HomeContactPage from "@/components/Home/Contact";
 import Partner from "@/components/Partner";
 import Seo from "@/components/Seo";
 import Header from "@/layout/header";
@@ -57,7 +57,7 @@ const ProductPage = () => {
           </div>
         </>
       )}
-      <FreeTrial />
+      <HomeContactPage />
       <YoutubeLink />
       <Partner />
       <Footer />

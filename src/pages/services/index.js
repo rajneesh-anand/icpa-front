@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import IntroVideo from "@/components/IntroVideo";
 import KeyFeatures from "@/components/KeyFeatures";
-import FreeTrial from "@/components/FreeTrial";
+import HomeContactPage from "@/components/Home/Contact";
 import Partner from "@/components/Partner";
 import Seo from "@/components/Seo";
 import Header from "@/layout/header";
@@ -68,7 +68,7 @@ const ServicePage = () => {
         </>
       )}
       <MembershipPlan />
-      <FreeTrial />
+      <HomeContactPage />
       <YoutubeLink />
       <Partner />
       <ModalForm show={show} handleClose={handleClose} />

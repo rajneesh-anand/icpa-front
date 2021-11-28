@@ -41,10 +41,12 @@ const PartnerPage = () => {
     <>
       <div className="partner-area ptb-50">
         <div className="container">
-          <div className="partner-title">
-            Services available for major online e-commerce platforms
+          <div className="section-title">
+            <span className="sub-title">
+              SERVICES AVAILABLE FOR ALL MAJOR ONLINE E-COMMERCE PLATFORMS
+            </span>
+            {/* <h2>Most Probably Included Best Features Ever</h2> */}
           </div>
-
           {display ? (
             <OwlCarousel
               className="partner-slides owl-carousel owl-theme"

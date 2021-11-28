@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
 
-const FreeTrialStyle2 = () => {
+const HomeContactPage = () => {
   const [message, setMessage] = useState();
   const {
     register,
@@ -57,7 +57,7 @@ const FreeTrialStyle2 = () => {
 
   return (
     <>
-      <div className="free-trial-area">
+      <div className="home-contact-area ptb-50 bg-F7F7FF">
         <div className="container">
           {message && (
             <ToastContainer
@@ -72,9 +72,13 @@ const FreeTrialStyle2 = () => {
               pauseOnHover
             />
           )}
-          <div className="free-trial-content bg-color">
-            {/* <span className="sub-title">Feel Free To Contact Us </span>
-            <h4>Send us your query ?</h4> */}
+          <div className="section-title">
+            <span className="sub-title">
+              Do you have any question ? Send us your query !{" "}
+            </span>
+            {/* <h2>Most Probably Included Best Features Ever</h2> */}
+          </div>
+          <div className="home-contact-form">
             <div className="row">
               <div className="col-lg-4 col-md-4 ">
                 <div>
@@ -242,4 +246,4 @@ const FreeTrialStyle2 = () => {
   );
 };
 
-export default FreeTrialStyle2;
+export default HomeContactPage;

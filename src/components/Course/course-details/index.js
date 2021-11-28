@@ -118,15 +118,9 @@ const CourseDetail = ({ data }) => {
               <div className="courses-details-desc">
                 <TabsComponent>
                   <TabList>
-                    <Tab>Overview</Tab>
                     <Tab>Curriculum</Tab>
+                    <Tab>Course Overview</Tab>
                   </TabList>
-                  <TabPanel>
-                    <div className="courses-overview">
-                      <h3>Course Description</h3>
-                      {htmr(data.details)}
-                    </div>
-                  </TabPanel>
                   <TabPanel>
                     <div className="courses-curriculum">
                       <h3>Course Videos</h3>
@@ -146,6 +140,12 @@ const CourseDetail = ({ data }) => {
                             </li>
                           ))}
                       </ul>
+                    </div>
+                  </TabPanel>
+                  <TabPanel>
+                    <div className="courses-overview">
+                      <h3>Course Description</h3>
+                      {htmr(data.details)}
                     </div>
                   </TabPanel>
                 </TabsComponent>
@@ -174,44 +174,90 @@ const CourseDetail = ({ data }) => {
                 </div>
                 <ul className="info">
                   <li className="price">
-                    <div className="d-flex justify-content-between align-items-center">
-                      <span>
-                        <i className="flaticon-tag"></i> Price
-                      </span>
-                      &#x20B9;{data.courseFee}
+                    <div className="d-flex ">
+                      <i className="fas fa-tags"></i>
+                      <h6
+                        style={{
+                          paddingLeft: 4,
+                        }}
+                      >
+                        Course Fee
+                      </h6>
+                      {data.discount > 0 ? (
+                        <div
+                          style={{ marginLeft: "auto", display: "inline-flex" }}
+                        >
+                          <h6
+                            style={{
+                              textDecoration: "line-through",
+                              paddingTop: 8,
+                              paddingRight: 4,
+                            }}
+                          >
+                            &#x20B9;{data.courseFee}
+                          </h6>
+                          <h3> &#x20B9;{data.saleFee}</h3>
+                        </div>
+                      ) : (
+                        <h6> &#x20B9;{data.courseFee}</h6>
+                      )}
                     </div>
                   </li>
 
-                  <li>
-                    <div className="d-flex justify-content-between align-items-center">
-                      <span>
-                        <i className="flaticon-time"></i> Duration
-                      </span>
-                      {data.duration}
+                  <li className="price">
+                    <div className="d-flex ">
+                      <i className="fas fa-clock"></i>
+                      <h6
+                        style={{
+                          paddingLeft: 4,
+                        }}
+                      >
+                        Duration
+                      </h6>
+                      <h5 style={{ marginLeft: "auto" }}>{data.duration}</h5>
                     </div>
                   </li>
-                  <li>
-                    <div className="d-flex justify-content-between align-items-center">
-                      <span>
-                        <i className="flaticon-distance-learning"></i> Lessons
-                      </span>
-                      {data.numberOfLectures}
+                  <li className="price">
+                    <div className="d-flex ">
+                      <i className="fas fa-play-circle"></i>
+                      <h6
+                        style={{
+                          paddingLeft: 4,
+                        }}
+                      >
+                        Lectures
+                      </h6>
+                      <h5 style={{ marginLeft: "auto" }}>
+                        {data.numberOfLectures}
+                      </h5>
                     </div>
                   </li>
-                  <li>
-                    <div className="d-flex justify-content-between align-items-center">
-                      <span>
-                        <i className="flaticon-web"></i> Enrolled Clients
-                      </span>
-                      {data.numberOfEnrollments}
+                  <li className="price">
+                    <div className="d-flex">
+                      <i className="fas fa-users"></i>
+                      <h6
+                        style={{
+                          paddingLeft: 4,
+                        }}
+                      >
+                        Enrolled Clients
+                      </h6>
+                      <h5 style={{ marginLeft: "auto" }}>
+                        {data.numberOfEnrollments} +
+                      </h5>
                     </div>
                   </li>
-                  <li>
-                    <div className="d-flex justify-content-between align-items-center">
-                      <span>
-                        <i className="flaticon-lock"></i> Access
-                      </span>
-                      Lifetime
+                  <li className="price">
+                    <div className="d-flex">
+                      <i className="fas fa-lock"></i>
+                      <h6
+                        style={{
+                          paddingLeft: 4,
+                        }}
+                      >
+                        Course Validity
+                      </h6>
+                      <h5 style={{ marginLeft: "auto" }}>{data.validity}</h5>
                     </div>
                   </li>
                 </ul>

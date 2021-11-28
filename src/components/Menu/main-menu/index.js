@@ -10,11 +10,6 @@ const MainMenu = () => {
             <a className="main-menu-link">Services &amp; Plans</a>
           </Link>
         </li>
-        {/* <li>
-          <Link href="/membership" activeClassName="active">
-            <a className="main-menu-link">Membership Plan</a>
-          </Link>
-        </li> */}
 
         <li>
           <Link href="/courses" activeClassName="active">
@@ -44,26 +39,17 @@ const MainMenu = () => {
           </Link>
         </li>
         <li>
-          <Link
-            href={process.env.PUBLIC_URL + "/telephonic-consultation"}
-            activeClassName="active"
-          >
+          <Link href="/telephonic-consultation" activeClassName="active">
             <a className="main-menu-link">Telephonic Consultancy</a>
           </Link>
         </li>
         <li>
-          <Link
-            href={process.env.PUBLIC_URL + "/blogs"}
-            activeClassName="active"
-          >
+          <Link href="/blogs" activeClassName="active">
             <a className="main-menu-link">E-Commerce News Updates</a>
           </Link>
         </li>
         <li>
-          <Link
-            href={process.env.PUBLIC_URL + "/courses/youtube"}
-            activeClassName="active"
-          >
+          <Link href="/courses/youtube" activeClassName="active">
             <a className="main-menu-link">Free Youtube Videos</a>
           </Link>
         </li>

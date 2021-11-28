@@ -24,14 +24,14 @@ const KeyFeatures = ({ data }) => {
                     <div
                       className="service-card-img"
                       style={{
-                        backgroundImage:
-                          "url(https://images.unsplash.com/photo-1491374812364-00028bbe7d2f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a22e4862c36c552e726815949fbcb41a&auto=format&fit=crop&w=500&q=60)",
+                        backgroundImage: item.image
+                          ? item.image
+                          : `url(https://images.unsplash.com/photo-1491374812364-00028bbe7d2f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a22e4862c36c552e726815949fbcb41a&auto=format&fit=crop&w=500&q=60)`,
                       }}
                     >
                       <div className="overlay">
                         <div className="overlay-content">
-                          {/* <Link href={`/service/${item.slug}`}> */}
-                          <Link href="#">
+                          <Link href="/contact">
                             <a>Contact Us </a>
                           </Link>
                         </div>
@@ -39,21 +39,22 @@ const KeyFeatures = ({ data }) => {
                     </div>
 
                     <div className="service-card-content">
-                      <div
-                        style={{
-                          position: "relative",
-                          display: "flex",
-                          padding: "8px 16px",
-                        }}
-                      >
-                        {item.serviceFee > 0 ? (
-                          <h2> &#x20B9;{item.serviceFee}</h2>
+                      <div className="price-group text-center">
+                        {item.discount > 0 ? (
+                          <div className="d-flex justify-content-center">
+                            <h6>&#x20B9;{item.serviceFee}</h6>
+                            <h4> &#x20B9;{item.saleFee}</h4>
+                          </div>
+                        ) : item.saleFee == 0 ? (
+                          <p>Free</p>
                         ) : (
-                          <h2>Free</h2>
+                          <h4> &#x20B9; {item.saleFee}</h4>
                         )}
-
-                        <span className="popular">{item.popularity}</span>
                       </div>
+                      {item.popularity && (
+                        <span className="popular">{item.popularity}</span>
+                      )}
+
                       <div className="text-center serviceName">
                         <h4>{item.serviceName}</h4>
                       </div>

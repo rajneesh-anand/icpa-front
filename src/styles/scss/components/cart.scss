@@ -4,28 +4,28 @@
         margin-top: 16px;
         margin-bottom: 16px;
         button {
-            border: 1px solid #A8DADC;
-            // color: #464242;
+            border: 1px solid #A8DADC;    
+            color: #234f69;     
             font-size: 12.5px;
-            font-weight: 600;
-            // border-radius: 30px;           
+            font-weight: 600;                    
             padding: 8px 15px;
             text-transform: uppercase;
             position: relative;          
             margin-right: 4px;
-            width: 208px;
+            margin-bottom: 4px;           
             letter-spacing: 0.08em;
             font-family: 'Roboto Condensed';
 
             @include transition(0.3s);
+          
 
             &:last-child {
               margin-right: 0;
             }           
                      
             &:hover {
-                border: 2px solid #457B9D ;
-                color: #234f69;
+                border: 1px solid #103044 ;
+             
                    
             }
             &.is-checked{
@@ -36,7 +36,6 @@
             span {
                 position: relative;
                 display: inline-block;
-                // padding: 5px 20px;
                 &.filter-text {
                     text-transform: uppercase;
                     line-height: 1.58;              
@@ -54,56 +53,7 @@
             
         }
     }
-    
-
-
-
-    // .data-filter-menu {
-    //     margin-bottom: 15px;
-    //     @media #{$lg-device} {
-    //       margin-bottom: 15px;
-    //     }
-    //     @media #{$md-device} {
-    //       margin-bottom: 15px;
-    //     }
-    //     button {
-    //       background-color: transparent;
-    //       border: none;
-    //       box-shadow: none;
-    //       color: $black;
-    //       font-size: 16px;
-    //       letter-spacing: 0;
-    //       line-height: 1.1;
-    //       margin-right: 38.74px;
-    //       padding: 0;
-    //       position: relative;
-    //       @include transition(0.3s);
-    //       @media #{$sm-device} {
-    //         margin-right: 25px;
-    //       }
-    //       &:last-child {
-    //         margin-right: 0;
-    //       }
-    //       &:after {
-    //         background-color: #535353;
-    //         bottom: 0;
-    //         content: "";
-    //         height: 1px;
-    //         position: absolute;
-    //         right: 0;
-    //         width: 0;
-    //         @include transition(0.3s);
-    //       }
-    //       &.active,
-    //       &:hover {
-    //         &:after {
-    //           left: 0;
-    //           width: 100%;
-    //         }
-    //       }
-    //     }
-    // }
-
+  
 .card {
     background: #fff;
     box-shadow: 0 6px 10px rgba(0, 0, 0, .08), 0 0 6px rgba(0, 0, 0, .05);

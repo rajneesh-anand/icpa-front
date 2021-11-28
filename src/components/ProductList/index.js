@@ -26,12 +26,8 @@ const ProductList = ({ data }) => {
       </div>
       <div className="products-area pb-50 ">
         <div className="container">
-          <div className="row">
-            <div className="col-12">
-              <div className="messonry-button text-center mb-8">
-                <DataFilter categories={categories} />
-              </div>
-            </div>
+          <div className="messonry-button text-center mb-8">
+            <DataFilter categories={categories} />
           </div>
 
           <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 portfolio-list mb-n30">

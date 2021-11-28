@@ -14,7 +14,7 @@ const SideMenu = ({ show, handleClose }) => {
       show={show}
       onHide={handleClose}
       placement="start"
-      style={{ width: "272px" }}
+      style={{ width: "320px" }}
     >
       <OffcanvasHeader>
         <OffcanvasTitle style={{ width: "100%" }}>
@@ -22,15 +22,6 @@ const SideMenu = ({ show, handleClose }) => {
             <>
               <div className="text-center">
                 <i className="fas fa-user-circle" style={{ fontSize: 56 }}></i>
-                {/* <img
-                  src="/images/fav.png"
-                  className="rounded-circle"
-                  style={{
-                    width: "60px",
-                    borderRadius: "50%",
-                    // marginRight: 5,
-                  }}
-                /> */}
               </div>
 
               <div className="text-center">
@@ -40,27 +31,23 @@ const SideMenu = ({ show, handleClose }) => {
               </div>
             </>
           ) : (
-            <>
+            <div className="sidebar-nav-top">
               <div className="text-center">
-                <img
-                  src={session.user.image}
-                  className="rounded-circle"
-                  style={{
-                    width: "60px",
-                    marginRight: 5,
-                  }}
-                />
+                <img src={session.user.image} className="rounded-circle" />
               </div>
-              <div className="text-center" style={{ fontSize: 14 }}>
+              <div className="text-center">
                 <p>{session.user.name}</p>
               </div>
               <div className="text-center">
                 <Link href="/user/account">
                   <a>My Account</a>
                 </Link>
+                <Link href="/user/course">
+                  <a>My Course</a>
+                </Link>
                 <button onClick={() => signOut()}>Sign Out</button>
               </div>
-            </>
+            </div>
           )}
         </OffcanvasTitle>
       </OffcanvasHeader>
@@ -71,17 +58,7 @@ const SideMenu = ({ show, handleClose }) => {
             <ul className="aside-menu">
               <li>
                 <Link href="/services" activeClassName="active">
-                  <a className="main-menu-link">Services</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/membership" activeClassName="active">
-                  <a className="main-menu-link">Membership Plan</a>
-                </Link>
-              </li>
-              <li>
-                <Link href="/products" activeClassName="active">
-                  <a className="main-menu-link">Products Suggestion</a>
+                  <a className="main-menu-link">Services &amp; Plans</a>
                 </Link>
               </li>
               <li>
@@ -90,44 +67,48 @@ const SideMenu = ({ show, handleClose }) => {
                 </Link>
                 <ul className="sub-menu">
                   <li>
-                    <Link
-                      className="sub-menu-link"
-                      href="/course/amazon-seller"
-                    >
+                    <Link className="sub-menu-link" href="/courses/amazon">
                       <a> Amazon Seller Course</a>
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      className="sub-menu-link"
-                      href="/course/flipkart-seller"
-                    >
+                    <Link className="sub-menu-link" href="/courses/flipkart">
                       <a> Flipkart Seller Course</a>
                     </Link>
                   </li>
                 </ul>
               </li>
               <li>
-                <Link
-                  href={process.env.PUBLIC_URL + "/telephonic-consultation"}
-                  activeClassName="active"
-                >
+                <Link href="/products" activeClassName="active">
+                  <a className="main-menu-link">Products Suggestion</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/franchise" activeClassName="active">
+                  <a className="main-menu-link">Franchise Opportunity</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/telephonic-consultation" activeClassName="active">
                   <a className="main-menu-link">Telephonic Consultancy</a>
                 </Link>
               </li>
               <li>
-                <Link
-                  href={process.env.PUBLIC_URL + "/blogs"}
-                  activeClassName="active"
-                >
+                <Link href="/blogs" activeClassName="active">
                   <a className="main-menu-link">E-Commerce News Updates</a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/courses/youtube" activeClassName="active">
+                  <a className="main-menu-link">Free Youtube Videos</a>
                 </Link>
               </li>
             </ul>
           </nav>
         </div>
-        <div className="aside-footer-area text-center ptb-50">
+        <div className="aside-footer-area ">
           <ul className="social-links">
+            <li>Follow Us</li>
             <li>
               <a href="https://www.facebook.com/" target="_blank">
                 <i className="ri-facebook-fill"></i>

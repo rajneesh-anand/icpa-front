@@ -27,6 +27,10 @@ class MyDocument extends Document {
               `,
             }}
           />
+          <link
+            href="https://kit-pro.fontawesome.com/releases/v5.13.0/css/pro.min.css"
+            rel="stylesheet"
+          />
 
           <link
             rel="stylesheet"

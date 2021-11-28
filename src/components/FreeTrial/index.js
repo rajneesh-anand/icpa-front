@@ -77,7 +77,7 @@ const FreeTrialStyle2 = () => {
             <h4>Send us your query ?</h4> */}
             <div className="row">
               <div className="col-lg-4 col-md-4 ">
-                <div data-aos="fade-down">
+                <div>
                   <div className="contact-title">
                     <div className="icon bg1">
                       <i className="ri-customer-service-2-line"></i>

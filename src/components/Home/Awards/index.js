@@ -38,25 +38,16 @@ const AwardsPage = () => {
             className="mySwiper screenshots-swiper-slides"
           >
             <SwiperSlide>
-              <img src="/images/screenshots/screen1.png" alt="screenshots" />
+              <img src="/images/screenshots/award1.jpg" alt="award-1" />
             </SwiperSlide>
             <SwiperSlide>
-              <img src="/images/screenshots/screen1.png" alt="screenshots" />
+              <img src="/images/screenshots/award2.jpg" alt="award-2" />
             </SwiperSlide>
             <SwiperSlide>
-              <img src="/images/screenshots/screen1.png" alt="screenshots" />
+              <img src="/images/screenshots/award3.jpg" alt="award-3" />
             </SwiperSlide>
             <SwiperSlide>
-              <img src="/images/screenshots/screen1.png" alt="screenshots" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="/images/screenshots/screen1.png" alt="screenshots" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="/images/screenshots/screen1.png" alt="screenshots" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="/images/screenshots/screen1.png" alt="screenshots" />
+              <img src="/images/screenshots/awards4.jpg" alt="award-4" />
             </SwiperSlide>
           </Swiper>
         </div>

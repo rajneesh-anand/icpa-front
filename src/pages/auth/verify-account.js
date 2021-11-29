@@ -38,12 +38,8 @@ export default function AccountverifyPage() {
             </svg>
             <div style={{ marginTop: 16 }}>
               <h4 style={{ color: "green" }}>
-                We have sent a verification link to your registered email
-                address
+                We have sent a login link to your registered email address !
               </h4>
-              <h6 style={{ color: "green" }}>
-                Login to your email address and verify.
-              </h6>
             </div>
           </div>
         </div>

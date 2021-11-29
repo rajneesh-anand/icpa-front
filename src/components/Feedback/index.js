@@ -1,5 +1,6 @@
 import React from "react";
 import dynamic from "next/dynamic";
+import htmr from "htmr";
 const OwlCarousel = dynamic(import("react-owl-carousel3"));
 
 const options = {
@@ -35,9 +36,14 @@ const options = {
 
 const ClientFeedback = () => {
   const [display, setDisplay] = React.useState(false);
+  const [comments, setComments] = React.useState();
 
-  React.useEffect(() => {
+  React.useEffect(async () => {
     setDisplay(true);
+
+    const res = await fetch(`${process.env.PUBLIC_URL}/api/testinomial`);
+    const result = await res.json();
+    setComments(result.data);
   }, []);
 
   return (
@@ -51,126 +57,45 @@ const ClientFeedback = () => {
             </h6>
           </div>
 
-          {display ? (
-            <OwlCarousel
-              className="feedback-slides owl-carousel owl-theme"
-              {...options}
-            >
-              <div className="single-feedback-box">
-                <div className="client-info">
-                  <div className="d-flex align-items-center">
-                    <img src="/images/user/user1.jpg" alt="user" />
-                    <div className="title">
-                      <h3>Deanna Hodges</h3>
-                      <span>Spotify Developer</span>
+          {display &&
+            (comments && comments.length > 0 ? (
+              <OwlCarousel
+                className="feedback-slides owl-carousel owl-theme"
+                {...options}
+              >
+                {comments.map((item, index) => (
+                  <div key={item.id} className="single-feedback-box">
+                    <div className="client-info">
+                      <div className="d-flex align-items-center">
+                        <img
+                          src={
+                            item.image ? item.image : "/images/user/default.svg"
+                          }
+                          alt={item.name}
+                        />
+                        <div className="title">
+                          <h3>{item.name}</h3>
+                          <span>{item.company}</span>
+                        </div>
+                      </div>
+                    </div>
+                    {htmr(item.description)}
+                    <div className="rating d-flex align-items-center justify-content-between">
+                      <h5>{item.location}</h5>
+                      <div>
+                        <i className="ri-star-fill"></i>
+                        <i className="ri-star-fill"></i>
+                        <i className="ri-star-fill"></i>
+                        <i className="ri-star-fill"></i>
+                        <i className="ri-star-fill"></i>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <p>
-                  "Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type."
-                </p>
-                <div className="rating d-flex align-items-center justify-content-between">
-                  <h5>Theme Customization</h5>
-                  <div>
-                    <i className="ri-star-fill"></i>
-                    <i className="ri-star-fill"></i>
-                    <i className="ri-star-fill"></i>
-                    <i className="ri-star-fill"></i>
-                    <i className="ri-star-fill"></i>
-                  </div>
-                </div>
-              </div>
-
-              <div className="single-feedback-box">
-                <div className="client-info">
-                  <div className="d-flex align-items-center">
-                    <img src="/images/user/user2.jpg" alt="user" />
-                    <div className="title">
-                      <h3>Londynn Vargas</h3>
-                      <span>PHP Developer</span>
-                    </div>
-                  </div>
-                </div>
-                <p>
-                  "Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type."
-                </p>
-                <div className="rating d-flex align-items-center justify-content-between">
-                  <h5>Customer Support</h5>
-                  <div>
-                    <i className="ri-star-fill"></i>
-                    <i className="ri-star-fill"></i>
-                    <i className="ri-star-fill"></i>
-                    <i className="ri-star-fill"></i>
-                    <i className="ri-star-fill"></i>
-                  </div>
-                </div>
-              </div>
-
-              <div className="single-feedback-box">
-                <div className="client-info">
-                  <div className="d-flex align-items-center">
-                    <img src="/images/user/user3.jpg" alt="user" />
-                    <div className="title">
-                      <h3>James Andy</h3>
-                      <span>Moodle Developer</span>
-                    </div>
-                  </div>
-                </div>
-                <p>
-                  "Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type."
-                </p>
-                <div className="rating d-flex align-items-center justify-content-between">
-                  <h5>Responsive Design</h5>
-                  <div>
-                    <i className="ri-star-fill"></i>
-                    <i className="ri-star-fill"></i>
-                    <i className="ri-star-fill"></i>
-                    <i className="ri-star-fill"></i>
-                    <i className="ri-star-line"></i>
-                  </div>
-                </div>
-              </div>
-
-              <div className="single-feedback-box">
-                <div className="client-info">
-                  <div className="d-flex align-items-center">
-                    <img src="/images/user/user4.jpg" alt="user" />
-                    <div className="title">
-                      <h3>David Warner</h3>
-                      <span>Python Developer</span>
-                    </div>
-                  </div>
-                </div>
-                <p>
-                  "Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type."
-                </p>
-                <div className="rating d-flex align-items-center justify-content-between">
-                  <h5>Design Quality</h5>
-                  <div>
-                    <i className="ri-star-fill"></i>
-                    <i className="ri-star-fill"></i>
-                    <i className="ri-star-fill"></i>
-                    <i className="ri-star-fill"></i>
-                    <i className="ri-star-half-line"></i>
-                  </div>
-                </div>
-              </div>
-            </OwlCarousel>
-          ) : (
-            ""
-          )}
+                ))}
+              </OwlCarousel>
+            ) : (
+              ""
+            ))}
         </div>
       </div>
     </>

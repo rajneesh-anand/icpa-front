@@ -80,7 +80,7 @@ export default async function handler(req, res) {
           name: name,
           email: email,
           orderType: type,
-          course: { connect: { courseName: course } },
+          course: course ? { connect: { courseName: course } } : undefined,
           paymentStatus: "Pending",
         },
       });

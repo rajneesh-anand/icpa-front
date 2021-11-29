@@ -10,6 +10,7 @@ export const MessageBox = styled.div`
   align-items: center;
   flex-direction: column;
   text-align: center;
+  height: 60vh;
 `;
 
 export default function VerifyErrorPage() {
@@ -24,7 +25,7 @@ export default function VerifyErrorPage() {
       <div className="container">
         <div className="row">
           <MessageBox>
-            <h4>Your verification link expired</h4>
+            <h4 style={{ color: "red" }}>Your verification link expired !</h4>
           </MessageBox>
         </div>
       </div>

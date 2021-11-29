@@ -72,7 +72,8 @@ export default function ModalForm({ show, handleClose }) {
               ></i>
               <span>Fill up the form</span>
               <h6>
-                Get free of cost updates of e-commerce (Amazon,Flipkart etc.){" "}
+                Get free of cost update for E-Commerce seller( amazon, flipkart,
+                meesho, shopsy )
               </h6>
             </div>
             <div className="card-body">

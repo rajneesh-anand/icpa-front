@@ -451,7 +451,7 @@ Blog Area CSS
       line-height: 1.5;
       margin-bottom: 0;
       font-size: 14.5px;
-
+      min-height: 72px;
       a {
         transition: background-size 0.25s cubic-bezier(0.785, 0.135, 0.15, 0.86)
           0s;
@@ -496,7 +496,7 @@ Blog Area CSS
     text-align: center;
     margin-top: 8px;
     padding-top: 8px;
-    border-top: 1px dashed #ddd;
+    border-top: 2px solid gold;
   }
 }
 

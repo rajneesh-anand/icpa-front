@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import Link from "next/link";
 const PaymentStatus = ({ data }) => {
   console.log(data);
   return (
@@ -32,14 +32,19 @@ const PaymentStatus = ({ data }) => {
                       </g>
                     </svg>
 
-                    <div>
-                      <h6>Payment done !</h6>
+                    <div className="text-center pt-2 pb-2">
+                      <h6>Thank you for purchasing our service</h6>
                     </div>
-                    <h6>Our Business team will contact you shortly</h6>
+                    <h6>Our Business team will contact you shortly !</h6>
+                    <div className="text-center pt-2">
+                      <Link href="/">
+                        <a className="default-btn-sm">Explore More</a>
+                      </Link>
+                    </div>
                   </div>
                 </>
               ) : (
-                <div data-aos="zoom-in">
+                <div className="payment-danger">
                   <i className="ri-close-line"></i>
                   <h6>{data.RESPMSG}</h6>
                 </div>

@@ -6,6 +6,7 @@ import Footer from "@/layout/footer";
 import Layout from "@/layout/index";
 import parse from "urlencoded-body-parser";
 import PaymentStatus from "@/components/PaymentStatus";
+import prisma from "@/libs/prisma";
 
 export default function PaymentStatusPage({ status }) {
   console.log(status);

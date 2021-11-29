@@ -271,6 +271,15 @@
     color: #462929;
     font-weight: 600 !important;
   }
+  .btn-list {
+    display: flex;
+    justify-content: center;
+    padding-top: 8px;
+    margin-bottom: 16px;
+    .plan-btn {
+      padding: 0px 8px;
+    }
+  }
   .view-more-box {
     text-align: center;
     margin-top: 20px;

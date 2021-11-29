@@ -43,17 +43,18 @@ const Header = () => {
               <div className="col-lg-6 col-md-6 col-12 text-center">
                 <ul className="top-contact-info">
                   <li>
-                    <i className="ri-phone-fill"></i> <span>+91-789945454</span>
+                    <i className="ri-phone-fill"></i>{" "}
+                    <span>+91-8810436602</span>
                   </li>
                   <li>
                     {" "}
                     <i className="ri-whatsapp-fill"></i>
-                    <span>+91-789945454</span>
+                    <span>+91-8810436602</span>
                   </li>
                   <li>
                     {" "}
                     <i className="ri-mail-fill"></i>{" "}
-                    <span>support@theicpaglobal.com</span>
+                    <span>theicpaglobal@gmail.com</span>
                   </li>
                 </ul>
                 <p></p>

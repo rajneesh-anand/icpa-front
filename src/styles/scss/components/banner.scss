@@ -155,7 +155,18 @@
     color: green;
   }
   h6 {
-    color: red;
+    color: #198754;
+    font-size: 24px;
+    font-family: "Roboto Condensed";
+    font-weight: 500 !important;
+  }
+  .payment-danger {
+    h6 {
+      color: red;
+      font-size: 24px;
+      font-family: "Roboto Condensed";
+      font-weight: 500 !important;
+    }
   }
 }
 
@@ -481,10 +492,10 @@
       }
     }
 
-    & a {
-      text-decoration: none;
-      color: #202927;
-    }
+    // & a {
+    //   text-decoration: none;
+    //   color: #202927;
+    // }
 
     & h2 {
       border: none;

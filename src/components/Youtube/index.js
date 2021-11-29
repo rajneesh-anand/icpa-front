@@ -9,7 +9,7 @@ const YoutubeLink = () => {
           <div className="youtube-btn">
             <a
               target="_blank"
-              href="https://www.youtube.com/watch?v=SlOM0otAiCM&list=PLgWbknddpHMYwjA3Kcdh4wzQkrWGIVDFs"
+              href="https://www.youtube.com/channel/UC0fQiGRmQuOjj_o_FoAH05A"
               rel="noopener noreferrer"
             >
               <img
@@ -22,7 +22,7 @@ const YoutubeLink = () => {
           <div className="youtube-link">
             <a
               target="_blank"
-              href="https://www.youtube.com/watch?v=SlOM0otAiCM&list=PLgWbknddpHMYwjA3Kcdh4wzQkrWGIVDFs"
+              href="https://www.youtube.com/channel/UC0fQiGRmQuOjj_o_FoAH05A"
               rel="noopener noreferrer"
             >
               Join / Subscribe our Youtube channel for Amazon / Flipkart Seller

@@ -17,7 +17,12 @@ const BlogList = ({ data }) => {
                   <div className="image">
                     <Link href={`/blog/${item.slug}`}>
                       <a className="d-block">
-                        <img src={item.image} alt="blog" />
+                        <img
+                          src={
+                            item.image ? item.image : "/images/blog-default.svg"
+                          }
+                          alt={item.title}
+                        />
                       </a>
                     </Link>
                     <Link href="/blog-grid">

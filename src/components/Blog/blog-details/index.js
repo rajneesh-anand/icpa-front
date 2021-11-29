@@ -8,7 +8,7 @@ const BlogDetails = ({ data }) => {
     return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
   };
   return (
-    <div className="blog-details-area ptb-100">
+    <div className="blog-details-area pt-2">
       <div className="container">
         <div className="row">
           <div className="col-lg-12 col-md-12">
@@ -46,7 +46,7 @@ const BlogDetails = ({ data }) => {
                     <img src={data.author.image} alt="user" />
                     <div className="title">
                       <span className="name">
-                        By <small>{data.author.name}</small>
+                        Posted By : {data.author.name}
                       </span>
                       {/* <span className="date">March 17, 2021</span> */}
                     </div>

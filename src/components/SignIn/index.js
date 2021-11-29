@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { signIn } from "next-auth/client";
+import Link from "next/link";
 
 export default function SignInModal({ csrfToken }) {
   const {
@@ -92,67 +93,15 @@ export default function SignInModal({ csrfToken }) {
             <div className="signin-conditions">
               <p>
                 By Login, you agree to ICPA Global Consultants
-                <a
-                  href={process.env.PUBLIC_URL + "/termsofservices"}
-                  target="_blank"
-                >
-                  {" "}
-                  Terms of service{" "}
-                </a>
+                <Link href="/terms-service">
+                  <a target="_blank"> Terms of service </a>
+                </Link>
                 and
-                <a
-                  href={process.env.PUBLIC_URL + "/privacypolicy"}
-                  target="_blank"
-                >
-                  {" "}
-                  Privacy policy
-                </a>
+                <Link href="/privacy">
+                  <a target="_blank"> Privacy policy</a>
+                </Link>
               </p>
             </div>
-            {/* <div className="social-links">
-              <ul className="d-flex align-items-center justify-content-center">
-                <li>
-                  <span>Follow Us On:</span>
-                </li>
-                <li>
-                  <a
-                    href="https://www.facebook.com/"
-                    className="facebook"
-                    target="_blank"
-                  >
-                    <i className="ri-facebook-fill"></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://twitter.com/"
-                    className="twitter"
-                    target="_blank"
-                  >
-                    <i className="ri-twitter-fill"></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.linkedin.com/"
-                    className="linkedin"
-                    target="_blank"
-                  >
-                    <i className="ri-linkedin-fill"></i>
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.instagram.com/"
-                    className="instagram"
-                    target="_blank"
-                  >
-                    <i className="ri-instagram-line"></i>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          */}
           </div>
         </div>
       </div>

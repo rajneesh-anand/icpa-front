@@ -30,7 +30,6 @@ const MembershipPlan = () => {
   useEffect(async () => {
     const res = await fetch(`${process.env.API_URL}/upload/plan`);
     const data = await res.json();
-    console.log(data);
     setMembershipData(data);
   }, []);
   const handlePayment = async (e) => {

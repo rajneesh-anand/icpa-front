@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
       {children}
       <GoTop scrollStepInPx="100" delayInMs="10.50" />
       <WhatsAppWidget
-        phoneNumber="917011898821"
+        phoneNumber="918810436602"
         companyName="ICPA Global Consultants"
         message="What can we do for you?"
       />

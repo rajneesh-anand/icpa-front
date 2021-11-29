@@ -86,14 +86,14 @@ const HomeContactPage = () => {
                     <div className="icon bg1">
                       <i className="ri-customer-service-2-line"></i>
                     </div>
-                    <p>+91-9874521369</p>
+                    <a href="tel:+918810436602">(+91) 8810436602</a>
                   </div>
                   <div className="contact-title">
                     <div className="icon bg2">
                       <i className="ri-mail-send-line"></i>
                     </div>
-                    <a href="mailto:hello@texap.com">
-                      support@theicpaglobal.com
+                    <a href="mailto:theicpaglobal@gmail.com">
+                      theicpaglobal@gmail.com
                     </a>
                   </div>
 
@@ -101,7 +101,7 @@ const HomeContactPage = () => {
                     <div className="icon bg3">
                       <i className="ri-whatsapp-line"></i>
                     </div>
-                    <p>+91-9874521369</p>
+                    <a href="tel:+918810436602">(+91) 8810436602</a>
                   </div>
                 </div>
               </div>

@@ -186,6 +186,22 @@ Features Area CSS
 .features-area {
   position: relative;
   z-index: 1;
+  .serviceName {
+    h6 {
+      font-family: "Inter";
+      font-weight: 500;
+      padding-top: 16px;
+    }
+  }
+  .btn-list {
+    display: flex;
+    justify-content: center;
+    padding-top: 8px;
+    margin-bottom: 16px;
+    .plan-btn {
+      padding: 0px 8px;
+    }
+  }
 }
 .single-features-box {
   transition: var(--transition);

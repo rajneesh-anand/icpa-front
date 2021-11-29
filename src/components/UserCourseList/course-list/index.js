@@ -13,7 +13,12 @@ const UserCourseList = ({ data }) => {
                   <div className="course-image">
                     <Link href={`/course/${item.slug}`}>
                       <a className="d-block image">
-                        <img src={item.images} alt={item.courseName} />
+                        <img
+                          src={
+                            item.image ? item.image : "/images/blog-default.svg"
+                          }
+                          alt={item.courseName}
+                        />
                       </a>
                     </Link>
                   </div>

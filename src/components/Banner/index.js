@@ -42,14 +42,11 @@ function BannerPage({ data }) {
         {...swiperOption}
       >
         {data &&
-          data.map(
-            (item, index) =>
-              index > 0 && (
-                <SwiperSlide key={index}>
-                  <Intro data={item} />
-                </SwiperSlide>
-              )
-          )}
+          data.map((item, index) => (
+            <SwiperSlide key={index}>
+              <Intro data={item} />
+            </SwiperSlide>
+          ))}
         <div className="swiper-button-prev">
           <i className="icofont-arrow-left" ref={prevRef}></i>
         </div>

@@ -110,7 +110,10 @@ const CourseDetail = ({ data }) => {
 
       <div className="courses-details-area pb-100">
         <div className="courses-details-image">
-          <img src="/images/courses/course-01.jpg" alt="course-thumb" />
+          <img
+            src={data.image ? data.image : "/images/courses/course-01.jpg"}
+            alt="course-thumb"
+          />
         </div>
         <div className="container">
           <div className="row">

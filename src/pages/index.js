@@ -36,13 +36,6 @@ const HomePage = ({ banner }) => {
       <HomeCoursePage />
       <ProjectsPage />
       <AwardsPage />
-      {/* <AboutBrief />
-      <AppProgressStyle2 />
-      <KeyFeatures />
-      <MembershipPlan />
-      <AppScreenshotsStyle2 />
-      <SoftwareIntegrationsTwo />*/}
-
       <ClientFeedback />
 
       <YoutubeLink />

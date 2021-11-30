@@ -14,15 +14,13 @@ export default async function handler(req, res) {
         },
       });
 
-      console.log(`orders ---- > ${orders}`);
-
       let newArray = orders.map((el) => el.courseId);
       let courseIdList = newArray.filter((x) => x).join(",");
 
       const result = await prisma.$queryRaw(
         `select * from "Courses" where id in (${courseIdList})`
       );
-      console.log(`results ---- > ${results}`);
+
       res.status(200).json({
         data: result,
       });

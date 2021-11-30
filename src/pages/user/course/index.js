@@ -6,6 +6,7 @@ import Header from "@/layout/header";
 import Footer from "@/layout/footer";
 import Layout from "@/layout/index";
 import UserCourseList from "@/components/UserCourseList/course-list";
+import prisma from "@/libs/prisma";
 
 const UserCoursePage = ({ courseList }) => {
   // console.log(courseList);
@@ -13,7 +14,7 @@ const UserCoursePage = ({ courseList }) => {
     <Layout>
       <Seo
         title="My Course"
-        description="This is couse"
+        description="This is course page"
         canonical={`${process.env.PUBLIC_URL}/user/course`}
       />
       <Header />

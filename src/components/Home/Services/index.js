@@ -26,7 +26,7 @@ const HomeServicesPage = () => {
     txnToken: "",
   });
   useEffect(async () => {
-    const res = await fetch(`${process.env.PUBLIC_URL}/api/services`);
+    const res = await fetch("/api/services");
     const result = await res.json();
     console.log(result.data);
     setServices(result.data);

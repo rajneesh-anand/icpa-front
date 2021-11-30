@@ -4,7 +4,7 @@ import Link from "next/link";
 const HomeCoursePage = () => {
   const [courses, setCourses] = useState();
   useEffect(async () => {
-    const res = await fetch(`${process.env.PUBLIC_URL}/api/courselist`);
+    const res = await fetch("/api/courselist");
     const result = await res.json();
     setCourses(result.data);
   }, []);

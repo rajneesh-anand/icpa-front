@@ -41,7 +41,7 @@ const ClientFeedback = () => {
   React.useEffect(async () => {
     setDisplay(true);
 
-    const res = await fetch(`${process.env.PUBLIC_URL}/api/testinomial`);
+    const res = await fetch("/api/testinomial");
     const result = await res.json();
     setComments(result.data);
   }, []);

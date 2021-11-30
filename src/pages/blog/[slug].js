@@ -11,7 +11,7 @@ const SingleBlogPage = ({ result }) => {
     <Layout>
       <Seo
         title={`${result.title}`}
-        description="Amazon Flipkart Other E-Commerce Seller Platforms News and Updates"
+        description={`${result.description}`}
         canonical={`${process.env.PUBLIC_URL}/blog/${result.slug}`}
       />
       <Header />

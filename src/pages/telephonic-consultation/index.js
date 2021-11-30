@@ -23,8 +23,8 @@ const TelephonicPage = ({ faqData }) => {
   return (
     <Layout>
       <Seo
-        title="ICPA Global Consultants | Telephonic Consultation"
-        description="Amazon Flipkart Other E-Commerce Platform Seller | Telephonic Consultation"
+        title="Telephonic Consultation | ICPA Global Consultants"
+        description="Get Telephonic Consultation | ICPA Global Consultant is one stop solution for setting up an online store on various platforms i.e ( Amazon , Flipkart , Meesho , Shopsy ). We have years of expertise in online seller consultancy"
         canonical={`${process.env.PUBLIC_URL}/telephonic-consultation`}
       />
       <Header />

@@ -13,7 +13,7 @@ const YoutubeListPage = ({ data }) => {
     <Layout>
       <Seo
         title="Youtube Course | ICPA Global Consultants"
-        description="Watch our free videos on Youtube"
+        description="Our Free Youtube Course | ICPA Global Consultant is one stop solution for setting up an online store on various platforms i.e ( Amazon , Flipkart , Meesho , Shopsy ). We have years of expertise in online seller consultancy"
         canonical={`${process.env.PUBLIC_URL}/courses/youtube`}
       />
       <Header />

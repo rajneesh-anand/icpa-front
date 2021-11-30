@@ -13,7 +13,7 @@ const ContactPage = () => {
     <Layout>
       <Seo
         title="Contact Us | ICPA Global Consultants"
-        description="This is home"
+        description="Contact Us | ICPA Global Consultant is one stop solution for setting up an online store on various platforms i.e ( Amazon , Flipkart , Meesho , Shopsy ). We have years of expertise in online seller consultancy"
         canonical={`${process.env.PUBLIC_URL}/contact`}
       />
       <Header />

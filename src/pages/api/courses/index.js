@@ -4,27 +4,33 @@ import { getSession } from "next-auth/client";
 export default async function handler(req, res) {
   try {
     const session = await getSession({ req });
-    const orders = await prisma.orders.findMany({
-      where: {
-        email: session?.user?.email,
-      },
-      select: {
-        courseId: true,
-      },
-    });
+    if (session) {
+      const orders = await prisma.orders.findMany({
+        where: {
+          email: session.user.email,
+        },
+        select: {
+          courseId: true,
+        },
+      });
 
-    let newArray = orders.map((el) => el.courseId);
-    let courseIdList = newArray.filter((x) => x).join(",");
+      console.log(`orders ---- > ${orders}`);
 
-    const result = await prisma.$queryRaw(
-      `select * from "Courses" where id in (${courseIdList})`
-    );
+      let newArray = orders.map((el) => el.courseId);
+      let courseIdList = newArray.filter((x) => x).join(",");
 
-    console.log(result);
-    res.status(200).json({
-      data: result,
-      msg: "success",
-    });
+      const result = await prisma.$queryRaw(
+        `select * from "Courses" where id in (${courseIdList})`
+      );
+      console.log(`results ---- > ${results}`);
+      res.status(200).json({
+        data: result,
+      });
+    } else {
+      res.status(200).json({
+        data: null,
+      });
+    }
   } catch (error) {
     console.log(error);
     res.status(500).send(error);

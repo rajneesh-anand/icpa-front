@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from "next/link";
 import Seo from "@/components/Seo";
 import { getSession, useSession } from "next-auth/client";
 import Header from "@/layout/header";
@@ -7,7 +8,7 @@ import Layout from "@/layout/index";
 import UserCourseList from "@/components/UserCourseList/course-list";
 
 const UserCoursePage = ({ courseList }) => {
-  console.log(courseList);
+  // console.log(courseList);
   return (
     <Layout>
       <Seo
@@ -19,7 +20,22 @@ const UserCoursePage = ({ courseList }) => {
       {courseList ? (
         <UserCourseList data={courseList} />
       ) : (
-        <h6>You have not enrolled for any course</h6>
+        <div className="container">
+          <div className="text-center ptb-100">
+            <h4
+              style={{
+                color: "darkred",
+                fontFamily: "Poppins",
+                fontWeight: 400,
+              }}
+            >
+              You have not enrolled for any course !
+            </h4>
+            <Link href="/courses">
+              <a className="default-btn-sm">Buy Course</a>
+            </Link>
+          </div>
+        </div>
       )}
       <Footer />
     </Layout>
@@ -41,30 +57,8 @@ export async function getServerSideProps(context) {
 
   const result = await fetch(`${process.env.PUBLIC_URL}/api/courses`);
   const data = await result.json();
-  console.log(data.data);
 
   return {
-    props: { courseList: data.data },
+    props: { courseList: data.dada ? data.data : null },
   };
-
-  // const orders = await prisma.orders.findMany({
-  //   where: {
-  //     email: session.user.email,
-  //   },
-  //   select: {
-  //     courseId: true,
-  //   },
-  // });
-  // let newArray = orders.map((el) => el.courseId);
-  // let courseIdList = newArray.filter((x) => x).join(",");
-
-  // const result = await prisma.$queryRaw(
-  //   `select * from "Courses" where id in (${courseIdList})`
-  // );
-
-  // console.log(result);
-
-  // return {
-  //   props: { courseList: result.length != 0 ? JSON.stringify(result) : null },
-  // };
 }

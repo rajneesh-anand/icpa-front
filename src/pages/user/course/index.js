@@ -53,12 +53,31 @@ export async function getServerSideProps(context) {
         permanent: false,
       },
     };
+  } else {
+    const orders = await prisma.orders.findMany({
+      where: {
+        email: session.user.email,
+      },
+      select: {
+        courseId: true,
+      },
+    });
+    console.log(orders);
+
+    if (orders.length > 0) {
+      let newArray = orders.map((el) => el.courseId);
+      let courseIdList = newArray.filter((x) => x).join(",");
+      const result = await prisma.$queryRaw(
+        `select * from "Courses" where id in (${courseIdList})`
+      );
+      console.log(result);
+      return {
+        props: { courseList: result },
+      };
+    } else {
+      return {
+        props: { courseList: null },
+      };
+    }
   }
-
-  const result = await fetch(`${process.env.PUBLIC_URL}/api/courses`);
-  const data = await result.json();
-
-  return {
-    props: { courseList: data.dada ? data.data : null },
-  };
 }

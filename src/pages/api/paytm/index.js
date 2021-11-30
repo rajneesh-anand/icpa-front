@@ -18,7 +18,7 @@ export default async function handler(req, res) {
     mid: PaytmConfig.PaytmConfig.mid,
     websiteName: PaytmConfig.PaytmConfig.website,
     orderId: orderId,
-    callbackUrl: "https://icpa-mu.vercel.app/payment/status",
+    callbackUrl: "https://icpaglobalconsultant.com/payment/status",
     txnAmount: {
       value: amount,
       currency: "INR",

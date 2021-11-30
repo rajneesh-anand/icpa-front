@@ -7,7 +7,7 @@ const apiUrl = isProd
   : "http://localhost:8080/api";
 
 const publicUrl = isProd
-  ? "https://icpa-mu.vercel.app"
+  ? "https://icpaglobalconsultant.com"
   : "http://localhost:3000";
 
 module.exports = withImages({

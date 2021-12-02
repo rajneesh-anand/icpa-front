@@ -295,3 +295,55 @@
     height: 280px;
   }
 }
+
+.single-blog-box {
+  transition: var(--transition);
+  background: #f4f8fc;
+  margin-bottom: 25px;
+  padding: 30px;
+
+  .client-info {
+    margin-bottom: 20px;
+
+    img {
+      height: 60px;
+      border-radius: 50%;
+      width: 60px !important;
+    }
+    .title {
+      margin-left: 15px;
+
+      h3 {
+        font-size: 18px;
+        margin-bottom: 7px;
+      }
+      span {
+        display: block;
+        font-size: 14px;
+        color: var(--mainColor);
+      }
+    }
+  }
+  p {
+    font-size: 16px;
+  }
+  .rating {
+    margin-top: 25px;
+
+    h5 {
+      margin-bottom: 0;
+      font-size: 16px;
+    }
+    div {
+      i {
+        line-height: 1;
+        color: #ffca40;
+        margin-left: 2px;
+      }
+    }
+  }
+  &:hover {
+    background-color: var(--whiteColor);
+    box-shadow: 5px 15px 20px rgba(38, 42, 55, 0.05);
+  }
+}

@@ -7,6 +7,7 @@ import Header from "@/layout/header";
 import Footer from "@/layout/footer";
 import Layout from "@/layout/index";
 import ClientFeedback from "@/components/Feedback";
+import HomeBlogPage from "@/components/HomeBlogPage";
 import HomeServicesPage from "@/components/Home/Services";
 import HomeCoursePage from "@/components/Home/Courses";
 import YoutubeLink from "@/components/Youtube";
@@ -38,7 +39,7 @@ const HomePage = ({ banner }) => {
       <ProjectsPage />
       <AwardsPage />
       <ClientFeedback />
-
+      <HomeBlogPage />
       <YoutubeLink />
       <Partner />
       <HomeContactPage />

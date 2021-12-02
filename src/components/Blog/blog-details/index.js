@@ -1,11 +1,13 @@
 import React from "react";
 import Link from "next/link";
 import htmr from "htmr";
+import moment from "moment";
 
 const BlogDetails = ({ data }) => {
   const fomatDate = (date_value) => {
-    let date = new Date(date_value);
-    return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+    // let date = new Date(date_value);
+    // return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+    return moment(date_value).format("Do MMMM YYYY");
   };
   return (
     <div className="blog-details-area pt-2">
@@ -13,12 +15,12 @@ const BlogDetails = ({ data }) => {
         <div className="row">
           <div className="col-lg-12 col-md-12">
             <div className="blog-details-desc">
-              <div className="article-image">
+              {/* <div className="article-image">
                 <Link href="/">
                   <a className="tag">Branding</a>
                 </Link>
                 <img src={data.image} alt="blog-details" />
-              </div>
+              </div> */}
 
               <div className="article-content">
                 <div className="entry-meta">

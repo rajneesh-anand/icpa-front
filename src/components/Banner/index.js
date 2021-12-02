@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, {
   Navigation,
@@ -44,7 +45,15 @@ function BannerPage({ data }) {
         {data &&
           data.map((item, index) => (
             <SwiperSlide key={index}>
-              <Intro data={item} />
+              <div className="banner-image-container">
+                <Image
+                  src={item.url}
+                  alt={`banner-${index}`}
+                  width="100%"
+                  height="100%"
+                  layout="fill"
+                />
+              </div>
             </SwiperSlide>
           ))}
         <div className="swiper-button-prev">

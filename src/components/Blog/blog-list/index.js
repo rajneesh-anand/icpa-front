@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import moment from "moment";
 
 const BlogList = ({ data }) => {
   const fomatDate = (date_value) => {
-    let date = new Date(date_value);
-    return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+    // let date = new Date(date_value);
+    // return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+    return moment(date_value).format("Do MMMM YYYY");
   };
   return (
     <div className="blog-area ptb-50">
@@ -25,9 +27,9 @@ const BlogList = ({ data }) => {
                         />
                       </a>
                     </Link>
-                    <Link href="/blog-grid">
+                    {/* <Link href="/blog-grid">
                       <a className="tag">Branding</a>
-                    </Link>
+                    </Link> */}
                   </div>
                   <div className="content">
                     <ul className="meta">

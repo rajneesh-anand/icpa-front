@@ -16,6 +16,7 @@ import AwardsPage from "@/components/Home/Awards";
 const HomePage = ({ banner }) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
+  console.log(banner);
 
   useEffect(() => {
     setTimeout(() => {

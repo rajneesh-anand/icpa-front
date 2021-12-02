@@ -157,10 +157,7 @@ const CourseDetail = ({ data }) => {
             <div className="col-lg-4 col-md-12">
               <div className="courses-details-info">
                 <div className="image">
-                  <img
-                    src="https://res.cloudinary.com/dev-empty/image/upload/v1611677211/dgfkptphczegy0k4ou9t.jpg"
-                    alt="The Complete React Js &amp; Redux Course - Build Modern Web Apps"
-                  />
+                  <img src={chapters && chapters[0].poster} alt="poster" />
                   <div
                     className="link-btn popup-youtube"
                     onClick={(e) => {
@@ -314,9 +311,9 @@ const CourseDetail = ({ data }) => {
       </div>
 
       <ModalVideo
-        channel="youtube"
+        channel="custom"
+        url={chapters && chapters[0].video}
         isOpen={!isOpen}
-        videoId="bk7McNUjWgw"
         onClose={() => setIsOpen(!isOpen)}
       />
       <Hiddenfrom formData={paytmData} />

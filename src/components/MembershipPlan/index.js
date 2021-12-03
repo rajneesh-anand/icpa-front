@@ -38,7 +38,8 @@ const MembershipPlan = () => {
       const orderData = {
         name: session.user.name,
         email: session.user.email,
-        amount: "50",
+        amount: membershipData.fee,
+        type: "Membership Gold Plan",
       };
 
       const response = await fetch("/api/paytm", {

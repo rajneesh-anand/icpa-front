@@ -3,10 +3,9 @@ import Link from "next/link";
 import { useSession } from "next-auth/client";
 
 const Hiddenfrom = ({ formData }) => {
-  console.log(formData);
   return (
     <form
-      id="redFrom"
+      id="mForm"
       method="post"
       action={`https://securegw-stage.paytm.in/theia/api/v1/showPaymentPage?mid=${formData.mid}&orderId=${formData.orderId}`}
       name="paytm"
@@ -50,13 +49,13 @@ const MembershipPlan = () => {
         body: JSON.stringify(orderData),
       });
       const result = await response.json();
-
+      console.log(result);
       setPaytmData({
         mid: "zWEMTK89662017572077",
         orderId: result.orderId,
         txnToken: result.txnToken,
       });
-      document.getElementById("redFrom").submit();
+      document.getElementById("mForm").submit();
     } catch (err) {
       console.log(err);
     }

@@ -25,7 +25,6 @@ const Hiddenfrom = ({ formData }) => {
 };
 
 const CourseDetail = ({ data }) => {
-  console.log(data);
   const [chapters, setChapters] = useState();
   const [session, loading] = useSession();
   const [isOpen, setIsOpen] = React.useState(true);

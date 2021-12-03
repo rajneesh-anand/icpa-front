@@ -16,6 +16,7 @@
     "@prisma/client": "^2.30.0",
     "@sendgrid/mail": "^7.4.6",
     "aos": "^2.3.4",
+    "cors": "^2.8.5",
     "htmr": "^1.0.1",
     "imagesloaded": "^4.1.4",
     "moment": "^2.29.1",

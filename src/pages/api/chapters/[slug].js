@@ -1,9 +1,27 @@
 import prisma from "@/libs/prisma";
 
+import Cors from "cors";
+
+// Initializing the cors middleware
+const cors = Cors({
+  methods: ["GET", "HEAD"],
+});
+
+function runMiddleware(req, res, fn) {
+  return new Promise((resolve, reject) => {
+    fn(req, res, (result) => {
+      if (result instanceof Error) {
+        return reject(result);
+      }
+
+      return resolve(result);
+    });
+  });
+}
+
 export default async function handler(req, res) {
   const slug = req.query.slug;
-  console.log(`object`);
-  console.log(slug);
+  await runMiddleware(req, res, cors);
   try {
     const course = await prisma.coursemedia.findMany({
       where: {

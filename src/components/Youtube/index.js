@@ -25,8 +25,8 @@ const YoutubeLink = () => {
               href="https://www.youtube.com/channel/UC0fQiGRmQuOjj_o_FoAH05A"
               rel="noopener noreferrer"
             >
-              Join / Subscribe our Youtube channel for Amazon / Flipkart Seller
-              videos &amp; latest updates{" "}
+              Join / Subscribe our Youtube channel for Amazon Flipkart Meesho
+              Shopsy Shopify etc &amp; Latest Business Videos
             </a>
           </div>
         </div>

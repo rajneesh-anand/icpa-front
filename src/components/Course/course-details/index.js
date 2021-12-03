@@ -101,7 +101,10 @@ const CourseDetail = ({ data }) => {
               <i className="bx bxs-star"></i>
               <i className="bx bxs-star"></i>
               <div className="rating-count">
-                <span>( {data.numberOfRatings} Ratings )</span>
+                <span style={{ color: "white" }}>
+                  {" "}
+                  {data.ratings} ( {data.numberOfRatings} Ratings )
+                </span>
               </div>
             </div>
           </div>

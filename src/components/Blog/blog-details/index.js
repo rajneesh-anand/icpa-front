@@ -15,12 +15,12 @@ const BlogDetails = ({ data }) => {
         <div className="row">
           <div className="col-lg-12 col-md-12">
             <div className="blog-details-desc">
-              {/* <div className="article-image">
-                <Link href="/">
+              <div className="article-image">
+                {/* <Link href="/">
                   <a className="tag">Branding</a>
-                </Link>
+                </Link> */}
                 <img src={data.image} alt="blog-details" />
-              </div> */}
+              </div>
 
               <div className="article-content">
                 <div className="entry-meta">
@@ -45,7 +45,14 @@ const BlogDetails = ({ data }) => {
               <div className="article-footer">
                 <div className="post-author-meta">
                   <div className="d-flex align-items-center">
-                    <img src={data.author.image} alt="user" />
+                    <img
+                      src={
+                        data.author.image
+                          ? data.author.image
+                          : "/images/user/default.svg"
+                      }
+                      alt="user"
+                    />
                     <div className="title">
                       <span className="name">
                         Posted By : {data.author.name}

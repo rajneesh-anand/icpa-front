@@ -56,7 +56,7 @@ const ProductList = ({ data }) => {
                       </div>
                     )}
                     <div className="card-body">
-                      <div className="clearfix mb-3">
+                      {/* <div className="clearfix mb-3">
                         <span className="float-start price-hp">
                           &#x20B9; {item.price}
                         </span>{" "}
@@ -65,7 +65,7 @@ const ProductList = ({ data }) => {
                             Reviews
                           </a>
                         </span>
-                      </div>
+                      </div> */}
                       <div className="text-center">
                         <h5 className="card-title">{item.name}</h5>
                       </div>

@@ -180,6 +180,7 @@ const KeyFeatures = ({ data }) => {
                           <div className="d-flex justify-content-center">
                             <h6>&#x20B9;{item.serviceFee}</h6>
                             <h4> &#x20B9;{item.saleFee}</h4>
+                            {item.popularity && <span>{item.popularity}</span>}
                           </div>
                         ) : item.saleFee == 0 ? (
                           <p>Free</p>
@@ -187,8 +188,11 @@ const KeyFeatures = ({ data }) => {
                           <h4> &#x20B9; {item.saleFee}</h4>
                         )}
                       </div>
-                      {item.popularity && (
-                        <span className="popular">{item.popularity}</span>
+
+                      {item.discount && (
+                        <div className="discount">
+                          <h6>- {Math.round(item.discount)} % Off</h6>
+                        </div>
                       )}
 
                       <div className="text-center serviceName">

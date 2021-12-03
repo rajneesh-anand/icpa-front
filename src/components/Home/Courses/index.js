@@ -40,13 +40,19 @@ const HomeCoursePage = () => {
                       <div className="single-pricing-table">
                         <div className="title">
                           <h3>{courses[0].courseName}</h3>
-                          {/* <p>Powerful & awesome elements</p> */}
+
                           <div className="rating">
-                            <i className="ri-star-fill"></i>
-                            <i className="ri-star-fill"></i>
-                            <i className="ri-star-fill"></i>
-                            <i className="ri-star-fill"></i>
-                            <i className="ri-star-fill"></i>
+                            <i className="bx bxs-star"></i>
+                            <i className="bx bxs-star"></i>
+                            <i className="bx bxs-star"></i>
+                            <i className="bx bxs-star"></i>
+                            <i className="bx bxs-star"></i>
+                            <div className="rating-count">
+                              <span>
+                                {courses[0].ratings} ({" "}
+                                {courses[0].numberOfRatings} Ratings )
+                              </span>
+                            </div>
                           </div>
                         </div>
                         <span className="popular">Most Popular</span>
@@ -91,13 +97,19 @@ const HomeCoursePage = () => {
                       <div className="single-pricing-table">
                         <div className="title">
                           <h3>{courses[1].courseName}</h3>
-                          {/* <p>Powerful & awesome elements</p> */}
+
                           <div className="rating">
-                            <i className="ri-star-fill"></i>
-                            <i className="ri-star-fill"></i>
-                            <i className="ri-star-fill"></i>
-                            <i className="ri-star-fill"></i>
-                            <i className="ri-star-fill"></i>
+                            <i className="bx bxs-star"></i>
+                            <i className="bx bxs-star"></i>
+                            <i className="bx bxs-star"></i>
+                            <i className="bx bxs-star"></i>
+                            <i className="bx bxs-star"></i>
+                            <div className="rating-count">
+                              <span>
+                                {courses[1].ratings} ({" "}
+                                {courses[1].numberOfRatings} Ratings )
+                              </span>
+                            </div>
                           </div>
                         </div>
                         <span className="popular">Most Popular</span>

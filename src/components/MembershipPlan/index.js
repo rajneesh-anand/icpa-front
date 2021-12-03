@@ -63,7 +63,7 @@ const MembershipPlan = () => {
 
   return (
     <>
-      <div className="page-title-area">
+      <div className="page-title-area mt-4">
         <div className="container">
           <div className="page-title-content">
             <h4>JOIN OUR GOLD MEMBERSHIP PLAN </h4>
@@ -92,8 +92,8 @@ const MembershipPlan = () => {
               </div>
               {membershipData && (
                 <p>
-                  Rating {membershipData.rating} ({" "}
-                  {membershipData.number_of_ratings} )
+                  {membershipData.rating} ( {membershipData.number_of_ratings}{" "}
+                  Ratings )
                 </p>
               )}
             </div>
@@ -101,7 +101,7 @@ const MembershipPlan = () => {
 
           <div className="row align-items-center justify-content-center">
             <div className="col-lg-12 col-md-12 col-sm-12">
-              <div className="single-pricing-box active" data-aos="zoom-in">
+              <div className="single-pricing-box active">
                 {membershipData && (
                   <span className="popular">{membershipData.tag}</span>
                 )}

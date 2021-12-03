@@ -63,7 +63,7 @@ const HomeBlogPage = () => {
 
   return (
     <>
-      <div className="feedback-area ptb-100">
+      <div className="feedback-area ptb-50">
         <div className="container">
           <div className="section-title">
             <span className="sub-title">READ OUR LATEST BLOGS & NEWS </span>

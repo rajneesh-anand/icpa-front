@@ -13,7 +13,9 @@ import HomeCoursePage from "@/components/Home/Courses";
 import YoutubeLink from "@/components/Youtube";
 import HomeContactPage from "@/components/Home/Contact";
 import ProjectsPage from "@/components/Home/Projects";
-import AwardsPage from "@/components/Home/Awards";
+// import AwardsPage from "@/components/Home/Awards";
+import MembershipPage from "@/components/MembershipPlan";
+
 const HomePage = ({ banner }) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
@@ -36,8 +38,9 @@ const HomePage = ({ banner }) => {
       <Banner data={banner} />
       <HomeServicesPage />
       <HomeCoursePage />
+      <MembershipPage />
       <ProjectsPage />
-      <AwardsPage />
+      {/* <AwardsPage /> */}
       <ClientFeedback />
       <HomeBlogPage />
       <YoutubeLink />

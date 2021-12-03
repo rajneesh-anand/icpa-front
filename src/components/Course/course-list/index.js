@@ -62,10 +62,22 @@ const CourseList = ({ data }) => {
                       </a>
                     </Link>
                   </div>
-                  <div className="course-content">
+                  <div className="course-content text-center">
                     <Link href={`/course/${item.slug}`}>
                       <a>{item.courseName}</a>
                     </Link>
+                    <div className="rating">
+                      <i className="bx bxs-star"></i>
+                      <i className="bx bxs-star"></i>
+                      <i className="bx bxs-star"></i>
+                      <i className="bx bxs-star"></i>
+                      <i className="bx bxs-star"></i>
+                      <div className="rating-count">
+                        <span>
+                          {item.ratings} ( {item.numberOfRatings} Ratings )
+                        </span>
+                      </div>
+                    </div>
                     <p>{item.description}</p>
                   </div>
                   {/* <div className="price shadow">&#x20B9;{item.courseFee}</div> */}

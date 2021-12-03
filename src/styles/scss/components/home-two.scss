@@ -640,7 +640,7 @@ Pricing Area CSS
       list-style-type: none;
       margin: {
         top: 35px;
-        bottom: 0;
+        bottom: 30;
       }
       li {
         margin-bottom: 12px;
@@ -685,7 +685,7 @@ Pricing Area CSS
       display: flex;
       justify-content: center;
       padding-top: 8px;
-      border-top: 1px dashed hsla(0, 0%, 80%, 0.5);
+      border-top: 2px solid goldenrod;
       .plan-btn {
         padding: 0px 8px;
         i {

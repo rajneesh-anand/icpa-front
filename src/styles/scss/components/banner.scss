@@ -452,17 +452,14 @@
     transition: all 0.2s ease;
 
     & span {
-      display: block;
       background: var(--gradientColor);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       color: white;
-      padding: 4px 8px;
+      padding-left: 30px;
       font-weight: 600;
       letter-spacing: 0.06em;
-
       font-family: "Roboto";
-      position: absolute;
-      right: 14px;
-      top: 8px;
     }
     .price-group {
       margin-top: 6px;

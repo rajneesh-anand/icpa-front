@@ -44,7 +44,7 @@ const CourseDetail = ({ data }) => {
       `${process.env.PUBLIC_URL}/api/chapters/${data.slug}`
     );
     const result = await res.json();
-    console.log(result);
+    // console.log(result);
     setChapters(result.data);
   }, []);
 

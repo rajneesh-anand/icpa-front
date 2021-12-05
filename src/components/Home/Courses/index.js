@@ -4,9 +4,18 @@ import Link from "next/link";
 const HomeCoursePage = () => {
   const [courses, setCourses] = useState();
   useEffect(async () => {
+    let isMounted = true;
     const res = await fetch("/api/courselist");
     const result = await res.json();
-    setCourses(result.data);
+
+    const coursesData = result.data.length > 0 ? result.data : null;
+    if (isMounted) {
+      setCourses(coursesData);
+    }
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
   const truncate = (str, no_words) => {
     return str.split(" ").splice(0, no_words).join(" ") + "  ..... ";

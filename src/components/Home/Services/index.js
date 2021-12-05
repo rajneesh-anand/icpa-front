@@ -26,10 +26,18 @@ const HomeServicesPage = () => {
     txnToken: "",
   });
   useEffect(async () => {
+    let isMounted = true;
     const res = await fetch("/api/services");
     const result = await res.json();
-    console.log(result.data);
-    setServices(result.data);
+
+    const servicesData = result.data.length > 0 ? result.data : null;
+    if (isMounted) {
+      setServices(servicesData);
+    }
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
   const truncate = (str, no_words) => {
     return str.split(" ").splice(0, no_words).join(" ") + "  ..... ";

@@ -27,7 +27,6 @@ export async function getServerSideProps({ params, req, res }) {
   const { slug } = params;
   const result = await fetch(`${process.env.PUBLIC_URL}/api/course/${slug}`);
   const data = await result.json();
-  console.log(data);
 
   return {
     props: { course: data ? data.data : null },

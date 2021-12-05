@@ -4,7 +4,6 @@ import { flatDeep } from "./helper";
 
 const useMasonry = (data, masonryListWrap, masonryGrid, btnWrap, btn) => {
   const [categories, setCategories] = useState([]);
-  console.log(data);
 
   useEffect(() => {
     const mixCategories = data.map((item) => {

@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useSession } from "next-auth/client";
 import Link from "next/link";
-import { Tab, Tabs as TabsComponent, TabList, TabPanel } from "react-tabs";
 import dynamic from "next/dynamic";
+import { Tab, Tabs as TabsComponent, TabList, TabPanel } from "react-tabs";
 import htmr from "htmr";
+
 const ModalVideo = dynamic(() => import("react-modal-video"), {
   ssr: false,
 });
 
 const Hiddenfrom = ({ formData }) => {
-  console.log(formData);
   return (
     <form
       id="redFrom"
@@ -39,12 +39,19 @@ const CourseDetail = ({ data }) => {
   };
 
   useEffect(async () => {
+    let isMounted = true;
     const res = await fetch(
       `${process.env.PUBLIC_URL}/api/chapters/${data.slug}`
     );
     const result = await res.json();
-    console.log(result);
-    setChapters(result.data);
+    const chaptersData = result.data.length > 0 ? result.data : null;
+    if (isMounted) {
+      setChapters(chaptersData);
+    }
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   const handlePayment = async (e) => {
@@ -66,7 +73,7 @@ const CourseDetail = ({ data }) => {
         body: JSON.stringify(orderData),
       });
       const result = await response.json();
-      console.log(result);
+
       setPaytmData({
         mid: "zWEMTK89662017572077",
         orderId: result.orderId,
@@ -159,7 +166,12 @@ const CourseDetail = ({ data }) => {
             <div className="col-lg-4 col-md-12">
               <div className="courses-details-info">
                 <div className="image">
-                  <img src={chapters && chapters[0].poster} alt="poster" />
+                  <img
+                    src={
+                      chapters ? chapters[0].poster : "/images/blog-default.svg"
+                    }
+                    alt="poster"
+                  />
                   <div
                     className="link-btn popup-youtube"
                     onClick={(e) => {
@@ -167,7 +179,7 @@ const CourseDetail = ({ data }) => {
                       openModal();
                     }}
                   >
-                    <i className="ri-play-line"></i>
+                    {/* <i className="ri-play-line"></i> */}
                   </div>
                   <div className="content">
                     <i className="ri-play-line"></i>
@@ -311,13 +323,14 @@ const CourseDetail = ({ data }) => {
           </div>
         </div>
       </div>
-
-      <ModalVideo
-        channel="custom"
-        url={chapters && chapters[0].video}
-        isOpen={!isOpen}
-        onClose={() => setIsOpen(!isOpen)}
-      />
+      {chapters && (
+        <ModalVideo
+          channel="custom"
+          url={chapters && chapters[0].video}
+          isOpen={!isOpen}
+          onClose={() => setIsOpen(!isOpen)}
+        />
+      )}
       <Hiddenfrom formData={paytmData} />
     </>
   );

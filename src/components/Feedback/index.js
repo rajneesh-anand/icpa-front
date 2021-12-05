@@ -41,9 +41,18 @@ const ClientFeedback = () => {
   React.useEffect(async () => {
     setDisplay(true);
 
+    let isMounted = true;
     const res = await fetch("/api/testinomial");
     const result = await res.json();
-    setComments(result.data);
+
+    const testnomialData = result.data.length > 0 ? result.data : null;
+    if (isMounted) {
+      setComments(testnomialData);
+    }
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   return (

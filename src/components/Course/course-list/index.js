@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
 const CourseList = ({ data }) => {
-  console.log(data);
   const [count, setCount] = useState("0");
-
   const [number, setNumber] = useState("0");
   const duration = "3";
 

@@ -26,7 +26,6 @@
       -moz-transition: 0.5s;
       -webkit-transition: 0.5s;
       transition: 0.5s;
-
       background-color: transparent;
       position: relative;
       border-radius: 5px;
@@ -34,6 +33,10 @@
       font-weight: 600;
       text-transform: uppercase;
 
+      @media #{$xs-device} {
+        font-size: 11px;
+        margin-right: 20px;
+      }
       &:before {
         content: "";
         bottom: 1px;
@@ -482,6 +485,12 @@
   padding: 12px 12px 50px;
   margin-left: 15px;
   margin-top: -248px;
+
+  @media #{$xs-device} {
+    margin-top: 0px;
+    margin-left: 0px;
+    background-color: white;
+  }
 
   .image {
     text-align: center;

@@ -19,7 +19,7 @@ import MembershipPage from "@/components/MembershipPlan";
 const HomePage = ({ banner }) => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
-  console.log(banner);
+  // console.log(banner);
 
   useEffect(() => {
     setTimeout(() => {

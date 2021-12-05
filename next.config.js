@@ -11,7 +11,7 @@ const publicUrl = isProd
   : "http://localhost:3000";
 
 module.exports = withImages({
-  target: "experimental-serverless-trace",
+  webpack5: false,
   env: {
     PUBLIC_URL: publicUrl,
     API_URL: apiUrl,

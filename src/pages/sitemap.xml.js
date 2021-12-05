@@ -18,24 +18,24 @@ export const getServerSideProps = async ({ res }) => {
 
   const baseUrl = {
     development: "http://localhost:3000",
-    production: "https://icpaglobalconsultant.com",
+    production: "https://www.icpaglobalconsultant.com",
   }[process.env.NODE_ENV];
 
   const staticPages = [
-    "https://icpaglobalconsultant.com/about",
-    "https://icpaglobalconsultant.com/contact",
-    "https://icpaglobalconsultant.com/services",
-    "https://icpaglobalconsultant.com/courses",
-    "https://icpaglobalconsultant.com/course/amazon",
-    "https://icpaglobalconsultant.com/course/flipkart",
-    "https://icpaglobalconsultant.com/products",
-    "https://icpaglobalconsultant.com/franchise",
-    "https://icpaglobalconsultant.com/telephonic-consultation",
-    "https://icpaglobalconsultant.com/blogs",
-    "https://icpaglobalconsultant.com/courses/youtube",
-    "https://icpaglobalconsultant.com/faq",
-    "https://icpaglobalconsultant.com/privacy",
-    "https://icpaglobalconsultant.com/terms-service",
+    "https://www.icpaglobalconsultant.com/about",
+    "https://www.icpaglobalconsultant.com/contact",
+    "https://www.icpaglobalconsultant.com/services",
+    "https://www.icpaglobalconsultant.com/courses",
+    "https://www.icpaglobalconsultant.com/course/amazon",
+    "https://www.icpaglobalconsultant.com/course/flipkart",
+    "https://www.icpaglobalconsultant.com/products",
+    "https://www.icpaglobalconsultant.com/franchise",
+    "https://www.icpaglobalconsultant.com/telephonic-consultation",
+    "https://www.icpaglobalconsultant.com/blogs",
+    "https://www.icpaglobalconsultant.com/courses/youtube",
+    "https://www.icpaglobalconsultant.com/faq",
+    "https://www.icpaglobalconsultant.com/privacy",
+    "https://www.icpaglobalconsultant.com/terms-service",
   ];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

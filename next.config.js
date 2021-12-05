@@ -11,12 +11,9 @@ const publicUrl = isProd
   : "http://localhost:3000";
 
 module.exports = withImages({
-  webpack5: false,
   env: {
     PUBLIC_URL: publicUrl,
     API_URL: apiUrl,
-    DATABASE_URL: process.env.DATABASE_URL,
-    YOUTUBE_API_KEY: process.env.YOUTUBE_API_KEY,
   },
   images: {
     domains: ["res.cloudinary.com", "icpamedia.s3.amazonaws.com"],

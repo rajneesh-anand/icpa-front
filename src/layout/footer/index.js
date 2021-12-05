@@ -57,7 +57,7 @@ const Footer = () => {
                 <h6>Useful Links</h6>
                 <ul className="links-list">
                   <li>
-                    <Link href="/about-simple">
+                    <Link href="/about">
                       <a>About Us</a>
                     </Link>
                   </li>

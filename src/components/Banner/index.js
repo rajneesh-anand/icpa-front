@@ -46,13 +46,7 @@ function BannerPage({ data }) {
           data.map((item, index) => (
             <SwiperSlide key={index}>
               <div className="banner-image-container">
-                <Image
-                  src={item.url}
-                  alt={`banner-${index}`}
-                  width="100%"
-                  height="100%"
-                  layout="fill"
-                />
+                <Image src={item.url} alt={`banner-${index}`} layout="fill" />
               </div>
             </SwiperSlide>
           ))}

@@ -5,7 +5,7 @@ const HomeCoursePage = () => {
   const [courses, setCourses] = useState();
   useEffect(async () => {
     let isMounted = true;
-    const res = await fetch("/api/courselist");
+    const res = await fetch(`${process.env.API_URL}/course`);
     const result = await res.json();
 
     const coursesData = result.data.length > 0 ? result.data : null;

@@ -7,7 +7,7 @@ const Hiddenfrom = ({ formData }) => {
     <form
       id="redFrom"
       method="post"
-      action={`https://securegw-stage.paytm.in/theia/api/v1/showPaymentPage?mid=${formData.mid}&orderId=${formData.orderId}`}
+      action={`https://securegw.paytm.in/theia/api/v1/showPaymentPage?mid=${formData.mid}&orderId=${formData.orderId}`}
       name="paytm"
     >
       <input type="hidden" name="mid" value={formData.mid} />
@@ -27,7 +27,8 @@ const HomeServicesPage = () => {
   });
   useEffect(async () => {
     let isMounted = true;
-    const res = await fetch("/api/services");
+
+    const res = await fetch(`${process.env.API_URL}/service`);
     const result = await res.json();
 
     const servicesData = result.data.length > 0 ? result.data : null;
@@ -63,7 +64,7 @@ const HomeServicesPage = () => {
       const result = await response.json();
 
       setPaytmData({
-        mid: "zWEMTK89662017572077",
+        mid: "FEFWlQ95811221002383",
         orderId: result.orderId,
         txnToken: result.txnToken,
       });

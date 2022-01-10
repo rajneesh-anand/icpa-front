@@ -4,9 +4,8 @@ import htmr from "htmr";
 import moment from "moment";
 
 const BlogDetails = ({ data }) => {
+  console.log(data);
   const fomatDate = (date_value) => {
-    // let date = new Date(date_value);
-    // return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
     return moment(date_value).format("Do MMMM YYYY");
   };
   return (
@@ -29,12 +28,6 @@ const BlogDetails = ({ data }) => {
                       <i className="ri-calendar-2-line"></i>
                       {fomatDate(data.createdAt)}
                     </li>
-                    {/* <li>
-                        <i className="ri-message-2-line"></i>
-                        <Link href="/blog-details">
-                          <a>(4) Comments</a>
-                        </Link>
-                      </li> */}
                   </ul>
                 </div>
 
@@ -47,17 +40,16 @@ const BlogDetails = ({ data }) => {
                   <div className="d-flex align-items-center">
                     <img
                       src={
-                        data.author.image
-                          ? data.author.image
+                        data.author?.image
+                          ? data.author?.image
                           : "/images/user/default.svg"
                       }
                       alt="user"
                     />
                     <div className="title">
                       <span className="name">
-                        Posted By : {data.author.name}
+                        Posted By : {data.author?.name}
                       </span>
-                      {/* <span className="date">March 17, 2021</span> */}
                     </div>
                   </div>
                 </div>

@@ -42,7 +42,7 @@ const ClientFeedback = () => {
     setDisplay(true);
 
     let isMounted = true;
-    const res = await fetch("/api/testinomial");
+    const res = await fetch(`${process.env.API_URL}/testinomial`);
     const result = await res.json();
 
     const testnomialData = result.data.length > 0 ? result.data : null;

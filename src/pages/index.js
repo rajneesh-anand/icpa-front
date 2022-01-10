@@ -16,10 +16,9 @@ import ProjectsPage from "@/components/Home/Projects";
 // import AwardsPage from "@/components/Home/Awards";
 import MembershipPage from "@/components/MembershipPlan";
 
-const HomePage = ({ banner }) => {
+const HomePage = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
-  // console.log(banner);
 
   useEffect(() => {
     setTimeout(() => {
@@ -35,7 +34,7 @@ const HomePage = ({ banner }) => {
         canonical={`${process.env.PUBLIC_URL}`}
       />
       <Header />
-      <Banner data={banner} />
+      <Banner />
       <HomeServicesPage />
       <HomeCoursePage />
       <MembershipPage />
@@ -53,12 +52,3 @@ const HomePage = ({ banner }) => {
 };
 
 export default HomePage;
-
-export async function getServerSideProps() {
-  const result = await fetch(`${process.env.API_URL}/awsupload/fetchObject`);
-  const data = await result.json();
-
-  return {
-    props: { banner: data ? data.data : null },
-  };
-}

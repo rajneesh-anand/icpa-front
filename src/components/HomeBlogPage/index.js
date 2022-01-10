@@ -4,7 +4,7 @@ import htmr from "htmr";
 import Link from "next/link";
 const OwlCarousel = dynamic(import("react-owl-carousel3"));
 import moment from "moment";
-import { usePaginatedData } from "@/utils/useRequest";
+import Image from "next/image";
 
 const options = {
   nav: false,
@@ -39,19 +39,23 @@ const options = {
 
 const HomeBlogPage = () => {
   const [display, setDisplay] = React.useState(false);
-
-  const {
-    result,
-    error,
-    isLoadingMore,
-    size,
-    setSize,
-    isReachingEnd,
-    isEmpty,
-  } = usePaginatedData("/api/blogs");
+  const [blogs, setBlogs] = React.useState();
 
   React.useEffect(async () => {
     setDisplay(true);
+
+    let isMounted = true;
+    const res = await fetch(`${process.env.API_URL}/blog`);
+    const result = await res.json();
+
+    const blogData = result.data.length > 0 ? result.data : null;
+    if (isMounted) {
+      setBlogs(blogData);
+    }
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   const truncate = (str, no_words) => {
@@ -74,27 +78,22 @@ const HomeBlogPage = () => {
           </div>
 
           {display &&
-            (result && result.length > 0 ? (
+            (blogs && blogs.length > 0 ? (
               <OwlCarousel
                 className="feedback-slides owl-carousel owl-theme"
                 {...options}
               >
-                {result.map((item, index) => (
+                {blogs.map((item, index) => (
                   <div key={index} className="single-blog-box">
                     <div className="single-blog-post">
                       <div className="image">
-                        <Link href={`/blog/${item.slug}`}>
-                          <a className="d-block">
-                            <img
-                              src={
-                                item.image
-                                  ? item.image
-                                  : "/images/blog-default.svg"
-                              }
-                              alt={item.title}
-                            />
-                          </a>
-                        </Link>
+                        <Image
+                          src={
+                            item.image ? item.image : "/images/blog-default.svg"
+                          }
+                          alt={item.title}
+                          layout="fill"
+                        />
                       </div>
                       <div className="content">
                         <ul className="meta">

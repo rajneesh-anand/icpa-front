@@ -7,13 +7,15 @@ import SwiperCore, {
   Autoplay,
   Scrollbar,
 } from "swiper";
-import Intro from "./intro";
 
 SwiperCore.use([Navigation, Pagination, Autoplay, Scrollbar]);
 
-function BannerPage({ data }) {
+function BannerPage() {
+  const [data, setData] = useState([]);
+
   const prevRef = useRef(null);
   const nextRef = useRef(null);
+
   const swiperOption = {
     loop: true,
     speed: 600,
@@ -29,6 +31,12 @@ function BannerPage({ data }) {
     },
   };
 
+  useEffect(async () => {
+    const res = await fetch(`${process.env.API_URL}/awsupload/fetchObject`);
+    const result = await res.json();
+    setData(result.data);
+  }, []);
+
   return (
     <div className="hero-slider-area">
       <Swiper
@@ -42,7 +50,7 @@ function BannerPage({ data }) {
         }}
         {...swiperOption}
       >
-        {data &&
+        {data.length > 0 &&
           data.map((item, index) => (
             <SwiperSlide key={index}>
               <div className="banner-image-container">

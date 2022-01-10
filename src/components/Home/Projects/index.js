@@ -115,54 +115,6 @@ const ProjectsPage = () => {
           </div>
         </div>
       </div>
-
-      {/*     
-      <div className="project-area ptb-50">
-        <div className="container">
-          <div className="row">
-            <div className="col-6 col-lg-3 col-md-3 col-sm-6 p-a30">
-              <h2 className="m-t0 m-b10 font-weight-400 font-45">
-                <i className="ti-bag m-r10"></i>
-                <span className="counter">
-                  <span>15</span>
-                </span>
-                +
-              </h2>
-              <h4 className="font-weight-300 m-t0">Years in Business</h4>
-            </div>
-            <div className="col-6 col-lg-3 col-md-3 col-sm-6 p-a30">
-              <h2 className="m-t0 m-b10 font-weight-400 font-45">
-                <i className="ti-user m-r10"></i>
-                <span className="counter">
-                  <span>700</span>
-                </span>
-                +
-              </h2>
-              <h4 className="font-weight-300 m-t0">Happy Clients</h4>
-            </div>
-            <div className="col-6 col-lg-3 col-md-3 col-sm-6 p-a30">
-              <h2 className="m-t0 m-b10 font-weight-400 font-45">
-                <i className="flaticon-users m-r10"></i>
-                <span className="counter">
-                  <span>50</span>
-                </span>
-                +
-              </h2>
-              <h4 className="font-weight-300 m-t0">Technical Experts</h4>
-            </div>
-            <div className="col-6 col-lg-3 col-md-3 col-sm-6 p-a30">
-              <h2 className="m-t0 m-b10 font-weight-400 font-45">
-                <i className="ti-mobile m-r10"></i>
-                <span className="counter">
-                  <span>200</span>
-                </span>
-                +
-              </h2>
-              <h4 className="font-weight-300 m-t0">Apps Delivered</h4>
-            </div>
-          </div>
-        </div>
-      </div> */}
     </>
   );
 };

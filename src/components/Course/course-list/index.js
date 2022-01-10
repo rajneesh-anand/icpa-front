@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const CourseList = ({ data }) => {
   const [count, setCount] = useState("0");
@@ -49,16 +50,11 @@ const CourseList = ({ data }) => {
               <div key={index} className="col-lg-12 col-md-12">
                 <div className="single-course-box">
                   <div className="course-image">
-                    <Link href={`/course/${item.slug}`}>
-                      <a className="d-block image">
-                        <img
-                          src={
-                            item.image ? item.image : "/images/blog-default.svg"
-                          }
-                          alt={item.courseName}
-                        />
-                      </a>
-                    </Link>
+                    <Image
+                      src={item.image ? item.image : "/images/error.png"}
+                      alt={item.courseName}
+                      layout="fill"
+                    />
                   </div>
                   <div className="course-content text-center">
                     <Link href={`/course/${item.slug}`}>

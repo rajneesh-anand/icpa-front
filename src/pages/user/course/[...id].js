@@ -6,20 +6,40 @@ import Footer from "@/layout/footer";
 import Layout from "@/layout/index";
 import UserCourseDetail from "@/components/UserCourseList/course-details";
 import prisma from "@/libs/prisma";
+import Link from "next/link";
 
 const UserCourseVideoPage = ({ chapterList }) => {
-  const lectures = chapterList ? JSON.parse(chapterList) : [];
+  const lectures = chapterList ? JSON.parse(chapterList) : null;
 
   return (
     <Layout>
       <Seo
         title="My Course"
-        description="This is couse"
+        description="Watch Course Videos"
         canonical={`${process.env.PUBLIC_URL}/user/course`}
       />
       <Header />
 
-      <UserCourseDetail data={lectures} />
+      {lectures ? (
+        <UserCourseDetail data={lectures} />
+      ) : (
+        <div className="container">
+          <div className="text-center ptb-100">
+            <h4
+              style={{
+                color: "darkred",
+                fontFamily: "Poppins",
+                fontWeight: 400,
+              }}
+            >
+              There is no course media available !
+            </h4>
+            <Link href="/contact">
+              <a className="default-btn-sm">Contact Us</a>
+            </Link>
+          </div>
+        </div>
+      )}
 
       <Footer />
     </Layout>
@@ -58,6 +78,8 @@ export async function getServerSideProps(context) {
         },
       ],
     });
+
+    console.log(lectures);
 
     return {
       props: {

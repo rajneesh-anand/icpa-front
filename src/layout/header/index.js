@@ -144,6 +144,16 @@ const Header = () => {
                                     </Link>
                                   </li>
                                   <li>
+                                    <Link
+                                      href="/user/order"
+                                      activeClassName="active"
+                                    >
+                                      <a className="main-menu-link">
+                                        My Orders
+                                      </a>
+                                    </Link>
+                                  </li>
+                                  <li>
                                     <button
                                       className="default-btn-sm"
                                       onClick={() => signOut()}

@@ -7,19 +7,21 @@ import Footer from "@/layout/footer";
 import Layout from "@/layout/index";
 import UserCourseList from "@/components/UserCourseList/course-list";
 import prisma from "@/libs/prisma";
+import UserServices from "@/components/UserServices";
 
-const UserCoursePage = ({ courseList }) => {
-  // console.log(courseList);
+const UserCoursePage = ({ serviceList }) => {
+  const services = serviceList ? JSON.parse(serviceList) : null;
+  console.log(services);
   return (
     <Layout>
       <Seo
         title="My Course"
         description="This is course page"
-        canonical={`${process.env.PUBLIC_URL}/user/course`}
+        canonical={`${process.env.PUBLIC_URL}/user/order`}
       />
       <Header />
-      {courseList ? (
-        <UserCourseList data={courseList} />
+      {services ? (
+        <UserServices data={services} />
       ) : (
         <div className="container">
           <div className="text-center ptb-100">
@@ -30,10 +32,10 @@ const UserCoursePage = ({ courseList }) => {
                 fontWeight: 400,
               }}
             >
-              You have not enrolled for any course !
+              You have not purchased any services !
             </h4>
-            <Link href="/courses">
-              <a className="default-btn-sm">Buy Course</a>
+            <Link href="/services">
+              <a className="default-btn-sm">Buy Service</a>
             </Link>
           </div>
         </div>
@@ -54,30 +56,18 @@ export async function getServerSideProps(context) {
         permanent: false,
       },
     };
-  } else {
-    const orders = await prisma.orders.findMany({
-      where: {
-        email: session.user.email,
-        paymentStatus: "TXN_SUCCESS",
-        NOT: [{ courseId: null }],
-      },
-    });
-    console.log(orders);
-
-    if (orders.length > 0) {
-      let newArray = orders.map((el) => el.courseId);
-      let courseIdList = newArray.filter((x) => x).join(",");
-      const result = await prisma.$queryRaw(
-        `select * from "Courses" where id in (${courseIdList})`
-      );
-      console.log(result);
-      return {
-        props: { courseList: result },
-      };
-    } else {
-      return {
-        props: { courseList: null },
-      };
-    }
   }
+
+  const orders = await prisma.orders.findMany({
+    where: {
+      email: session.user.email,
+      paymentStatus: "TXN_SUCCESS",
+      AND: [{ courseId: null }],
+    },
+  });
+  return {
+    props: {
+      serviceList: orders.length != 0 ? JSON.stringify(orders) : null,
+    },
+  };
 }

@@ -34,18 +34,13 @@ const Footer = () => {
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.linkedin.com/" target="_blank">
-                      <i className="ri-linkedin-fill"></i>
+                    <a href="https://www.instagram.com/" target="_blank">
+                      <i className="ri-instagram-fill"></i>
                     </a>
                   </li>
                   <li>
                     <a href="https://www.messenger.com/" target="_blank">
                       <i className="ri-messenger-fill"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://github.com/" target="_blank">
-                      <i className="ri-github-fill"></i>
                     </a>
                   </li>
                 </ul>

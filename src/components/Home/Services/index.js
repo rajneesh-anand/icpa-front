@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useSession } from "next-auth/client";
+import ImageLoader from "@/components/ui/loaders/ImageLoader";
 
 const Hiddenfrom = ({ formData }) => {
   return (
@@ -84,95 +85,107 @@ const HomeServicesPage = () => {
           </div>
 
           <div className="row justify-content-center">
-            {services &&
-              services.map((item, index) => {
-                if (index < 6) {
+            {services
+              ? services.map((item, index) => {
+                  if (index < 6) {
+                    return (
+                      <div
+                        key={index}
+                        className="col-xl-4 col-lg-6 col-sm-6 col-md-6"
+                      >
+                        <div className="service-card">
+                          <div
+                            className="service-card-img"
+                            style={{
+                              backgroundImage: item.image
+                                ? `url(${item.image})`
+                                : `url(https://images.unsplash.com/photo-1491374812364-00028bbe7d2f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a22e4862c36c552e726815949fbcb41a&auto=format&fit=crop&w=500&q=60)`,
+                            }}
+                          >
+                            <div className="overlay">
+                              <div className="overlay-content">
+                                <Link href="/contact">
+                                  <a>Contact Us </a>
+                                </Link>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="service-card-content">
+                            <div className="price-group text-center">
+                              {item.discount > 0 ? (
+                                <div className="d-flex justify-content-center">
+                                  <h6>&#x20B9;{item.serviceFee}</h6>
+                                  <h4> &#x20B9;{item.saleFee}</h4>
+                                  {item.popularity && (
+                                    <span>{item.popularity}</span>
+                                  )}
+                                </div>
+                              ) : item.saleFee == 0 ? (
+                                <p>Free</p>
+                              ) : (
+                                <h4> &#x20B9; {item.saleFee}</h4>
+                              )}
+                            </div>
+                            {item.discount && (
+                              <div className="discount">
+                                <h6>- {Math.round(item.discount)} % Off</h6>
+                              </div>
+                            )}
+
+                            <div className="text-center serviceName">
+                              <h6>{item.serviceName}</h6>
+                            </div>
+                            {item.discount > 0 && (
+                              <div className="btn-list">
+                                <div className="plan-btn">
+                                  {!session ? (
+                                    <Link href="/auth/signin">
+                                      <a className="default-btn-sm">
+                                        Buy Service
+                                      </a>
+                                    </Link>
+                                  ) : (
+                                    <button
+                                      className="default-btn-sm"
+                                      onClick={() =>
+                                        handlePayment(
+                                          item.saleFee,
+                                          item.serviceName
+                                        )
+                                      }
+                                    >
+                                      Buy Service
+                                    </button>
+                                  )}
+                                </div>
+                                <div className="plan-btn">
+                                  <Link href="/contact">
+                                    <a className="default-btn-sm">
+                                      Ask Our Experts
+                                    </a>
+                                  </Link>
+                                </div>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  }
+                })
+              : [0, 1, 2, 3, 4, 5].map((item, index) => {
                   return (
                     <div
                       key={index}
                       className="col-xl-4 col-lg-6 col-sm-6 col-md-6"
                     >
                       <div className="service-card">
-                        <div
-                          className="service-card-img"
-                          style={{
-                            backgroundImage: item.image
-                              ? `url(${item.image})`
-                              : `url(https://images.unsplash.com/photo-1491374812364-00028bbe7d2f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a22e4862c36c552e726815949fbcb41a&auto=format&fit=crop&w=500&q=60)`,
-                          }}
-                        >
-                          <div className="overlay">
-                            <div className="overlay-content">
-                              <Link href="/contact">
-                                <a>Contact Us </a>
-                              </Link>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="service-card-content">
-                          <div className="price-group text-center">
-                            {item.discount > 0 ? (
-                              <div className="d-flex justify-content-center">
-                                <h6>&#x20B9;{item.serviceFee}</h6>
-                                <h4> &#x20B9;{item.saleFee}</h4>
-                                {item.popularity && (
-                                  <span>{item.popularity}</span>
-                                )}
-                              </div>
-                            ) : item.saleFee == 0 ? (
-                              <p>Free</p>
-                            ) : (
-                              <h4> &#x20B9; {item.saleFee}</h4>
-                            )}
-                          </div>
-                          {item.discount && (
-                            <div className="discount">
-                              <h6>- {Math.round(item.discount)} % Off</h6>
-                            </div>
-                          )}
-
-                          <div className="text-center serviceName">
-                            <h6>{item.serviceName}</h6>
-                          </div>
-                          {item.discount > 0 && (
-                            <div className="btn-list">
-                              <div className="plan-btn">
-                                {!session ? (
-                                  <Link href="/auth/signin">
-                                    <a className="default-btn-sm">
-                                      Buy Service
-                                    </a>
-                                  </Link>
-                                ) : (
-                                  <button
-                                    className="default-btn-sm"
-                                    onClick={() =>
-                                      handlePayment(
-                                        item.saleFee,
-                                        item.serviceName
-                                      )
-                                    }
-                                  >
-                                    Buy Service
-                                  </button>
-                                )}
-                              </div>
-                              <div className="plan-btn">
-                                <Link href="/contact">
-                                  <a className="default-btn-sm">
-                                    Ask Our Experts
-                                  </a>
-                                </Link>
-                              </div>
-                            </div>
-                          )}
-                        </div>
+                        <ImageLoader />
                       </div>
                     </div>
                   );
-                }
-              })}
+                })}
             <div className="col-xl-12 col-lg-12 col-sm-12 col-md-12">
               <div className="view-more-box">
                 <Link href="/services">

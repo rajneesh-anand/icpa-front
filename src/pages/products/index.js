@@ -10,6 +10,7 @@ import Header from "@/layout/header";
 import Footer from "@/layout/footer";
 import Layout from "@/layout/index";
 import YoutubeLink from "@/components/Youtube";
+import Image from "next/image";
 
 const ProductPage = () => {
   const {
@@ -31,7 +32,30 @@ const ProductPage = () => {
         canonical={`${process.env.PUBLIC_URL}/products`}
       />
       <Header />
-      <IntroVideo />
+      {/* <IntroVideo /> */}
+
+      <div className="product-page-title">
+        <div className="container">
+          <div className="row justify-content-center align-items-center">
+            <div className="col-12 col-xl-6 text-center">
+              <h2>PRODUCTS SUGGESTION</h2>
+              <p>
+                Pick products from our stock inventory to list on Amazon /
+                Flipkart / Meesho / Shopsy etc. ecommerce online platform
+              </p>
+            </div>
+            <div className="col-12  col-xl-6 ">
+              <div style={{ position: "relative", height: 320 }}>
+                <Image
+                  src="/images/stack.jpg"
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {isLoadingMore ? (
         <Loading />

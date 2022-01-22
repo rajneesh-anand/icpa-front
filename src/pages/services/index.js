@@ -12,6 +12,7 @@ import Loading from "@/components/Loading";
 import ModalForm from "@/components/ModalForm";
 import MembershipPlan from "@/components/MembershipPlan";
 import YoutubeLink from "@/components/Youtube";
+import Image from "next/image";
 
 const ServicePage = () => {
   const [show, setShow] = useState(false);
@@ -41,7 +42,31 @@ const ServicePage = () => {
         canonical={`${process.env.PUBLIC_URL}/services`}
       />
       <Header />
-      <IntroVideo />
+      {/* <IntroVideo /> */}
+
+      <div className="product-page-title">
+        <div className="container">
+          <div className="row justify-content-center align-items-center">
+            <div className="col-12 col-xl-6 text-center">
+              <h2>ONE STOP SOLUTION FOR ONLINE SELLER</h2>
+              <p>
+                We are always motivated to deliver best possible services for
+                online sellers. Avail our Services to sell your products online
+                hassle free.
+              </p>
+            </div>
+            <div className="col-12  col-xl-6 ">
+              <div style={{ position: "relative", height: 320 }}>
+                <Image
+                  src="/images/service.png"
+                  layout="fill"
+                  objectFit="contain"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {isLoadingMore ? (
         <Loading />
@@ -67,7 +92,7 @@ const ServicePage = () => {
           </div>
         </>
       )}
-      <MembershipPlan />
+      {/* <MembershipPlan /> */}
       <HomeContactPage />
       <YoutubeLink />
       <Partner />

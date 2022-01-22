@@ -62,13 +62,6 @@ const KeyFeatures = ({ data }) => {
 
   return (
     <>
-      <div className="page-title-area">
-        <div className="container">
-          <div className="page-title-content">
-            <h4>ONLINE SELLER SERVICES FOR AMAZON / FLIPKART</h4>
-          </div>
-        </div>
-      </div>
       <div className="features-area ptb-50">
         <div className="container">
           <div className="row justify-content-center">

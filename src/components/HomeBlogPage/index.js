@@ -59,7 +59,9 @@ const HomeBlogPage = () => {
   }, []);
 
   const truncate = (str, no_words) => {
-    return htmr(str.split(" ").splice(0, no_words).join(" ") + " ");
+    let truncatedString = str.split(" ").splice(0, no_words).join(" ") + " ";
+
+    return htmr(truncatedString);
   };
   const fomatDate = (date_value) => {
     return moment(date_value).format("Do MMMM YYYY");
@@ -107,8 +109,8 @@ const HomeBlogPage = () => {
                             <a>{item.title}</a>
                           </Link>
                         </h3>
-                        <div style={{ minHeight: "300px" }}>
-                          {truncate(item.content, 50)}
+                        <div style={{ minHeight: "272px" }}>
+                          {truncate(item.content, 40)}
                         </div>
                       </div>
                       <div className="read-more">

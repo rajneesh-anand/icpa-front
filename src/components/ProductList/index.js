@@ -3,6 +3,7 @@ import useMasonry from "@/utils/useMasonry";
 import DataFilter from "@/components/DataFilter";
 import { slugify } from "../../utils/helper";
 import Link from "next/link";
+import Image from "next/image";
 
 const ProductList = ({ data }) => {
   const { categories } = useMasonry(
@@ -15,15 +16,6 @@ const ProductList = ({ data }) => {
 
   return (
     <>
-      <div className="page-title-area">
-        <div className="container">
-          <div className="page-title-content">
-            <h4>
-              SELECT YOUR PRODUCTS FOR ONLINE LISTINGS ON AMAZON / FLIPKART
-            </h4>
-          </div>
-        </div>
-      </div>
       <div className="products-area pb-50 ">
         <div className="container">
           <div className="messonry-button text-center mb-8">
@@ -41,15 +33,20 @@ const ProductList = ({ data }) => {
                     .join(" ")}`}
                 >
                   <div className="card shadow-sm">
-                    <img
-                      src={
-                        item.image
-                          ? item.image
-                          : "https://source.unsplash.com/160x160/?food"
-                      }
-                      className="card-img-top"
-                      alt={item.name}
-                    />
+                    <div style={{ position: "relative", height: 204 }}>
+                      {" "}
+                      <Image
+                        src={
+                          item.image
+                            ? item.image
+                            : "https://source.unsplash.com/160x160/?food"
+                        }
+                        layout="fill"
+                        objectFit="contain"
+                        alt={item.name}
+                      />
+                    </div>
+
                     {item.popularity && (
                       <div className="label-top shadow-sm">
                         {item.popularity}

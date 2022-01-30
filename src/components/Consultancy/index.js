@@ -119,12 +119,6 @@ const Consultancy = ({ data }) => {
     <div className="consultation-area ptb-50">
       <div className="container">
         <div className="tel-box text-center">
-          {/* <img
-            src="/images/customer-support-icon.png"
-            alt="support-icon"
-            height={60}
-            width={60}
-          /> */}
           <CallIcon />
 
           <h4>BOOK TELEPHONIC CONSULTATION IN 2 EASY STEPS</h4>
@@ -133,12 +127,12 @@ const Consultancy = ({ data }) => {
         <Timeline />
 
         <div className="consultancy-form ">
-          <div className="text-center">
+          <div className="text-center mb-4">
             <h6>FILL UP THE FORM AND BOOK TELEPHONIC CONSULTATION</h6>
           </div>
 
           <Form>
-            <Row className="justify-content-center mb-2">
+            <Row className="justify-content-center mb-3">
               <Form.Group as={Col} md="4">
                 <Form.Label>Select Seller Type *</Form.Label>
                 <Form.Select
@@ -165,7 +159,7 @@ const Consultancy = ({ data }) => {
                 </Form.Select>
               </Form.Group>
             </Row>
-            <Row className="justify-content-center mb-2">
+            <Row className="justify-content-center mb-3">
               <Form.Group as={Col} md="4">
                 <Form.Label>Full Name *</Form.Label>
                 <Form.Control
@@ -196,7 +190,7 @@ const Consultancy = ({ data }) => {
                 {errors.email && <p>{errors.email.message}</p>}
               </Form.Group>
             </Row>
-            <Row className="justify-content-center mb-2">
+            <Row className="justify-content-center mb-3">
               <Form.Group as={Col} md="4">
                 <Form.Label>Phone Number *</Form.Label>
                 <Form.Control
@@ -224,7 +218,7 @@ const Consultancy = ({ data }) => {
                 />
               </Form.Group>
             </Row>
-            <Row className="justify-content-center mb-2">
+            <Row className="justify-content-center mb-3">
               <Form.Group as={Col} md="4">
                 <Form.Label>I am interested in *</Form.Label>
                 <Form.Select
@@ -256,7 +250,7 @@ const Consultancy = ({ data }) => {
                 </Form.Select>
               </Form.Group>
             </Row>
-            <Row className="justify-content-center mb-2">
+            <Row className="justify-content-center mb-3">
               <Form.Group as={Col} md="4">
                 <Form.Label>Select Talktime Package *</Form.Label>
                 <Form.Select
@@ -279,7 +273,7 @@ const Consultancy = ({ data }) => {
                 />
               </Form.Group>
             </Row>
-            <Row className="justify-content-center mb-2">
+            <Row className="justify-content-center mb-3">
               <Form.Group as={Col} md="8">
                 <Form.Label>Specify your reason for call </Form.Label>
                 <Form.Control

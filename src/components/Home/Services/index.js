@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useSession } from "next-auth/client";
 import ImageLoader from "@/components/ui/loaders/ImageLoader";
+import Image from "next/image";
 
 const Hiddenfrom = ({ formData }) => {
   return (
@@ -95,6 +96,23 @@ const HomeServicesPage = () => {
                       >
                         <div className="service-card">
                           <div
+                            style={{
+                              position: "relative",
+                              height: 204,
+                            }}
+                          >
+                            <Image
+                              src={
+                                item.image
+                                  ? item.image
+                                  : "https://source.unsplash.com/160x160/?food"
+                              }
+                              layout="fill"
+                              objectFit="fill"
+                              alt={item.name}
+                            />
+                          </div>
+                          {/* <div
                             className="service-card-img"
                             style={{
                               backgroundImage: item.image
@@ -109,7 +127,7 @@ const HomeServicesPage = () => {
                                 </Link>
                               </div>
                             </div>
-                          </div>
+                          </div> */}
 
                           <div className="service-card-content">
                             <div className="price-group text-center">

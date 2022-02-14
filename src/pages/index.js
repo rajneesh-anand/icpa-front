@@ -37,7 +37,7 @@ const HomePage = () => {
       <Banner />
       <HomeServicesPage />
       <HomeCoursePage />
-      <MembershipPage />
+      {/* <MembershipPage /> */}
       <ProjectsPage />
       {/* <AwardsPage /> */}
       <ClientFeedback />
